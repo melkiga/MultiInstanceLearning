@@ -1,0 +1,384 @@
+\begin{thebibliography}{60}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alabdulmohsin et~al.(2016)Alabdulmohsin, Cisse, Gao, and
+  Zhang]{Alabdulmohsin2016215}
+I.~Alabdulmohsin, M.~Cisse, X.~Gao, and X.~Zhang.
+\newblock Large margin classification with indefinite similarities.
+\newblock \emph{Machine Learning}, 103\penalty0 (2):\penalty0 215--237, 2016.
+
+\bibitem[Alcal\'{a}-Fdez et~al.(2011)Alcal\'{a}-Fdez, Fern\'{a}ndez, Luengo,
+  Derrac, Garc\'{i}a, S\'{a}nchez, and Herrera]{Alca2011}
+J.~Alcal\'{a}-Fdez, A.~Fern\'{a}ndez, J.~Luengo, J.~Derrac, S.~Garc\'{i}a,
+  L.~S\'{a}nchez, and F.~Herrera.
+\newblock {KEEL Data-Mining Software Tool: Data Set Repository, Integration of
+  Algorithms and Experimental Analysis Framework, Analysis Framework}.
+\newblock \emph{Journal of Multiple-Valued Logic and Soft Computing},
+  17:\penalty0 255--287, 2011.
+
+\bibitem[Amores(2013)]{Amores2013}
+J.~Amores.
+\newblock {Multiple instance classification: Review, taxonomy and comparative
+  study}.
+\newblock \emph{Artificial Intelligence}, 201:\penalty0 81--105, 2013.
+
+\bibitem[Andrews et~al.(2002)Andrews, Tsochantaridis, and Hofmann]{Andrews2002}
+S.~Andrews, I.~Tsochantaridis, and T.~Hofmann.
+\newblock {Support Vector Machines for Multiple-Instance Learning}.
+\newblock In \emph{{Proceedings of the 15th International Conference on Neural
+  Information Processing Systems}}, pages 577--584, 2002.
+
+\bibitem[Auer and Ortner(2004)]{Auer2004}
+P.~Auer and R.~Ortner.
+\newblock {A Boosting Approach to Multiple Instance Learning}.
+\newblock In \emph{{Proceedings of the 15th European Conference on Machine
+  Learning}}, volume 3201 LNCS, pages 63--74, 2004.
+
+\bibitem[Ben-David(2008)]{Bendavid2008}
+A.~Ben-David.
+\newblock {About the Relationship Between ROC Curves and Cohen’s Kappa}.
+\newblock \emph{Engineering Applications of Artificial Intelligence},
+  21\penalty0 (6):\penalty0 874--882, 2008.
+
+\bibitem[Bjerring and Frank(2011)]{Bjerring2011}
+L.~Bjerring and E.~Frank.
+\newblock {Beyond Trees: Adopting MITI to Learn Rules and Ensemble Classifiers
+  for Multi-instance Data}.
+\newblock In \emph{Proceedings of the Australasian Joint Conference on
+  Artificial Intelligence}, pages 41--50, 2011.
+
+\bibitem[Blaschko and Hofmann(2006)]{Blaschko2006}
+M.~Blaschko and T.~Hofmann.
+\newblock {Conformal Multi-instance Kernels}.
+\newblock In \emph{{Proceedings of the 19th Conference on Advances in Neural
+  Information Processing Systems}}, pages 1--6, 2006.
+
+\bibitem[Blockeel et~al.(2005)Blockeel, Page, and Srinivasan]{Blockeel2005}
+H.~Blockeel, D.~Page, and A.~Srinivasan.
+\newblock Multi-instance tree learning.
+\newblock In \emph{{Proceedings of the International Conference on Machine
+  Learning}}, pages 57--64, 2005.
+
+\bibitem[Boyd and Vanderberghe(2004)]{Boyd2004}
+S.~Boyd and L.~Vanderberghe.
+\newblock \emph{{Convex Optimization}}.
+\newblock Cambridge University Press, 2004.
+
+\bibitem[Bunescu and Mooney(2007)]{Bunescu2007}
+R.~Bunescu and R.~Mooney.
+\newblock {Multiple Instance Learning for Sparse Positive Bags}.
+\newblock In \emph{{Proceedings of the 24th Annual International Conference on
+  Machine Learning}}, pages 105--112, 2007.
+
+\bibitem[Cano et~al.(2015)Cano, Zafra, and Ventura]{2015-KAIS}
+A.~Cano, A.~Zafra, and S.~Ventura.
+\newblock {Speeding up multiple instance learning classification rules on
+  GPUs}.
+\newblock \emph{Knowledge and Information Systems}, 44\penalty0 (1):\penalty0
+  127--145, 2015.
+
+\bibitem[Carbonneau et~al.(2015)Carbonneau, Granger, Raymond, and
+  Gagnon]{Alpaydin2015}
+M.A. Carbonneau, E.~Granger, A.J. Raymond, and G.~Gagnon.
+\newblock {Single- vs. multiple-instance classification}.
+\newblock \emph{Pattern Recognition}, 48\penalty0 (9):\penalty0 2831--2838,
+  2015.
+
+\bibitem[Carbonneau et~al.(2016)Carbonneau, Granger, Raymond, and
+  Gagnon]{Carbonneau2016}
+M.A. Carbonneau, E.~Granger, A.J. Raymond, and G.~Gagnon.
+\newblock {Robust multiple-instance learning ensembles using random subspace
+  instance selection}.
+\newblock \emph{Pattern Recognition}, 58:\penalty0 83--99, 2016.
+
+\bibitem[Chen and Wang(2004)]{Chen2004}
+Y.~Chen and J.~Wang.
+\newblock Image categorization by learning and reasoning with regions.
+\newblock \emph{Journal of Machine Learning Research}, 5:\penalty0 913--939,
+  2004.
+
+\bibitem[Chen et~al.(2006)Chen, Bi, and Wang]{Chen2006}
+Y.~Chen, J.~Bi, and J.~Wang.
+\newblock {MILES: Multiple-Instance Learning via Embedded Instance Selection}.
+\newblock \emph{{IEEE Transactions on Pattern Analysis and Machine
+  Intelligence}}, 28\penalty0 (12):\penalty0 1931--1947, 2006.
+
+\bibitem[Cortes and Vapnik(1995)]{Cortes1995}
+C.~Cortes and V.~Vapnik.
+\newblock Support-vector networks.
+\newblock \emph{Machine Learning}, 20\penalty0 (3):\penalty0 273--297, 1995.
+
+\bibitem[Derrac et~al.(2011)Derrac, Garc{\'i}a, Molina, and
+  Herrera]{Derrac2011}
+J.~Derrac, S.~Garc{\'i}a, D.~Molina, and F.~Herrera.
+\newblock A practical tutorial on the use of nonparametric statistical tests as
+  a methodology for comparing evolutionary and swarm intelligence algorithms.
+\newblock \emph{Swarm and Evolutionary Computation}, 1\penalty0 (1):\penalty0
+  3--18, 2011.
+
+\bibitem[Dietterich et~al.(1997)Dietterich, Lathrop, and
+  Lozano-Perez]{Dietterich1997}
+T.G. Dietterich, R.H. Lathrop, and T.~Lozano-Perez.
+\newblock Solving the multiple instance problem with axis-parallel rectangles.
+\newblock \emph{Artificial Intelligence}, 89:\penalty0 31--71, 1997.
+
+\bibitem[Dong(2006)]{Dong2006}
+L.~Dong.
+\newblock A comparison of multi-instance learning algorithms.
+\newblock \emph{Master of Science Thesis, The University of Waikato}, 2006.
+
+\bibitem[Doran and Ray(2014)]{Doran201479}
+G.~Doran and S.~Ray.
+\newblock A theoretical and empirical analysis of support vector machine
+  methods for multiple-instance classification.
+\newblock \emph{Machine Learning}, 97\penalty0 (1-2):\penalty0 79--102, 2014.
+
+\bibitem[Dunn(1961)]{Dunn1961}
+O.J. Dunn.
+\newblock Multiple comparisons among means.
+\newblock \emph{Journal of the American Statistical Association}, 56:\penalty0
+  52--64, 1961.
+
+\bibitem[Durrant and Kab{\'a}n(2015)]{durrant2015random}
+Robert~J Durrant and Ata Kab{\'a}n.
+\newblock Random projections as regularizers: learning a linear discriminant
+  from fewer observations than dimensions.
+\newblock \emph{Machine Learning}, 99\penalty0 (2):\penalty0 257--286, 2015.
+
+\bibitem[Faria et~al.(2017)Faria, Coelho, Silva, Rocha, Almeida, Lemos, and
+  Braga]{Faria2017196}
+A.W.C. Faria, F.G.F. Coelho, A.M. Silva, H.P. Rocha, G.M. Almeida, A.P. Lemos,
+  and A.P. Braga.
+\newblock Milkde: A new approach for multiple instance learning based on
+  positive instance selection and kernel density estimation.
+\newblock \emph{Engineering Applications of Artificial Intelligence},
+  59:\penalty0 196--204, 2017.
+
+\bibitem[Foulds and Frank(2010)]{Foulds2010}
+J.~Foulds and E.~Frank.
+\newblock A review of multi-instance learning assumptions.
+\newblock \emph{The Knowledge Engineering Review}, 25-1:\penalty0 1--24, 2010.
+
+\bibitem[Fu et~al.(2011)Fu, Robles-Kelly, and Zhou]{Fu2011}
+Z.~Fu, A.~Robles-Kelly, and J.~Zhou.
+\newblock {MILIS: Multiple Instance Learning with Instance Selection}.
+\newblock \emph{{IEEE Transactions on Pattern Analysis and Machine
+  Intelligence}}, 33\penalty0 (5):\penalty0 958--977, 2011.
+
+\bibitem[Garc{\'i}a and Herrera(2008)]{Garcia2008}
+S.~Garc{\'i}a and F.~Herrera.
+\newblock {An Extension on “Statistical Comparisons of Classifiers over
+  Multiple Data Sets” for all Pairwise Comparisons}.
+\newblock \emph{Journal of Machine Learning Research}, 9:\penalty0 2677--2694,
+  2008.
+
+\bibitem[Garc{\'i}a et~al.(2008)Garc{\'i}a, Molina, Lozano, and
+  Herrera]{Garcia2009}
+S.~Garc{\'i}a, D.~Molina, M.~Lozano, and F.~Herrera.
+\newblock {A study on the use of non-parametric tests for analyzing the
+  evolutionary algorithms' behaviour - a case study on the CEC2005 Special
+  Session on Real Parameter Optimization}.
+\newblock \emph{Heuristics}, 15:\penalty0 617--644, 2008.
+
+\bibitem[Garc{\'i}a et~al.(2010)Garc{\'i}a, Fern{\'a}ndez, Luengo, and
+  Herrera]{Garcia20102044}
+S.~Garc{\'i}a, A.~Fern{\'a}ndez, J.~Luengo, and F.~Herrera.
+\newblock {Advanced nonparametric tests for multiple comparisons in the design
+  of experiments in computational intelligence and data mining: Experimental
+  analysis of power}.
+\newblock \emph{Information Sciences}, 180\penalty0 (10):\penalty0 2044--2064,
+  2010.
+
+\bibitem[G{\"a}rtner et~al.(2002)G{\"a}rtner, Flach, Kowalczyk, and
+  Smola]{Smola2002}
+T.~G{\"a}rtner, P.A. Flach, A.~Kowalczyk, and A.J. Smola.
+\newblock Multi-instance kernels.
+\newblock In \emph{Proceedings of the 19th International Conference on Machine
+  Learning}, pages 179--186, 2002.
+
+\bibitem[Gibbons and Chakraborti(2011)]{Gibbons2011}
+J.D. Gibbons and S.~Chakraborti.
+\newblock \emph{{Nonparametric Statistical Inference}}.
+\newblock Chapman \& Hall/CRC Press, 5th edition, 2011.
+
+\bibitem[Hall et~al.(2009)Hall, Frank, Holmes, Pfahringer, Reutemannr, and
+  Witten]{Hall2009}
+M.~Hall, E.~Frank, G.~Holmes, B.~Pfahringer, P.~Reutemannr, and I.H. Witten.
+\newblock {The WEKA Data Mining Software: An Update}.
+\newblock \emph{SIGKDD Explorations}, 11:\penalty0 10--18, 2009.
+
+\bibitem[Herman et~al.(2008)Herman, Ye, Xu, and Zhang]{Herman2008}
+G.~Herman, G.~Ye, J.~Xu, and B.~Zhang.
+\newblock Region-based image categorization with reduced feature set.
+\newblock In \emph{Proceedings of the 10th IEEE Workshop on Multimedia Signal
+  Processing}, pages 586--591, 2008.
+
+\bibitem[Herrera et~al.(2016)Herrera, Ventura, Bello, Cornelis, Zafra,
+  S{\'a}nchez-Tarrag{\'o}, and Vluymans]{Herrera2016}
+F.~Herrera, S.~Ventura, R.~Bello, C.~Cornelis, A.~Zafra,
+  D.~S{\'a}nchez-Tarrag{\'o}, and S.~Vluymans.
+\newblock \emph{Multiple Instance Learning Foundations and Methods}.
+\newblock Springer, 2016.
+
+\bibitem[Hollander and Wolfe(1999)]{Holander1999}
+M.~Hollander and D.A. Wolfe.
+\newblock \emph{Nonparametric Statistical Methods}.
+\newblock John Wiley \& Sons, Inc., 1999.
+
+\bibitem[Huang et~al.(2006)Huang, Kecman, and Kopriva]{Huang2006}
+T.M. Huang, V.~Kecman, and I.~Kopriva.
+\newblock \emph{{Kernel Based Algorithms for Mining Huge Data Sets, Supervised,
+  Semi- supervised, and Unsupervised Learning}}.
+\newblock Springer-Verlag, 2006.
+
+\bibitem[Kecman(2001)]{Kecman2001}
+V.~Kecman.
+\newblock \emph{Learning and Soft Computing: Support Vector Machines, Neural
+  Networks, and Fuzzy Logic Models}.
+\newblock MIT Press, 2001.
+
+\bibitem[Kecman(2015)]{Kecman2016}
+V.~Kecman.
+\newblock {Iterative k Data Algorithm for Solving Both The Least Squares SVM
+  and The System of Linear Equations}.
+\newblock In \emph{Proceedings of the IEEE SoutheastCon}, pages 1--6, 2015.
+
+\bibitem[Kecman and Zigic(2014)]{Kecman2014}
+V.~Kecman and L.~Zigic.
+\newblock {Algorithms for Direct L2 Support Vector Machines}.
+\newblock In \emph{Proceedings of the IEEE International Symposium on
+  Innovations in Intelligent Systems and Applications}, pages 419--424, 2014.
+
+\bibitem[Kecman et~al.(2005)Kecman, Huang, and Vogt]{Kecman2015}
+V.~Kecman, T.M Huang, and M.~Vogt.
+\newblock {Iterative Single Data Algorithm for Training Kernel Machines from
+  Huge Data Sets: Theory and Performance}.
+\newblock \emph{Studies in Computational Intelligence}, 177:\penalty0 255--274,
+  2005.
+
+\bibitem[Lozano-P{\'e}rez(1998)]{Maron1998}
+O.~Maron~T. Lozano-P{\'e}rez.
+\newblock A framework for multiple-instance learning.
+\newblock \emph{Neural Information Processing Systems}, 3201:\penalty0
+  570--576, 1998.
+
+\bibitem[Luna et~al.(2016)Luna, Cano, Sakalauskas, and Ventura]{2016-INS-MIARM}
+J.M. Luna, A.~Cano, V.~Sakalauskas, and S.~Ventura.
+\newblock Discovering useful patterns from multiple instance data.
+\newblock \emph{Information Sciences}, 357:\penalty0 23--38, 2016.
+
+\bibitem[Melki and Kecman(2016)]{Melki2016}
+G.~Melki and V.~Kecman.
+\newblock Speeding up online training of l1 support vector machines.
+\newblock In \emph{Proceedings of the IEEE SoutheastCon}, pages 1--6, 2016.
+
+\bibitem[Nocedal and Wright(2006)]{Nocedal2006}
+J.~Nocedal and S.J. Wright.
+\newblock \emph{Numerical Optimization}.
+\newblock Springer, 2006.
+
+\bibitem[Platt(1998)]{Platt1998}
+J.~Platt.
+\newblock {Sequantial Minimal Optimization: A Fast Algorithm for Training
+  Support Vector Machines}.
+\newblock \emph{Technical Report: MSR-TR-98-14}, 1998.
+
+\bibitem[Ray and Craven(2005)]{Ray2005}
+S.~Ray and M.~Craven.
+\newblock Supervised versus multiple instance learning: An empirical
+  comparison.
+\newblock \emph{Proceeding of International Conference on Machine Learning},
+  pages 697--704, 2005.
+
+\bibitem[Schapire et~al.(1998)Schapire, Freund, Bartlett, and
+  Lee]{Schapire19981651}
+R.E. Schapire, Y.~Freund, P.~Bartlett, and W.S. Lee.
+\newblock Boosting the margin: A new explanation for the effectiveness of
+  voting methods.
+\newblock \emph{Annals of Statistics}, 26\penalty0 (5):\penalty0 1651--1686,
+  1998.
+
+\bibitem[Sch{\"o}elkopf and Smola(2002)]{Schoelkopf2002}
+B.~Sch{\"o}elkopf and A.~Smola.
+\newblock \emph{{Learning with Kernels; Support Vector Machines,
+  Regularization, Optimization, and Beyond}}.
+\newblock MIT Press, 2002.
+
+\bibitem[Shalev-Shwartz and Ben-David(2014)]{Shalev2014}
+S.~Shalev-Shwartz and S.~Ben-David.
+\newblock \emph{{Understanding Machine Learning: From Theory to Algorithms}}.
+\newblock Cambridge University Press, 2014.
+
+\bibitem[Suzumura et~al.(2017)Suzumura, Ogawa, Sugiyama, Karasuyama, and
+  Takeuchi]{Suzumura20171}
+S.~Suzumura, K.~Ogawa, M.~Sugiyama, M.~Karasuyama, and I.~Takeuchi.
+\newblock Homotopy continuation approaches for robust sv classification and
+  regression.
+\newblock \emph{Machine Learning}, pages 1--30, 2017.
+
+\bibitem[Vanwinckelen et~al.(2016)Vanwinckelen, Tragante~do O, Fierens, and
+  Blockeel]{Vanwinckelen2016}
+Gitte Vanwinckelen, Vinicius Tragante~do O, Daan Fierens, and Hendrik Blockeel.
+\newblock Instance-level accuracy versus bag-level accuracy in multi-instance
+  learning.
+\newblock \emph{Data Mining and Knowledge Discovery}, 30\penalty0 (2):\penalty0
+  313--341, 2016.
+
+\bibitem[Viola et~al.(2005)Viola, Platt, and Zhang]{Viola2005}
+P.~Viola, J.C. Platt, and C.~Zhang.
+\newblock Multiple instance boosting for object detection.
+\newblock In \emph{Advances in Neural Information Processing Systems}, pages
+  1417--1424, 2005.
+
+\bibitem[Wang and Zucker(2000)]{Wang2000}
+J.~Wang and J.~Zucker.
+\newblock Solving the multiple-instance problem: a lazy learning approach.
+\newblock \emph{Proceedings of the 17th International Conference on Machine
+  Learning}, pages 1119--1126, 2000.
+
+\bibitem[Wang et~al.(2014)Wang, Liu, Matwin, Japkowicz, and Guo]{Wang2014}
+X.~Wang, X.~Liu, S.~Matwin, N.~Japkowicz, and H.~Guo.
+\newblock A multi-view two-level classification method for generalized
+  multi-instance problems.
+\newblock In \emph{Proceeding of the IEEE International Conference on Big
+  Data}, pages 104--111, 2014.
+
+\bibitem[Wei and Zhou(2016)]{Wei2016155}
+X.-S. Wei and Z.-H. Zhou.
+\newblock An empirical study on image bag generators for multi-instance
+  learning.
+\newblock \emph{Machine Learning}, 105\penalty0 (2):\penalty0 155--198, 2016.
+
+\bibitem[Xu(2003)]{Xu2003}
+X.~Xu.
+\newblock Statistical learning in multiple instance problem.
+\newblock \emph{Master's thesis, University of Waikato}, 2003.
+
+\bibitem[Xu and Shih(2011)]{Xu2011}
+Y.Y. Xu and C.H. Shih.
+\newblock Multiple-instance learning via decision-based neural networks.
+\newblock \emph{Intelligent Decision Technologies}, 10:\penalty0 885--895,
+  2011.
+
+\bibitem[Yang et~al.(2006)Yang, Dong, and Hua]{Yang2006}
+C.Y.C Yang, M.D.M Dong, and J.H.J Hua.
+\newblock Region-based image annotation using asymmetrical support vector
+  machine-based multiple-instance learning.
+\newblock \emph{Proceedings of the IEEE Computer Society Conference on Computer
+  Vision and Pattern Recognition}, pages 2057--2063, 2006.
+
+\bibitem[Yi and Lin(2016)]{Yi2016}
+Y.~Yi and M.~Lin.
+\newblock Human action recognition with graph-based multiple-instance learning.
+\newblock \emph{Pattern Recognition}, 53:\penalty0 148--162, 2016.
+
+\bibitem[Zhang and Goldman(2002)]{Zhang2001}
+Q.~Zhang and S.~Goldman.
+\newblock {Em-DD: An improved multiple-instance learning technique}.
+\newblock volume~15, pages 1073--1080, 2002.
+
+\end{thebibliography}
