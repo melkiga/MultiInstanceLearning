@@ -1,5 +1,46 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: article.aux
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: article.aux
 The style file: natbib.bst
 Database file #1: references.bib
-Warning--empty booktitle in Zhang2001
-(There was 1 warning)
+You've used 56 entries,
+            2773 wiz_defined-function locations,
+            948 strings with 14118 characters,
+and the built_in function-call counts, 27877 in all, are:
+= -- 2510
+> -- 1527
+< -- 50
++ -- 515
+- -- 459
+* -- 2152
+:= -- 4133
+add.period$ -- 168
+call.type$ -- 56
+change.case$ -- 313
+chr.to.int$ -- 56
+cite$ -- 112
+duplicate$ -- 1332
+empty$ -- 2338
+format.name$ -- 561
+if$ -- 5973
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 65
+newline$ -- 288
+num.names$ -- 224
+pop$ -- 670
+preamble$ -- 1
+purify$ -- 265
+quote$ -- 0
+skip$ -- 1069
+stack$ -- 0
+substring$ -- 1242
+swap$ -- 216
+text.length$ -- 18
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 571
+warning$ -- 0
+while$ -- 266
+width$ -- 0
+write$ -- 725

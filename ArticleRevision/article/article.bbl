@@ -1,15 +1,9 @@
-\begin{thebibliography}{60}
+\begin{thebibliography}{56}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
-
-\bibitem[Alabdulmohsin et~al.(2016)Alabdulmohsin, Cisse, Gao, and
-  Zhang]{Alabdulmohsin2016215}
-I.~Alabdulmohsin, M.~Cisse, X.~Gao, and X.~Zhang.
-\newblock Large margin classification with indefinite similarities.
-\newblock \emph{Machine Learning}, 103\penalty0 (2):\penalty0 215--237, 2016.
 
 \bibitem[Alcal\'{a}-Fdez et~al.(2011)Alcal\'{a}-Fdez, Fern\'{a}ndez, Luengo,
   Derrac, Garc\'{i}a, S\'{a}nchez, and Herrera]{Alca2011}
@@ -19,6 +13,13 @@ J.~Alcal\'{a}-Fdez, A.~Fern\'{a}ndez, J.~Luengo, J.~Derrac, S.~Garc\'{i}a,
   Algorithms and Experimental Analysis Framework, Analysis Framework}.
 \newblock \emph{Journal of Multiple-Valued Logic and Soft Computing},
   17:\penalty0 255--287, 2011.
+
+\bibitem[Alpaydin et~al.(2015)Alpaydin, Cheplygina, Loog, and
+  Tax]{Alpaydin2015}
+E.~Alpaydin, V.~Cheplygina, M.~Loog, and D.M.J. Tax.
+\newblock {Single- vs. multiple-instance classification}.
+\newblock \emph{Pattern Recognition}, 48\penalty0 (9):\penalty0 2831--2838,
+  2015.
 
 \bibitem[Amores(2013)]{Amores2013}
 J.~Amores.
@@ -54,7 +55,7 @@ L.~Bjerring and E.~Frank.
 \bibitem[Blaschko and Hofmann(2006)]{Blaschko2006}
 M.~Blaschko and T.~Hofmann.
 \newblock {Conformal Multi-instance Kernels}.
-\newblock In \emph{{Proceedings of the 19th Conference on Advances in Neural
+\newblock In \emph{{Proceedings of the Conference on Advances in Neural
   Information Processing Systems}}, pages 1--6, 2006.
 
 \bibitem[Blockeel et~al.(2005)Blockeel, Page, and Srinivasan]{Blockeel2005}
@@ -71,7 +72,7 @@ S.~Boyd and L.~Vanderberghe.
 \bibitem[Bunescu and Mooney(2007)]{Bunescu2007}
 R.~Bunescu and R.~Mooney.
 \newblock {Multiple Instance Learning for Sparse Positive Bags}.
-\newblock In \emph{{Proceedings of the 24th Annual International Conference on
+\newblock In \emph{{Proceedings of the Annual International Conference on
   Machine Learning}}, pages 105--112, 2007.
 
 \bibitem[Cano et~al.(2015)Cano, Zafra, and Ventura]{2015-KAIS}
@@ -80,13 +81,6 @@ A.~Cano, A.~Zafra, and S.~Ventura.
   GPUs}.
 \newblock \emph{Knowledge and Information Systems}, 44\penalty0 (1):\penalty0
   127--145, 2015.
-
-\bibitem[Carbonneau et~al.(2015)Carbonneau, Granger, Raymond, and
-  Gagnon]{Alpaydin2015}
-M.A. Carbonneau, E.~Granger, A.J. Raymond, and G.~Gagnon.
-\newblock {Single- vs. multiple-instance classification}.
-\newblock \emph{Pattern Recognition}, 48\penalty0 (9):\penalty0 2831--2838,
-  2015.
 
 \bibitem[Carbonneau et~al.(2016)Carbonneau, Granger, Raymond, and
   Gagnon]{Carbonneau2016}
@@ -131,23 +125,11 @@ L.~Dong.
 \newblock A comparison of multi-instance learning algorithms.
 \newblock \emph{Master of Science Thesis, The University of Waikato}, 2006.
 
-\bibitem[Doran and Ray(2014)]{Doran201479}
-G.~Doran and S.~Ray.
-\newblock A theoretical and empirical analysis of support vector machine
-  methods for multiple-instance classification.
-\newblock \emph{Machine Learning}, 97\penalty0 (1-2):\penalty0 79--102, 2014.
-
 \bibitem[Dunn(1961)]{Dunn1961}
 O.J. Dunn.
 \newblock Multiple comparisons among means.
 \newblock \emph{Journal of the American Statistical Association}, 56:\penalty0
   52--64, 1961.
-
-\bibitem[Durrant and Kab{\'a}n(2015)]{durrant2015random}
-Robert~J Durrant and Ata Kab{\'a}n.
-\newblock Random projections as regularizers: learning a linear discriminant
-  from fewer observations than dimensions.
-\newblock \emph{Machine Learning}, 99\penalty0 (2):\penalty0 257--286, 2015.
 
 \bibitem[Faria et~al.(2017)Faria, Coelho, Silva, Rocha, Almeida, Lemos, and
   Braga]{Faria2017196}
@@ -197,7 +179,7 @@ S.~Garc{\'i}a, A.~Fern{\'a}ndez, J.~Luengo, and F.~Herrera.
   Smola]{Smola2002}
 T.~G{\"a}rtner, P.A. Flach, A.~Kowalczyk, and A.J. Smola.
 \newblock Multi-instance kernels.
-\newblock In \emph{Proceedings of the 19th International Conference on Machine
+\newblock In \emph{Proceedings of the International Conference on Machine
   Learning}, pages 179--186, 2002.
 
 \bibitem[Gibbons and Chakraborti(2011)]{Gibbons2011}
@@ -287,20 +269,17 @@ J.~Platt.
   Support Vector Machines}.
 \newblock \emph{Technical Report: MSR-TR-98-14}, 1998.
 
+\bibitem[Qi and Han(2007)]{qi2007}
+Xiaojun Qi and Yutao Han.
+\newblock Incorporating multiple svms for automatic image annotation.
+\newblock \emph{Pattern Recognition}, 40\penalty0 (2):\penalty0 728--741, 2007.
+
 \bibitem[Ray and Craven(2005)]{Ray2005}
 S.~Ray and M.~Craven.
 \newblock Supervised versus multiple instance learning: An empirical
   comparison.
-\newblock \emph{Proceeding of International Conference on Machine Learning},
-  pages 697--704, 2005.
-
-\bibitem[Schapire et~al.(1998)Schapire, Freund, Bartlett, and
-  Lee]{Schapire19981651}
-R.E. Schapire, Y.~Freund, P.~Bartlett, and W.S. Lee.
-\newblock Boosting the margin: A new explanation for the effectiveness of
-  voting methods.
-\newblock \emph{Annals of Statistics}, 26\penalty0 (5):\penalty0 1651--1686,
-  1998.
+\newblock In \emph{Proceeding of the International Conference on Machine
+  Learning}, pages 697--704, 2005.
 
 \bibitem[Sch{\"o}elkopf and Smola(2002)]{Schoelkopf2002}
 B.~Sch{\"o}elkopf and A.~Smola.
@@ -312,13 +291,6 @@ B.~Sch{\"o}elkopf and A.~Smola.
 S.~Shalev-Shwartz and S.~Ben-David.
 \newblock \emph{{Understanding Machine Learning: From Theory to Algorithms}}.
 \newblock Cambridge University Press, 2014.
-
-\bibitem[Suzumura et~al.(2017)Suzumura, Ogawa, Sugiyama, Karasuyama, and
-  Takeuchi]{Suzumura20171}
-S.~Suzumura, K.~Ogawa, M.~Sugiyama, M.~Karasuyama, and I.~Takeuchi.
-\newblock Homotopy continuation approaches for robust sv classification and
-  regression.
-\newblock \emph{Machine Learning}, pages 1--30, 2017.
 
 \bibitem[Vanwinckelen et~al.(2016)Vanwinckelen, Tragante~do O, Fierens, and
   Blockeel]{Vanwinckelen2016}
@@ -337,8 +309,14 @@ P.~Viola, J.C. Platt, and C.~Zhang.
 \bibitem[Wang and Zucker(2000)]{Wang2000}
 J.~Wang and J.~Zucker.
 \newblock Solving the multiple-instance problem: a lazy learning approach.
-\newblock \emph{Proceedings of the 17th International Conference on Machine
+\newblock In \emph{Proceedings of the International Conference on Machine
   Learning}, pages 1119--1126, 2000.
+
+\bibitem[Wang and Kwong(2014)]{Wang20143106}
+R.~Wang and S.~Kwong.
+\newblock Active learning with multi-criteria decision making systems.
+\newblock \emph{Pattern Recognition}, 47\penalty0 (9):\penalty0 3106--3119,
+  2014.
 
 \bibitem[Wang et~al.(2014)Wang, Liu, Matwin, Japkowicz, and Guo]{Wang2014}
 X.~Wang, X.~Liu, S.~Matwin, N.~Japkowicz, and H.~Guo.
@@ -346,12 +324,6 @@ X.~Wang, X.~Liu, S.~Matwin, N.~Japkowicz, and H.~Guo.
   multi-instance problems.
 \newblock In \emph{Proceeding of the IEEE International Conference on Big
   Data}, pages 104--111, 2014.
-
-\bibitem[Wei and Zhou(2016)]{Wei2016155}
-X.-S. Wei and Z.-H. Zhou.
-\newblock An empirical study on image bag generators for multi-instance
-  learning.
-\newblock \emph{Machine Learning}, 105\penalty0 (2):\penalty0 155--198, 2016.
 
 \bibitem[Xu(2003)]{Xu2003}
 X.~Xu.
@@ -379,6 +351,7 @@ Y.~Yi and M.~Lin.
 \bibitem[Zhang and Goldman(2002)]{Zhang2001}
 Q.~Zhang and S.~Goldman.
 \newblock {Em-DD: An improved multiple-instance learning technique}.
-\newblock volume~15, pages 1073--1080, 2002.
+\newblock In \emph{Advances in Neural Information Processing Systems}, pages
+  1073--1080, 2002.
 
 \end{thebibliography}
