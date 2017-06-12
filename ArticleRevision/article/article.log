@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 JUN 2017 17:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 JUN 2017 17:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1053,6 +1053,24 @@ l.292 \end{alignat}
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 326.
  [7]
+Package epstopdf Info: Source file: <convergence.eps>
+(epstopdf)                    date: 2017-06-12 17:04:18
+(epstopdf)                    size: 193078 bytes
+(epstopdf)             Output file: <convergence-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-06-12 17:07:13
+(epstopdf)                    size: 220937 bytes
+(epstopdf)             Command: <repstopdf --outfile=convergence-eps-converted-
+to.pdf convergence.eps>
+(epstopdf)             \includegraphics on input line 370.
+Package epstopdf Info: Output file is already uptodate.
+
+<convergence-eps-converted-to.pdf, id=331, 1066.98625pt x 733.74126pt>
+File: convergence-eps-converted-to.pdf Graphic file (type pdf)
+
+<use convergence-eps-converted-to.pdf>
+Package pdftex.def Info: convergence-eps-converted-to.pdf used on input line 37
+0.
+(pdftex.def)             Requested size: 430.31812pt x 295.92082pt.
 Package epstopdf Info: Source file: <mirsvm_figure.eps>
 (epstopdf)                    date: 2017-06-12 11:48:28
 (epstopdf)                    size: 148829 bytes
@@ -1061,15 +1079,15 @@ Package epstopdf Info: Source file: <mirsvm_figure.eps>
 (epstopdf)                    size: 53935 bytes
 (epstopdf)             Command: <repstopdf --outfile=mirsvm_figure-eps-converte
 d-to.pdf mirsvm_figure.eps>
-(epstopdf)             \includegraphics on input line 372.
+(epstopdf)             \includegraphics on input line 378.
 Package epstopdf Info: Output file is already uptodate.
 
-<mirsvm_figure-eps-converted-to.pdf, id=330, 421.575pt x 316.18124pt>
+<mirsvm_figure-eps-converted-to.pdf, id=332, 421.575pt x 316.18124pt>
 File: mirsvm_figure-eps-converted-to.pdf Graphic file (type pdf)
 
 <use mirsvm_figure-eps-converted-to.pdf>
 Package pdftex.def Info: mirsvm_figure-eps-converted-to.pdf used on input line 
-372.
+378.
 (pdftex.def)             Requested size: 226.48395pt x 169.86691pt.
 Package epstopdf Info: Source file: <misvm_figure.eps>
 (epstopdf)                    date: 2017-06-12 11:48:28
@@ -1079,34 +1097,16 @@ Package epstopdf Info: Source file: <misvm_figure.eps>
 (epstopdf)                    size: 55531 bytes
 (epstopdf)             Command: <repstopdf --outfile=misvm_figure-eps-converted
 -to.pdf misvm_figure.eps>
-(epstopdf)             \includegraphics on input line 376.
+(epstopdf)             \includegraphics on input line 382.
 Package epstopdf Info: Output file is already uptodate.
 
-<misvm_figure-eps-converted-to.pdf, id=331, 421.575pt x 316.18124pt>
+<misvm_figure-eps-converted-to.pdf, id=333, 421.575pt x 316.18124pt>
 File: misvm_figure-eps-converted-to.pdf Graphic file (type pdf)
 
 <use misvm_figure-eps-converted-to.pdf>
 Package pdftex.def Info: misvm_figure-eps-converted-to.pdf used on input line 3
-76.
+82.
 (pdftex.def)             Requested size: 226.48395pt x 169.86691pt.
-Package epstopdf Info: Source file: <convergence.eps>
-(epstopdf)                    date: 2017-06-12 17:04:18
-(epstopdf)                    size: 193078 bytes
-(epstopdf)             Output file: <convergence-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-06-12 17:07:13
-(epstopdf)                    size: 220937 bytes
-(epstopdf)             Command: <repstopdf --outfile=convergence-eps-converted-
-to.pdf convergence.eps>
-(epstopdf)             \includegraphics on input line 383.
-Package epstopdf Info: Output file is already uptodate.
-
-<convergence-eps-converted-to.pdf, id=332, 1066.98625pt x 733.74126pt>
-File: convergence-eps-converted-to.pdf Graphic file (type pdf)
-
-<use convergence-eps-converted-to.pdf>
-Package pdftex.def Info: convergence-eps-converted-to.pdf used on input line 38
-3.
-(pdftex.def)             Requested size: 430.31812pt x 295.92082pt.
  [8pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
  has been already used, duplicate ignored
 
@@ -1125,8 +1125,8 @@ l.391
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.391 
-       <./mirsvm_figure-eps-converted-to.pdf> <./misvm_figure-eps-converted-to.
-pdf> <./convergence-eps-converted-to.pdf>] [10pdfTeX warning (ext4): destinatio
+       <./convergence-eps-converted-to.pdf> <./mirsvm_figure-eps-converted-to.p
+df> <./misvm_figure-eps-converted-to.pdf>] [10pdfTeX warning (ext4): destinatio
 n with the same identifier (name{table.2}) has been already used, duplicate ign
 ored
 
@@ -1317,12 +1317,16 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 965.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 965.
 Package rerunfilecheck Info: File `article.out' has not changed.
 (rerunfilecheck)             Checksum: E16548B4683BF63ABAA3C82DE838723A;254.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 965.
  ) 
 Here is how much of TeX's memory you used:
  22657 strings out of 493089
- 440555 string characters out of 6134842
- 597103 words of memory out of 5000000
+ 440554 string characters out of 6134842
+ 598130 words of memory out of 5000000
  25557 multiletter control sequences out of 15000+600000
  37817 words of font info for 95 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -1359,10 +1363,10 @@ pe1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/font
 s/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/ur
 w/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/ut
 mri8a.pfb>
-Output written on article.pdf (18 pages, 637038 bytes).
+Output written on article.pdf (18 pages, 637066 bytes).
 PDF statistics:
- 627 PDF objects out of 1000 (max. 8388607)
- 571 compressed objects within 6 object streams
+ 628 PDF objects out of 1000 (max. 8388607)
+ 572 compressed objects within 6 object streams
  147 named destinations out of 1000 (max. 500000)
  68 words of extra memory for PDF output out of 10000 (max. 10000000)
 
