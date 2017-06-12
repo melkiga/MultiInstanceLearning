@@ -116,10 +116,10 @@ Number of Input Attributes & $d$ \\
 Set of Bags & $\mathcal{B} = \set{\bm B_1,\, \ldots,\, \bm B_n}$ \\
 Bag Index Set & $I \in \ints_+^n$ \\
 Input Space & $\bm{X} \in \mathbb{R}^{m \times d}$ \\
-Bag $I$ & $\bm B_I = \set{\bm x_i \st \forall i \in I}$ \\
-Input Instance $i$ from Bag $I$ & $\bm{x}_i = (x_{1}, \ldots, x_{d}),\, i \in I$ \\
 Bag Labels & $\bm{Y} \in \{-1,\,1\}^n$ \\
-Unknown Individual Instance Label $i$ & $y_i \in \set{-1,+1}$ \\
+Input Instance $i$ from Bag $I$ & $\bm{x}_i = (x_{1}, \ldots, x_{d}),\, i \in I$ \\
+Individual Instance Label $i$ & $y_i \in \set{-1,+1}$ \\
+Bag $I$ & $\bm B_I = \set{\bm x_i \st \forall i \in I}$ \\
 \noalign{\smallskip}\hline\noalign{\smallskip}
 Full Multi-Instance Training Dataset & $\mathcal{D} = \{(\bm B_1,Y_1), \ldots, (\bm B_n,Y_n)\}$ \\
 Full Single-Instance Training Dataset & $\mathcal{S} = \{(\bm x_1,y_1), \ldots, (\bm x_m,y_m)\} $\\
@@ -142,7 +142,7 @@ In MIL, the goal is to train a classifier that predicts the label of an unseen b
 This implies that individual instance labels $y_i$ exist, but are not known during training. Equation~\ref{eqn:stas} can also be rewritten as Equation~\ref{eqn:stasmax} for simplicity:
 \begin{equation}
 \centering \label{eqn:stasmax}
-Y_I = \text{argmax}_{\forall i \in I}\,\,\, y_i.
+Y_I = \text{max}_{\forall i \in I}\,\,\, y_i.
 \end{equation}
 
 In addition to the SMI assumption, alternative MI assumptions have been proposed to date~\citep{Foulds2010}. A recent review describing the taxonomy of multi-instance classification was presented by~\cite{Amores2013}. The review presents various methods and algorithms used in literature which are categorized based on their approach to handling the MI input space. Instance-based classifiers that fall under the \textit{instance-space paradigm}, aim to separate instances in positive bags from those in negative ones. Bag-level classifiers (\textit{bag-space paradigm}) treat each bag as a whole entity, implicitly extracting information from each bag in order to accurately predict their labels. Methods that fall under the \textit{embedded-space paradigm} map the input bags to a single feature vector that explicitly encapsulates all the relevant information contained within each bag.
