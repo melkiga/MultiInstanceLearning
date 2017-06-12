@@ -1,0 +1,105 @@
+Dear Dr. Cano,
+
+The reports from the reviewers of your manuscript, "MIRSVM: Multi-Instance Support Vector Machine with Bag Representatives", which you submitted to Machine Learning, have now been received.
+
+With regret, I must inform you that your manuscript cannot be accepted for publication in Machine Learning.
+
+Attached, please find the reviewers' comments.  
+
+Thank you for considering Machine Learning and I wish you every success in finding an alternative place of publication.
+
+Sincerely,
+
+     Guest Editors of S.I. : ACML 2017
+     Machine Learning
+
+
+Comments for the Author:
+
+Meta-review: 
+There are four experts reviewing this manuscript and two of them are strongly against this manuscript.
+The major concern is that the instance selection strategy is not new, which is similar to wrapper method in feature selection.
+There are several previous works following the same category, but the authors didn't compare any of them.
+Besides these, there are some state-of-the-art MIL methods missing, such as non-IID based MIL method, miGraph, etc. Moreover, there is no theoretical analysis on the proposed method.
+
+Although the empirical results of this method is promising, there is no new insight for the multiple instance learning. 
+
+
+Reviewer #2: 
+This article describes a simple approach to tackle multiple instance learning. Only one sample per bag is considered at each iteration, then a classical binary SVM is learned; The author propose to loop over the selection/classification procedure until convergence.
+
+The contribution is too limited for a journal publication: contrary to what the authors said, there is no new formalisation here. The proposal consists simply in embbeding a standard SVM in a loop where samples of the training set are selected.
+On top of that, the whole experimental part is compromised.
+
+As a consequence, I think this article should be re-written before a new submission.
+
+==
+
+The authors mention a reformulation of SVM: this is not the case, they simply embbed a classical SVM in a selection/classification loop.
+
+L1-SVM has been proposed by Mangasarian around 2000: it corresponds to L1 penalty on the regularization term. I know LIBSVM introduces confusion in this definition... However L2/L2 formulation are closer to Ridge regression than to SVM.
+
+Mixing SVM with multiple instance learning lead to think about multiple instance kernels: the authors should cite some references in this field and explain briefly that their framework is different.
+
+p1 l16 MIL is a specific framework, not a generalization
+p1 l47 the author should give one exemple of application enabled by the new definition of MIL
+
+Section 2.1 and 2.2 should be fused
+
+p3 l9 notation is ambiguous: i is a bag index but is also used to index sample x
+p3 l12 insist on the fact that y_i are unknown
+p3 l36 eq (2) argmax => max
+
+p5 l15 eq (4) insist on the fact that the feature space is implicit and that this formulation is not calculable in many cases (gaussian kernel)
+
+p6&7 : standard SVM formulation => useless
+
+p9 Fig3 : the notion of support vector is far from the original formulation, where all ambiguous or misclassified point are SV (ie in the margin). I agree that it corresponds to a real sparsness of the solution, however, using this definition remove the concept of margin, which damages the SVM interest.
+
+On top of that, given the differences between formulations, we can not be sure that the 2 solutions correspond to similar regularization compromise.
+
+The whole experimental section is jeopardized by a wrong optimization of the baselines: many models on many datasets lead to random accuracy (& AUC) associated to optimal recall... This corresponds simply to a single labelling of the whole dataset.
+Given the number of abnormal results, we should consider the whole experimental section as compromised.
+
+
+Reviewer #3: This paper proposes a novel multiple instance learning algorithm by combining multi-instance support vector machines with representative instance selection. The proposed MIRSVM is able to eliminate the possible class imbalance problem, and thus leading to better results than other methods as revealed by the experiments. This paper is generally clearly written, however I still have several concerns:
+1.	I think it is necessary to review some prior works on active learning, as the main contribution of this paper is to select suitable instances from the bags, which shares the same motivation with active learning.
+2.	Since this paper focuses on representative instance selection, I think more emphasize should be put on explaining such selection process. Unfortunately, this process is only mentioned in Lines 14 and 15 in Alg. 1. I think more textual descriptions/explanations are needed. In contrast, the derivations of SVM can be shortened, as they are routines and are well-known by the readers.
+3.	I think the first two paragraphs in Section 2.2 are similar to the corresponding parts in the introduction, so they can be written in a more compact way. In fact, I feel that many parts of this paper have been over-explained, especially the sections that introduce multi-instance learning and SVM.
+4.	In Fig. 1, the authors mentioned the case of missing feature. However, the proposed method cannot handle such case. Therefore, it is inappropriate to provide an example of missing feature.
+5.	The authors only use the two-class situation in the paper. Can the proposed method adapt to multi-class cases? What about the experimental results?
+6.	The "run time" appeared in Table 13 refers to training time or test time? I am curious about the fact that the proposed MIRSVM is much more efficient than other SVM-based approaches. Why? I think some explanations are necessary.
+7.	A very relevant reference is missing: Multiple-Instance Active Learning, NIPS 2008. This paper also studies the instance selection in bags.
+8.	The notation B in Section 2.1 denotes a set, so different font should be used to differentiate it from the representation of a matrix (e.g. X).
+9.	The English of this paper can be further improved. For example, "bag-representative selector method" should be "bag-representative selection method"; "which can prove difficult when …" is a weird representation; "higher number of support vectors" should be "larger number of support vectors". 
+
+Given above shortcomings, I feel regret that this paper cannot meet the requirement of MLJ.
+
+
+
+Reviewer #4: The authors proposed a novel formulation and algorithm for the multiple-instance support vector machine problem, which optimizes bags classification via bag-representative selection. First, the primal formulation was posed and its dual was then derived and computed using a quadratic programming solver. This formulation was designed to utilize bag-level information and find an optimal separating hyperplane between bags, rather than individual instances, using the standard multi-instance assumption. The experimental study showed the better performance of MIRSVM compared with multi-instance support vector machines, traditional multi-instance learners, as well as with ensemble methods.On the contrary, our proposal MIRSVM performs statistically better, neither compromising accuracy nor run-time while displaying a robust performance across all of the evaluated datasets. In general, the paper is well written. If the authors include more important references, the paper
+will be better. 
+(1) The reference related to SVM is missing:
+[1]"A Modified Support Vector Machine and Its Application to Image Segmentation", Image and Vision Computing, vol.29, issue 1, pp.29-40, 2011.
+(2) The authors compare the proposed approach with the ensemble approach. The references related to ensemble learning are missing:
+[2] "Hybrid Adaptive Classifier Ensemble", IEEE Transactions on Cybernetics, vol. 42, no. 2, pp. 177-190. 2015.
+[3] Hybrid K Nearest Neighbor Classifier",  IEEE Transactions on Cybernetics, vol. 46, no. 6, pp. 1263-1275, 2016.
+[4] Identifying Protein Kinase-specific Phosphorylation Sites Based on the Bagging-Adaboost Ensemble Approach." IEEE Transactions on NanoBioScience, Vol.9, no.2, pp.132-143, 2010.
+(3) The authors also use the non-parametric tests. The reference related to the  non-parametric tests is missing:
+[5]  "A New Kind of Nonparametric Test for Statistical Comparison of Multiple Classifiers Over Multiple Datasets", IEEE Transactions on Cybernetics, 2016 (DOI: 10.1109/TCYB.2016.2611020)
+
+
+
+Reviewer #5: This paper aims to solve the multiple instance learning problem. They propose the MIRSVM algorithm, in which representative samples are selected for the positive and negative bags, independently, and a kernel-based SVM is trained based on these representative samples. An iterative selecting and training step was adopted to find out the optimal subset of representative samples, and the termination condition is that there is no updating for the representative set, which is very similar to k-mean clustering. Different with the traditional solution, only one representative sample is selected for each bag, which could overcome the imbalance training problem directly. 
+
+Pros:
+1. The problem is very interesting and important, especially for many real world problem.
+2. The whole paper is well-written and providing a good review of the existing algorithms. 
+
+Cons:
+1. The whole article is over-formatting, most of this listed formulations are well-known, and the paper could be shortened by removing them. 
+2. The variable definitions in Section 2.1 are not clear enough. E.g. D is supposed to be the multiple-instance training dataset, which consists of the pairs of B and Y, then it confuses me that the notation: $Y \in D$.
+3. It is interesting to evaluate the performance based on various evaluation metric, while the results could be demonstrated in a more concise way. One the contrary，it would be more interesting to see the proposed algorithm could directly improve/solve some real problem, instead of reporting a large group of evaluation numbers. 
+4. I am wondering whether the proposed algorithm would be released, which could be a big contribution to the whole community. 
+
+Overall, the whole paper is clean and well-written, it's nice to know that the proposed algorithm is outperforming over the existing algorithms. While some parts of this article could be still improved before publishing. As a result, I suggest a minor revision.
