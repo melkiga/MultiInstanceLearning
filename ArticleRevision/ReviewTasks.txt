@@ -9,3 +9,39 @@
 7. Remove missing feature in figure of MI dataset------------[DONE]
 8. Explain Run-time (train or test or both)
 9. Elaborate on the results and why they are that way
+10. Read: "Active learning with multi-criteria decision making systems" and add it to the paper
+
+
+------ SUBMISSION INSTRUCTIONS -------
+More info: https://www.elsevier.com/journals/pattern-recognition/0031-3203/guide-for-authors
+> Author Biographies 
+	Include in the manuscript a short (maximum 50 words) biography of each author.
+> Essential title page information 
+	• Title. 
+	• Author names and affiliations. Please clearly indicate the given name(s) and family name(s) of each author and check that all names are accurately spelled. Present the authors' affiliation addresses (where the actual work was done) below the names. Indicate all affiliations with a lower-case superscript letter immediately after the author's name and in front of the appropriate address. Provide the full postal address of each affiliation, including the country name and, if available, the e-mail address of each author.
+> Highlights 
+	Highlights are mandatory for this journal. They consist of a short collection of bullet points that convey the core findings of the article and should be submitted in a separate editable file in the online submission system. Please use 'Highlights' in the file name and include 3 to 5 bullet points (maximum 85 characters, including spaces, per bullet point). You can view example Highlights on our information site.
+> Keywords 
+	Immediately after the abstract, provide a maximum of five to ten keywords, using American spelling and avoiding general and plural terms and multiple concepts (avoid, for example, 'and', 'of'). Be sparing with abbreviations: only abbreviations firmly established in the field may be eligible. These Keywords will be used for indexing purposes.
+
+One author has been designated as the corresponding author with contact details:
+• E-mail address
+• Full postal address
+
+All necessary files have been uploaded:
+Manuscript: between 20 and 35 pages,  elsarticle.cls 
+• Include keywords
+• All figures (include relevant captions)
+• All tables (including titles, description, footnotes)
+• Ensure all figure and table citations in the text match the files provided
+• Indicate clearly if color should be used for any figures in print
+Graphical Abstracts / Highlights files (where applicable)
+Supplemental files (where applicable)
+
+Further considerations
+• Manuscript has been 'spell checked' and 'grammar checked'
+• All references mentioned in the Reference List are cited in the text, and vice versa
+• Permission has been obtained for use of copyrighted material from other sources (including the Internet)
+• Relevant declarations of interest have been made
+• Journal policies detailed in this guide have been reviewed
+• Referee suggestions and contact details provided, based on journal requirements
