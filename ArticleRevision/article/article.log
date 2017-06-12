@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 JUN 2017 12:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 JUN 2017 12:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1014,7 +1014,7 @@ l.190 \end{alignat}
                    \relax 
 l.190 \end{alignat}
                    
-Underfull \vbox (badness 1062) has occurred while \output is active []
+Underfull \vbox (badness 2486) has occurred while \output is active []
 
  [4pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
  has been already used, duplicate ignored
@@ -1073,7 +1073,7 @@ d-to.pdf mirsvm_figure.eps>
 (epstopdf)             \includegraphics on input line 389.
 Package epstopdf Info: Output file is already uptodate.
 
-<mirsvm_figure-eps-converted-to.pdf, id=359, 421.575pt x 316.18124pt>
+<mirsvm_figure-eps-converted-to.pdf, id=338, 421.575pt x 316.18124pt>
 File: mirsvm_figure-eps-converted-to.pdf Graphic file (type pdf)
 
 <use mirsvm_figure-eps-converted-to.pdf>
@@ -1091,7 +1091,7 @@ Package epstopdf Info: Source file: <misvm_figure.eps>
 (epstopdf)             \includegraphics on input line 393.
 Package epstopdf Info: Output file is already uptodate.
 
-<misvm_figure-eps-converted-to.pdf, id=360, 421.575pt x 316.18124pt>
+<misvm_figure-eps-converted-to.pdf, id=339, 421.575pt x 316.18124pt>
 File: misvm_figure-eps-converted-to.pdf Graphic file (type pdf)
 
 <use misvm_figure-eps-converted-to.pdf>
@@ -1303,11 +1303,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 975.
 Here is how much of TeX's memory you used:
  22668 strings out of 493089
  440786 string characters out of 6134842
- 619664 words of memory out of 5000000
+ 618648 words of memory out of 5000000
  25565 multiletter control sequences out of 15000+600000
  37817 words of font info for 95 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 56i,15n,84p,1802b,878s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,15n,84p,1775b,878s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1340,10 +1340,10 @@ pe1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/font
 s/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/ur
 w/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/ut
 mri8a.pfb>
-Output written on article.pdf (18 pages, 420151 bytes).
+Output written on article.pdf (18 pages, 419690 bytes).
 PDF statistics:
- 643 PDF objects out of 1000 (max. 8388607)
- 588 compressed objects within 6 object streams
+ 628 PDF objects out of 1000 (max. 8388607)
+ 573 compressed objects within 6 object streams
  151 named destinations out of 1000 (max. 500000)
  63 words of extra memory for PDF output out of 10000 (max. 10000000)
 

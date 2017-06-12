@@ -4,3 +4,5 @@ ArticleRevision/.DS_Store
 .DS_Store
 ArticleRevision/article/article.synctex.gz
 *.gz
+*.gz
+*.aux
