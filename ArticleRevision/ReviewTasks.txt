@@ -1,110 +1,11 @@
 ## Tasks for reviewing the MIRSVM paper
 
-*** Meta-Review Notes:
-		- the instance selection strategy is not new, (similar to wrapper method in feature selection)			## check on instance selection strategy and what "wrapper" is for feature selection?					
-		- several previous works following the same category, no comparison										## which works?
-		- some state-of-the-art MIL methods missing, such as non-IID based MIL method, miGraph, etc				## check what non-IID based MIL, miGraph
-		- no theoretical analysis on the proposed method														## add theoretical analysis?			
-		
-*** Reviewer #2:
-		- contribution is too limited for a journal publication:
-			- no new formalisation here (thinks that it is: embbeding a standard SVM in a loop)
-			- "experimental part is compromised" (????)
-		
-		[[[- L1-SVM has been proposed by Mangasarian around 2000: it corresponds to L1 penalty on the 			(^) found some by Mangasarian need to add, no idea what this means so im going to ignore it.
-			regularization term. I know LIBSVM introduces confusion in this definition... 
-			However L2/L2 formulation are closer to Ridge regression than to SVM (???)]]]				
-		
-		- Mix of SVMs and MIL points to multiple instance kernels: the authors should cite some 				## find multi-instanc kernel methods, cite, and explain why MIRSVM is different
-			references in this field and explain briefly that their framework is different.
-		
-		- TODO:
-			[[[- p1 l16 MIL is a specific framework, not a generalization ]]]						# it acutally is.... this is an incorrect comment. BUT, i changed it to be "variation" instead of generalization
-			[[[- p1 l47 author should give one exemple of application enabled by the new definition of MIL]]]     -- disregarded
-			[[[- Section 2.1 and 2.2 should be fused ]]]															-- disregarded
-			[[[- p3 l9 notation is ambiguous: i is a bag index but is also used to index sample x]]] 				-- disregarded
-			[[[- p3 l12 insist on the fact that y_i are unknown]]]
-			[[[- p3 l36 eq (2) argmax => max]]]						-- disregarded, this is actually used in a lot of books and papers
-			[[[- p5 l15 eq (4) insist on the fact that the feature space is implicit and that this 
-				formulation is not calculable in many cases (gaussian kernel) (?????)]]]
-			[[[- p6&7 : standard SVM formulation => useless			-- lol]]]
-			[[[- p9 Fig3 : 
-				- the notion of support vector is far from the original formulation, where all 
-					ambiguous or misclassified point are SV (ie in the margin). I agree that it corresponds 
-					to a real sparsness of the solution, however, using this definition removes the concept 
-					of margin, which damages the SVM interest.
-				- On top of that, given the differences between formulations, we can not be sure that the 2 
-					solutions correspond to similar regularization compromise.]]]
-			[[[- The whole experimental section is jeopardized by a wrong optimization of the baselines: 			## re-run the experiments
-				many models on many datasets lead to random accuracy (& AUC) associated to optimal recall... 
-				This corresponds simply to a single labelling of the whole dataset. Given the number of abnormal 
-				results, we should consider the whole experimental section as compromised.	]]]
-			
-*** Reviewer #3: (thinks it is clearly written but has concerns)
-		- Concerns:
-			[[[- review some prior works on active learning, as the main contribution of this paper is to select 	## shorten derivations 
-				suitable instances from the bags, which shares the same motivation with active learning.]]] 		## add more explanation about the instance selection process
-			
-			[[[- since this paper focuses on representative instance selection, explain such selection process. 
-				Unfortunately, this process is only mentioned in Lines 14 and 15 in Alg. 1. I think more textual 
-				descriptions/explanations are needed. In contrast, the derivations of SVM can be shortened, 
-				as they are routines and are well-known by the readers.]]]
-			
-			[[[- the first two paragraphs in Section 2.2 are similar to the corresponding parts in the introduction,]]] ## shorten section 2.2 since it is in intro
-			
-			[[[- many parts have been over-explained, especially the sections that introduce MIL and SVM.]]]			  ## remove over explanation
-			
-			[[[- In Fig. 1, the authors mentioned the case of missing feature. However, the proposed method cannot   ## remove missing feature in figure
-				handle such case. Therefore, it is inappropriate to provide an example of missing feature.]]]
-			
-			[[[- The authors only use the two-class situation in the paper. Can the proposed method adapt to 		  ## add that it can be extended to multi-class 
-				multi-class cases? What about the experimental results?]]]
-			
-			[[[- The "run time" appeared in Table 13 refers to training time or test time? I am curious about 		  ## explain the run-time of MIRSVM
-				the fact that the proposed MIRSVM is much more efficient than other SVM-based approaches. 
-				Why? I think some explanations are necessary.]]]
-			
-			[[[- A very relevant reference is missing: Multiple-Instance Active Learning, NIPS 2008. 			  ## add this reference and READ IT
-				This paper also studies the instance selection in bags.]]]
-			
-			[[[- The notation B in Section 2.1 denotes a set, so different font should be used to differentiate 	  ## fix notation
-				it from the representation of a matrix (e.g. X).]]]
-			
-			[[[- The English of this paper can be further improved. For example, "bag-representative selector method" should be "bag-representative selection method"; "which can prove difficult when …" is a weird representation; "higher number of support vectors" should be "larger number of support vectors". ]]]
-
-[[[*** Reviewer #4: {NOW WE KNOW THE REVIEWER IS EITHER: Yu OR Zhiwen FROM ALL THESE PAPERS}
-		- Add these references:
-		(1) The reference related to SVM is missing: 
-			[1]"A Modified Support Vector Machine and Its Application to Image Segmentation", Image and Vision Computing, vol.29, issue 1, pp.29-40, 2011.
-		(2) The authors compare the proposed approach with the ensemble approach. The references related to ensemble learning are missing:
-			[2] "Hybrid Adaptive Classifier Ensemble", IEEE Transactions on Cybernetics, vol. 42, no. 2, pp. 177-190. 2015.
-			[3] Hybrid K Nearest Neighbor Classifier",  IEEE Transactions on Cybernetics, vol. 46, no. 6, pp. 1263-1275, 2016.
-			[4] Identifying Protein Kinase-specific Phosphorylation Sites Based on the Bagging-Adaboost Ensemble Approach." IEEE Transactions on NanoBioScience, Vol.9, no.2, pp.132-143, 2010.
-		(3) The authors also use the non-parametric tests. The reference related to the  non-parametric tests is missing:
-			[5]  "A New Kind of Nonparametric Test for Statistical Comparison of Multiple Classifiers Over Multiple Datasets", IEEE Transactions on Cybernetics, 2016 (DOI: 10.1109/TCYB.2016.2611020)]]]
-
-*** Reviewer #5:
-		[[[1. The whole article is over-formatting, most of this listed formulations are well-known, and the paper could be shortened by removing them. ]]]
-		[[[2. The variable definitions in Section 2.1 are not clear enough. E.g. D is supposed to be the multiple-instance training dataset, which consists of the pairs of B and Y, then it confuses me that the notation: $Y \in D$.]]]
-		[[[3. It is interesting to evaluate the performance based on various evaluation metric, while the results could be demonstrated in a more concise way. One the contrary，it would be more interesting to see the proposed 	algorithm could directly improve/solve some real problem, instead of reporting a large group of evaluation numbers. ]]]
-		[[[4. I am wondering whether the proposed algorithm would be released, which could be a big contribution to the whole community. ]]]
-		
-
-------------------------------------------------------------------------------------------------
-NOTES: 	
-	-- TODO:
-		- re-run the experiments
-		- further explain the instance selection criteria
-		- the first two paragraphs in Section 2.2 are similar to the corresponding parts in the introduction
-		- remove redundant information and formulations (over explanation of: sections that introduce MIL and SVM)
-		- read and add references below
-		- explain why run-time is good and specify whether it is train or test
-		- see if we can extend it to multi-class
-		
-	
-	-- REFERENCES:
-		- (reviewer 3 is either Yu or Zhiwen so I didnt add any of the citations because they are irrelevant)
-		- citations adding is in bib file at top for the following:
-			- Massive data discrimination via linear support vector machines [R2]					% Not sure which of these [R1] meant
-			- Minimal kernel classifiers [R2] 
-			- Multiple-instance active learning [R3] 												% Read this, it is similar to mine as R2 said
+1. Emphasize why the instance selection strategy is new
+2. Review notation
+3. Port article to elsevier
+4. Add convergence
+5. Shorten SVM derivations when needed
+6. Read introduction and section 2.1 2.2
+7. Remove missing feature in figure of MI dataset [DONE]
+8. Explain Run-time (train or test or both)
+9. Elaborate on the results and why they are that way
