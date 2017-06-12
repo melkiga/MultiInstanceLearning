@@ -1,21 +1,4 @@
-%\begin{filecontents*}{MIRSVM.eps}
-%gsave
-%newpath
-%  20 20 moveto
-%  20 220 lineto
-%  220 220 lineto
-%  220 20 lineto
-%closepath
-%2 setlinewidth
-%gsave
-%  .4 setgray fill
-%grestore
-%stroke
-%grestore
-%\end{filecontents*}
-\RequirePackage{fix-cm}
-\documentclass[smallcondensed]{svjour3}                 
-\smartqed  
+\documentclass[preprint,12pt]{elsarticle}
 \hyphenation{op-tical net-works semi-conduc-tor}
 \usepackage[hidelinks]{hyperref}
 \usepackage{amsmath,amssymb,mathtools,float,times,bm,tikz,proof,tabularx,capt-of,natbib}
@@ -39,7 +22,7 @@
 
 \overfullrule=5pt
 
-\journalname{Machine Learning}
+\journal{Pattern Recognition}
 
 \begin{document}
 
@@ -47,35 +30,27 @@
 \tikzstyle{block} = [rectangle, draw, fill=gray!20,text width=5em, text centered, rounded corners, minimum height=4em]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
+\begin{frontmatter}
+
 \title{MIRSVM: Multi-Instance Support Vector Machine with Bag Representatives}
 
-\author{Gabriella Melki \and
-        Alberto Cano			\and
-        Sebasti\'an Ventura
-}
-
-\institute{Gabriella Melki \at
-			Virginia Commonwealth University, 401 W. Main St. E2264, Richmond, VA 23284\\
-            \email{melkiga@vcu.edu}          
-           \and
-           Alberto Cano \at
-           	Virginia Commonwealth University, 401 W. Main St. E4251, Richmond, VA 23284\\
-            \email{acano@vcu.edu}
-           \and
-           Sebasti\'an Ventura \at
-            University of C\'{o}rdoba, ``Albert Einstein Building'', 3rd floor, 14071 C\'{o}rdoba, Spain\\
-            \email{sventura@uco.es}
-}
+\author[a]{Gabriella Melki}\author[a]{Alberto Cano}\author[b,c]{Sebasti\'an Ventura}
+\address[a]{Department of Computer Science, Virginia Commonwealth University, USA}
+\address[b]{Department of Computer Science and Numerical Analysis, University of Cordoba, Spain}
+\address[c]{Department of Computer Science, King Abdulaziz University, Saudi Arabia Kingdom}
 
 \date{Received: date / Accepted: date}
 % The correct dates will be entered by the editor
 
-\maketitle
-
 \begin{abstract}
 \textit{Multiple-instance learning} (MIL) is a variation of \textit{supervised learning}, where samples are represented by labeled bags, each containing sets of instances. The individual labels of the samples within a bag are unknown, and labels are assigned based on a multi-instance assumption. One of the major complexities associated with this type of learning is the ambiguous relationship between a bag's label and the instances it contains. This paper proposes a novel support vector machine (SVM) multiple-instance formulation and presents an algorithm with a bag-representative selector that trains the SVM based on bag-level information, named MIRSVM. The contribution is able to identify instances that highly impact classification, i.e. bag-representatives, for both positive and negative bags, while finding the optimal class separation hyperplane. Unlike other multi-instance SVM methods, this approach eliminates possible class imbalance issues by allowing both positive and negative bags to have at most one representative, while highlighting the instances that contribute most to the classification model. The experimental study evaluates and compares the performance of this proposal against $10$ state-of-the-art multi-instance methods over $15$ datasets, and the results are validated through non-parametric statistical analysis. The results indicate that bag-based learners outperform the instance-based and wrapper methods, as well as this proposal's overall superior performance against other multi-instance SVM models. 
-\keywords{Machine learning \and multiple-instance learning \and support vector machines \and bag-level multi-instance classification \and bag-representative selection}
 \end{abstract}
+
+\begin{keyword}
+Machine learning \sep multiple-instance learning \sep support vector machines \sep bag-level multi-instance classification \sep bag-representative selection
+\end{keyword}
+
+\end{frontmatter}
 
 \section{Introduction}\label{intro}
 In traditional classification, learning algorithms attempt to correctly label unknown samples by finding patterns that exist between training samples and their class label. \textit{Multi-instance} (MI) learning (or \textit{multiple-instance} learning) is a variation of \textit{supervised learning} that has been recently been gaining interest because of its applicability to many real-world problems such as text categorization \citep{Andrews2002}, image classification and annotation \citep{Herman2008,qi2007}, human action recognition \citep{Yi2016}, and drug activity prediction \citep{Dietterich1997}. 
@@ -954,12 +929,11 @@ This paper proposed a novel formulation and algorithm for the multiple-instance 
 
 The experimental study showed the better performance of MIRSVM compared with multi-instance support vector machines, traditional multi-instance learners, as well as with ensemble methods. The results, according to a variety of performance metrics, were compared and further validated using statistical analysis with non-parametric tests which highlight the advantages of using bag-level based and ensemble learners such as Bagging and Stacking, while showing the instance-level based learners performed poorly in comparison or were deemed as strongly biased and unstable classifiers. On the contrary, our proposal MIRSVM performs statistically better, neither compromising accuracy nor run-time while displaying a robust performance across all of the evaluated datasets.
 
-\begin{acknowledgements}
+\section*{Acknowledgment}
 This research was supported by the Spanish Ministry of Economy and Competitiveness, project TIN2014-55252-P, and by FEDER funds.
-\end{acknowledgements}
 
 % BibTeX users please use one of
-\bibliographystyle{natbib}
+\bibliographystyle{model1-num-names}
 \bibliography{references}   
 
 \end{document}

@@ -22,21 +22,26 @@
 \citation{Dietterich1997}
 \citation{Dietterich1997}
 \citation{Foulds2010}
-\citation{Alpaydin2015}
-\citation{Ray2005}
 \providecommand \oddpage@label [2]{}
+\Newlabel{a}{a}
+\Newlabel{b}{b}
+\Newlabel{c}{c}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
 \newlabel{intro}{{1}{1}{Introduction}{section.1}{}}
+\citation{Alpaydin2015}
+\citation{Ray2005}
 \citation{Maron1998,Zhang2001}
 \citation{Carbonneau2016,Faria2017196,Vanwinckelen2016}
 \citation{Huang2006,Schoelkopf2002}
 \citation{Kecman2016,Melki2016}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Background}{2}{section.2}}
-\newlabel{sec:background}{{2}{2}{Background}{section.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Notation}{2}{subsection.2.1}}
-\newlabel{subsec:notation}{{2.1}{2}{Notation}{subsection.2.1}{}}
 \citation{Amores2013}
 \citation{Dietterich1997}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background}{3}{section.2}}
+\newlabel{sec:background}{{2}{3}{Background}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Notation}{3}{subsection.2.1}}
+\newlabel{subsec:notation}{{2.1}{3}{Notation}{subsection.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Multiple-Instance Learning}{3}{subsection.2.2}}
+\newlabel{subsec:mil}{{2.2}{3}{Multiple-Instance Learning}{subsection.2.2}{}}
 \citation{Foulds2010}
 \citation{Amores2013}
 \citation{Dietterich1997}
@@ -46,12 +51,10 @@
 \citation{Auer2004}
 \citation{Chen2004,Chen2006,Carbonneau2016,qi2007}
 \citation{Fu2011}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary of notation used throughout the paper}}{3}{table.1}}
-\newlabel{tab:Notation}{{1}{3}{Summary of notation used throughout the paper}{table.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Multiple-Instance Learning}{3}{subsection.2.2}}
-\newlabel{subsec:mil}{{2.2}{3}{Multiple-Instance Learning}{subsection.2.2}{}}
-\newlabel{eqn:stas}{{1}{3}{Multiple-Instance Learning}{equation.2.1}{}}
-\newlabel{eqn:stasmax}{{2}{3}{Multiple-Instance Learning}{equation.2.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary of notation used throughout the paper}}{4}{table.1}}
+\newlabel{tab:Notation}{{1}{4}{Summary of notation used throughout the paper}{table.1}{}}
+\newlabel{eqn:stas}{{1}{4}{Multiple-Instance Learning}{equation.2.1}{}}
+\newlabel{eqn:stasmax}{{2}{4}{Multiple-Instance Learning}{equation.2.2}{}}
 \citation{Ray2005,Viola2005}
 \citation{Dong2006}
 \citation{Bunescu2007}
@@ -63,16 +66,17 @@
 \citation{Hall2009}
 \citation{Hall2009}
 \citation{Wang2014}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Example of multi-instance data representation. The figure shows a sample binary MI dataset with $2$ bags, identified as $B_1$ and $B_2$. The bags each contain differing number of instances, each with $d$ dimension, and are assigned positive and negative labels indicated by column $\bm  {Y}$.}}{5}{figure.1}}
+\newlabel{fig:mirep}{{1}{5}{Example of multi-instance data representation. The figure shows a sample binary MI dataset with $2$ bags, identified as $B_1$ and $B_2$. The bags each contain differing number of instances, each with $d$ dimension, and are assigned positive and negative labels indicated by column $\bm Y$}{figure.1}{}}
 \citation{2015-KAIS,2016-INS-MIARM}
 \citation{Kecman2001}
 \citation{Shalev2014}
 \citation{Cortes1995}
 \citation{Cortes1995}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Example of multi-instance data representation. The figure shows a sample binary MI dataset with $2$ bags, identified as $B_1$ and $B_2$. The bags each contain differing number of instances, each with $d$ dimension, and are assigned positive and negative labels indicated by column $\bm  {Y}$.}}{4}{figure.1}}
-\newlabel{fig:mirep}{{1}{4}{Example of multi-instance data representation. The figure shows a sample binary MI dataset with $2$ bags, identified as $B_1$ and $B_2$. The bags each contain differing number of instances, each with $d$ dimension, and are assigned positive and negative labels indicated by column $\bm Y$}{figure.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Support Vector Machines}{4}{subsection.2.3}}
-\newlabel{subsec:svms}{{2.3}{4}{Support Vector Machines}{subsection.2.3}{}}
 \citation{Nocedal2006}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Support Vector Machines}{6}{subsection.2.3}}
+\newlabel{subsec:svms}{{2.3}{6}{Support Vector Machines}{subsection.2.3}{}}
+\newlabel{eq:primalsvm}{{3}{6}{Support Vector Machines}{equation.2.3}{}}
 \citation{Platt1998}
 \citation{Boyd2004}
 \citation{Schoelkopf2002}
@@ -82,108 +86,109 @@
 \citation{Herrera2016}
 \citation{Wang20143106}
 \citation{Andrews2002}
+\newlabel{eqn:kerneltrick}{{4}{7}{Support Vector Machines}{equation.2.4}{}}
+\newlabel{eq:dualsvm}{{5}{7}{Support Vector Machines}{equation.2.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Multiple-Instance Support Vector Machines}{7}{subsection.2.4}}
 \citation{Yang2006}
-\newlabel{eq:primalsvm}{{3}{5}{Support Vector Machines}{equation.2.3}{}}
-\newlabel{eqn:kerneltrick}{{4}{5}{Support Vector Machines}{equation.2.4}{}}
-\newlabel{eq:dualsvm}{{5}{5}{Support Vector Machines}{equation.2.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Multiple-Instance Support Vector Machines}{5}{subsection.2.4}}
 \citation{Smola2002}
 \citation{Blaschko2006}
 \citation{Herrera2016}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Multiple-Instance Representative SVM}{8}{section.3}}
+\newlabel{sec:contribution}{{3}{8}{Multiple-Instance Representative SVM}{section.3}{}}
+\newlabel{eq:primalmirsvm}{{6}{8}{Multiple-Instance Representative SVM}{equation.3.6}{}}
+\newlabel{eq:primalmirsvm1}{{6a}{8}{Multiple-Instance Representative SVM}{equation.3.1}{}}
 \citation{Boyd2004}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Multiple-Instance Representative SVM}{6}{section.3}}
-\newlabel{sec:contribution}{{3}{6}{Multiple-Instance Representative SVM}{section.3}{}}
-\newlabel{eq:primalmirsvm}{{6}{6}{Multiple-Instance Representative SVM}{equation.3.6}{}}
-\newlabel{eq:primalmirsvm1}{{6a}{6}{Multiple-Instance Representative SVM}{equation.3.1}{}}
-\newlabel{eqn:svmlagrangian}{{7}{6}{Multiple-Instance Representative SVM}{equation.3.7}{}}
+\newlabel{eqn:svmlagrangian}{{7}{9}{Multiple-Instance Representative SVM}{equation.3.7}{}}
+\newlabel{eqn:optcond1}{{8}{9}{Multiple-Instance Representative SVM}{equation.3.8}{}}
+\newlabel{eqn:optcond2}{{9}{9}{Multiple-Instance Representative SVM}{equation.3.9}{}}
+\newlabel{eqn:optcond3}{{10}{9}{Multiple-Instance Representative SVM}{equation.3.10}{}}
+\newlabel{eq:dualmirsvm1}{{11}{10}{Multiple-Instance Representative SVM}{equation.3.11}{}}
+\newlabel{eq:implicit1}{{11b}{10}{Multiple-Instance Representative SVM}{equation.3.2}{}}
+\newlabel{eq:implicit2}{{11c}{10}{Multiple-Instance Representative SVM}{equation.3.3}{}}
+\newlabel{eq:implicit3}{{11d}{10}{Multiple-Instance Representative SVM}{equation.3.4}{}}
+\newlabel{eq:si}{{12}{10}{Multiple-Instance Representative SVM}{equation.3.12}{}}
+\newlabel{eq:dualmirsvm}{{13}{10}{Multiple-Instance Representative SVM}{equation.3.13}{}}
+\newlabel{eq:gaussiankernel}{{14}{10}{Multiple-Instance Representative SVM}{equation.3.14}{}}
 \citation{Huang2006}
 \citation{Huang2006}
-\newlabel{eqn:optcond1}{{8}{7}{Multiple-Instance Representative SVM}{equation.3.8}{}}
-\newlabel{eqn:optcond2}{{9}{7}{Multiple-Instance Representative SVM}{equation.3.9}{}}
-\newlabel{eqn:optcond3}{{10}{7}{Multiple-Instance Representative SVM}{equation.3.10}{}}
-\newlabel{eq:dualmirsvm1}{{11}{7}{Multiple-Instance Representative SVM}{equation.3.11}{}}
-\newlabel{eq:implicit1}{{11b}{7}{Multiple-Instance Representative SVM}{equation.3.2}{}}
-\newlabel{eq:implicit2}{{11c}{7}{Multiple-Instance Representative SVM}{equation.3.3}{}}
-\newlabel{eq:implicit3}{{11d}{7}{Multiple-Instance Representative SVM}{equation.3.4}{}}
-\newlabel{eq:si}{{12}{7}{Multiple-Instance Representative SVM}{equation.3.12}{}}
-\newlabel{eq:dualmirsvm}{{13}{7}{Multiple-Instance Representative SVM}{equation.3.13}{}}
-\newlabel{eq:gaussiankernel}{{14}{7}{Multiple-Instance Representative SVM}{equation.3.14}{}}
-\newlabel{fig:mirsvm}{{3}{8}{Multiple-Instance Representative SVM}{equation.3.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces MIRSVM Flow Diagram. This figure represents a summary of the steps performed by the MIRSVM algorithm. The representatives are first randomly initialized and continuously updated according to the current hyper-plane, which is found using a quadratic programming (QP) solver. Upon completion, the model is returned along with the optimal bag-representatives.}}{8}{figure.2}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Multi-Instance Representative SVM (MIRSVM)}}{8}{algorithm.1}}
-\newlabel{alg:mirsvm}{{1}{8}{Multiple-Instance Representative SVM}{algorithm.1}{}}
-\newlabel{eqn:bias}{{16}{8}{Multiple-Instance Representative SVM}{equation.3.16}{}}
-\newlabel{fig:convegence}{{3}{9}{Multiple-Instance Representative SVM}{equation.3.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Bag representative convergence plots on 9 datasets. The blue line shows the number of bag representatives that are equal from one iteration to the next. The red dashed line represents the total number of bags.}}{9}{figure.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Difference between MIRSVM and MISVM on a random $2$-dimensional toy dataset. The instances of this dataset were drawn from the standard normal distribution, with $6$ bags, $4$ of which are negative (red) and $2$ of which are positive (blue), indicated by the red and blue dotted circles. There are a total of $125$ instances, $65$ belonging to the positive bags and $60$ belonging to the negative bags. The decision boundaries (black lines) are shown for each of the algorithms, along with the SVM margin (red and blue dashed lines) and support vectors (black crosses). In this example, both MIRSVM and MISVM were trained using $C = 1000$ and $\sigma = 1.5$. Note the differing number of support vectors produced by the two methods. MIRSVM has $6$, one for each bag, and MISVM has $29$. Also note the smoother representation of the data distribution given by MIRSVM's decision boundary, unlike MISVM whose decision boundary was greatly affected by the larger number of support vectors belonging to the negative class with respect to the only $2$ positive support vectors. }}{9}{figure.4}}
-\newlabel{fig:diff}{{4}{9}{Difference between MIRSVM and MISVM on a random $2$-dimensional toy dataset. The instances of this dataset were drawn from the standard normal distribution, with $6$ bags, $4$ of which are negative (red) and $2$ of which are positive (blue), indicated by the red and blue dotted circles. There are a total of $125$ instances, $65$ belonging to the positive bags and $60$ belonging to the negative bags. The decision boundaries (black lines) are shown for each of the algorithms, along with the SVM margin (red and blue dashed lines) and support vectors (black crosses). In this example, both MIRSVM and MISVM were trained using $C = 1000$ and $\sigma = 1.5$. Note the differing number of support vectors produced by the two methods. MIRSVM has $6$, one for each bag, and MISVM has $29$. Also note the smoother representation of the data distribution given by MIRSVM's decision boundary, unlike MISVM whose decision boundary was greatly affected by the larger number of support vectors belonging to the negative class with respect to the only $2$ positive support vectors}{figure.4}{}}
+\newlabel{eqn:bias}{{16}{11}{Multiple-Instance Representative SVM}{equation.3.16}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experiments}{11}{section.4}}
+\newlabel{sec:experiments}{{4}{11}{Experiments}{section.4}{}}
+\newlabel{fig:mirsvm}{{3}{12}{Multiple-Instance Representative SVM}{equation.3.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces MIRSVM Flow Diagram. This figure represents a summary of the steps performed by the MIRSVM algorithm. The representatives are first randomly initialized and continuously updated according to the current hyper-plane, which is found using a quadratic programming (QP) solver. Upon completion, the model is returned along with the optimal bag-representatives.}}{12}{figure.2}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Multi-Instance Representative SVM (MIRSVM)}}{12}{algorithm.1}}
+\newlabel{alg:mirsvm}{{1}{12}{Multiple-Instance Representative SVM}{algorithm.1}{}}
+\newlabel{fig:convegence}{{3}{13}{Multiple-Instance Representative SVM}{equation.3.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Bag representative convergence plots on 9 datasets. The blue line shows the number of bag representatives that are equal from one iteration to the next. The red dashed line represents the total number of bags.}}{13}{figure.3}}
 \citation{Hall2009}
 \citation{Alca2011}
 \citation{Xu2003}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Difference between MIRSVM and MISVM on a random $2$-dimensional toy dataset. The instances of this dataset were drawn from the standard normal distribution, with $6$ bags, $4$ of which are negative (red) and $2$ of which are positive (blue), indicated by the red and blue dotted circles. There are a total of $125$ instances, $65$ belonging to the positive bags and $60$ belonging to the negative bags. The decision boundaries (black lines) are shown for each of the algorithms, along with the SVM margin (red and blue dashed lines) and support vectors (black crosses). In this example, both MIRSVM and MISVM were trained using $C = 1000$ and $\sigma = 1.5$. Note the differing number of support vectors produced by the two methods. MIRSVM has $6$, one for each bag, and MISVM has $29$. Also note the smoother representation of the data distribution given by MIRSVM's decision boundary, unlike MISVM whose decision boundary was greatly affected by the larger number of support vectors belonging to the negative class with respect to the only $2$ positive support vectors. }}{14}{figure.4}}
+\newlabel{fig:diff}{{4}{14}{Difference between MIRSVM and MISVM on a random $2$-dimensional toy dataset. The instances of this dataset were drawn from the standard normal distribution, with $6$ bags, $4$ of which are negative (red) and $2$ of which are positive (blue), indicated by the red and blue dotted circles. There are a total of $125$ instances, $65$ belonging to the positive bags and $60$ belonging to the negative bags. The decision boundaries (black lines) are shown for each of the algorithms, along with the SVM margin (red and blue dashed lines) and support vectors (black crosses). In this example, both MIRSVM and MISVM were trained using $C = 1000$ and $\sigma = 1.5$. Note the differing number of support vectors produced by the two methods. MIRSVM has $6$, one for each bag, and MISVM has $29$. Also note the smoother representation of the data distribution given by MIRSVM's decision boundary, unlike MISVM whose decision boundary was greatly affected by the larger number of support vectors belonging to the negative class with respect to the only $2$ positive support vectors}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Experimental Setup}{14}{subsection.4.1}}
 \citation{Bendavid2008}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Datasets used for the experiments in\nobreakspace  {}\ref  {subsec:results}}}{10}{table.2}}
-\newlabel{tab:Dataset}{{2}{10}{Datasets used for the experiments in~\ref {subsec:results}}{table.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Experiments}{10}{section.4}}
-\newlabel{sec:experiments}{{4}{10}{Experiments}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Experimental Setup}{10}{subsection.4.1}}
-\newlabel{eq:hyperparam}{{17}{10}{Experimental Setup}{equation.4.17}{}}
-\newlabel{eq:paramC}{{17a}{10}{Experimental Setup}{equation.4.1}{}}
-\newlabel{eq:paramG}{{17b}{10}{Experimental Setup}{equation.4.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Datasets used for the experiments in\nobreakspace  {}\ref  {subsec:results}}}{15}{table.2}}
+\newlabel{tab:Dataset}{{2}{15}{Datasets used for the experiments in~\ref {subsec:results}}{table.2}{}}
+\newlabel{eq:hyperparam}{{17}{15}{Experimental Setup}{equation.4.17}{}}
+\newlabel{eq:paramC}{{17a}{15}{Experimental Setup}{equation.4.1}{}}
+\newlabel{eq:paramG}{{17b}{15}{Experimental Setup}{equation.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Results \& Statistical Analysis}{15}{subsection.4.2}}
+\newlabel{subsec:results}{{4.2}{15}{Results \& Statistical Analysis}{subsection.4.2}{}}
 \citation{Derrac2011,Garcia20102044}
 \citation{Garcia2008}
 \citation{Dunn1961}
 \citation{Garcia2009}
 \citation{Gibbons2011,Holander1999}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Results \& Statistical Analysis}{11}{subsection.4.2}}
-\newlabel{subsec:results}{{4.2}{11}{Results \& Statistical Analysis}{subsection.4.2}{}}
-\newlabel{eq:metrics}{{18}{11}{Results \& Statistical Analysis}{equation.4.18}{}}
-\newlabel{eq:accuracy}{{18a}{11}{Results \& Statistical Analysis}{equation.4.1}{}}
-\newlabel{eq:precision}{{18b}{11}{Results \& Statistical Analysis}{equation.4.2}{}}
-\newlabel{eq:recall}{{18c}{11}{Results \& Statistical Analysis}{equation.4.3}{}}
-\newlabel{eq:kappa}{{18d}{11}{Results \& Statistical Analysis}{equation.4.4}{}}
-\newlabel{eq:auc}{{18e}{11}{Results \& Statistical Analysis}{equation.4.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Accuracy}{11}{subsection.4.3}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Accuracy}}{12}{table.3}}
-\newlabel{tab:accResults}{{3}{12}{Accuracy}{table.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Bonferroni-Dunn test for Accuracy}}{12}{figure.5}}
-\newlabel{fig:BonfDunnacc}{{5}{12}{Bonferroni-Dunn test for Accuracy}{figure.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Nemenyi, Holm, and Shaffer tests for Accuracy}}{12}{table.4}}
-\newlabel{tab:statacc}{{4}{12}{Nemenyi, Holm, and Shaffer tests for Accuracy}{table.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Precision}}{13}{table.5}}
-\newlabel{tab:preResults}{{5}{13}{Precision}{table.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Bonferroni-Dunn test for Precision}}{13}{figure.6}}
-\newlabel{fig:BonfDunnprec}{{6}{13}{Bonferroni-Dunn test for Precision}{figure.6}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Nemenyi, Holm, and Shaffer tests for Precision}}{13}{table.6}}
-\newlabel{tab:statprec}{{6}{13}{Nemenyi, Holm, and Shaffer tests for Precision}{table.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Precision \& Recall}{13}{subsection.4.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Cohen's Kappa Rate}{13}{subsection.4.5}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Recall}}{14}{table.7}}
-\newlabel{tab:recResults}{{7}{14}{Recall}{table.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Bonferroni-Dunn test for Recall}}{14}{figure.7}}
-\newlabel{fig:BonfDunnrec}{{7}{14}{Bonferroni-Dunn test for Recall}{figure.7}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Nemenyi, Holm, and Shaffer tests for Recall}}{14}{table.8}}
-\newlabel{tab:statrec}{{8}{14}{Nemenyi, Holm, and Shaffer tests for Recall}{table.8}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Cohen's Kappa Rate}}{14}{table.9}}
-\newlabel{tab:kappaResults}{{9}{14}{Cohen's Kappa Rate}{table.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Bonferroni-Dunn test for Cohen's Kappa rate}}{14}{figure.8}}
-\newlabel{fig:BonfDunnkappa}{{8}{14}{Bonferroni-Dunn test for Cohen's Kappa rate}{figure.8}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Nemenyi, Holm, and Shaffer tests for Cohen's Kappa rate}}{14}{table.10}}
-\newlabel{tab:statkappa}{{10}{14}{Nemenyi, Holm, and Shaffer tests for Cohen's Kappa rate}{table.10}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces AUC}}{14}{table.11}}
-\newlabel{tab:aucResults}{{11}{14}{AUC}{table.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Bonferroni-Dunn test for AUC}}{14}{figure.9}}
-\newlabel{fig:BonfDunnauc}{{9}{14}{Bonferroni-Dunn test for AUC}{figure.9}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Nemenyi, Holm, and Shaffer tests for AUC}}{14}{table.12}}
-\newlabel{tab:statauc}{{12}{14}{Nemenyi, Holm, and Shaffer tests for AUC}{table.12}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}AUC}{15}{subsection.4.6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.7}Overall Comparison}{15}{subsection.4.7}}
-\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Run Time (seconds)}}{15}{table.13}}
-\newlabel{tab:time}{{13}{15}{Run Time (seconds)}{table.13}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Overall ranks comparison}}{15}{table.14}}
-\newlabel{tab:metarank}{{14}{15}{Overall ranks comparison}{table.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Bonferroni-Dunn test for overall ranks comparison}}{15}{figure.10}}
-\newlabel{fig:BonfDunnpmeta}{{10}{15}{Bonferroni-Dunn test for overall ranks comparison}{figure.10}{}}
-\bibstyle{natbib}
+\newlabel{eq:metrics}{{18}{16}{Results \& Statistical Analysis}{equation.4.18}{}}
+\newlabel{eq:accuracy}{{18a}{16}{Results \& Statistical Analysis}{equation.4.1}{}}
+\newlabel{eq:precision}{{18b}{16}{Results \& Statistical Analysis}{equation.4.2}{}}
+\newlabel{eq:recall}{{18c}{16}{Results \& Statistical Analysis}{equation.4.3}{}}
+\newlabel{eq:kappa}{{18d}{16}{Results \& Statistical Analysis}{equation.4.4}{}}
+\newlabel{eq:auc}{{18e}{16}{Results \& Statistical Analysis}{equation.4.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Accuracy}{16}{subsection.4.3}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Accuracy}}{17}{table.3}}
+\newlabel{tab:accResults}{{3}{17}{Accuracy}{table.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Bonferroni-Dunn test for Accuracy}}{17}{figure.5}}
+\newlabel{fig:BonfDunnacc}{{5}{17}{Bonferroni-Dunn test for Accuracy}{figure.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Nemenyi, Holm, and Shaffer tests for Accuracy}}{17}{table.4}}
+\newlabel{tab:statacc}{{4}{17}{Nemenyi, Holm, and Shaffer tests for Accuracy}{table.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Precision}}{18}{table.5}}
+\newlabel{tab:preResults}{{5}{18}{Precision}{table.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Bonferroni-Dunn test for Precision}}{18}{figure.6}}
+\newlabel{fig:BonfDunnprec}{{6}{18}{Bonferroni-Dunn test for Precision}{figure.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Nemenyi, Holm, and Shaffer tests for Precision}}{18}{table.6}}
+\newlabel{tab:statprec}{{6}{18}{Nemenyi, Holm, and Shaffer tests for Precision}{table.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Precision \& Recall}{18}{subsection.4.4}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Recall}}{19}{table.7}}
+\newlabel{tab:recResults}{{7}{19}{Recall}{table.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Bonferroni-Dunn test for Recall}}{19}{figure.7}}
+\newlabel{fig:BonfDunnrec}{{7}{19}{Bonferroni-Dunn test for Recall}{figure.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Nemenyi, Holm, and Shaffer tests for Recall}}{19}{table.8}}
+\newlabel{tab:statrec}{{8}{19}{Nemenyi, Holm, and Shaffer tests for Recall}{table.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Cohen's Kappa Rate}{19}{subsection.4.5}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Cohen's Kappa Rate}}{20}{table.9}}
+\newlabel{tab:kappaResults}{{9}{20}{Cohen's Kappa Rate}{table.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Bonferroni-Dunn test for Cohen's Kappa rate}}{20}{figure.8}}
+\newlabel{fig:BonfDunnkappa}{{8}{20}{Bonferroni-Dunn test for Cohen's Kappa rate}{figure.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Nemenyi, Holm, and Shaffer tests for Cohen's Kappa rate}}{20}{table.10}}
+\newlabel{tab:statkappa}{{10}{20}{Nemenyi, Holm, and Shaffer tests for Cohen's Kappa rate}{table.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces AUC}}{20}{table.11}}
+\newlabel{tab:aucResults}{{11}{20}{AUC}{table.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Bonferroni-Dunn test for AUC}}{20}{figure.9}}
+\newlabel{fig:BonfDunnauc}{{9}{20}{Bonferroni-Dunn test for AUC}{figure.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Nemenyi, Holm, and Shaffer tests for AUC}}{20}{table.12}}
+\newlabel{tab:statauc}{{12}{20}{Nemenyi, Holm, and Shaffer tests for AUC}{table.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}AUC}{21}{subsection.4.6}}
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Run Time (seconds)}}{21}{table.13}}
+\newlabel{tab:time}{{13}{21}{Run Time (seconds)}{table.13}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Overall ranks comparison}}{21}{table.14}}
+\newlabel{tab:metarank}{{14}{21}{Overall ranks comparison}{table.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Bonferroni-Dunn test for overall ranks comparison}}{21}{figure.10}}
+\newlabel{fig:BonfDunnpmeta}{{10}{21}{Bonferroni-Dunn test for overall ranks comparison}{figure.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.7}Overall Comparison}{22}{subsection.4.7}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{22}{section.5}}
+\newlabel{sec:conclusion}{{5}{22}{Conclusion}{section.5}{}}
+\bibstyle{model1-num-names}
 \bibdata{references}
 \bibcite{Alca2011}{{1}{2011}{{Alcal\'{a}-Fdez et~al.}}{{Alcal\'{a}-Fdez, Fern\'{a}ndez, Luengo, Derrac, Garc\'{i}a, S\'{a}nchez, and Herrera}}}
 \bibcite{Alpaydin2015}{{2}{2015}{{Alpaydin et~al.}}{{Alpaydin, Cheplygina, Loog, and Tax}}}
@@ -198,8 +203,6 @@
 \bibcite{Bunescu2007}{{11}{2007}{{Bunescu and Mooney}}{{}}}
 \bibcite{2015-KAIS}{{12}{2015}{{Cano et~al.}}{{Cano, Zafra, and Ventura}}}
 \bibcite{Carbonneau2016}{{13}{2016}{{Carbonneau et~al.}}{{Carbonneau, Granger, Raymond, and Gagnon}}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{16}{section.5}}
-\newlabel{sec:conclusion}{{5}{16}{Conclusion}{section.5}{}}
 \bibcite{Chen2004}{{14}{2004}{{Chen and Wang}}{{}}}
 \bibcite{Chen2006}{{15}{2006}{{Chen et~al.}}{{Chen, Bi, and Wang}}}
 \bibcite{Cortes1995}{{16}{1995}{{Cortes and Vapnik}}{{}}}
