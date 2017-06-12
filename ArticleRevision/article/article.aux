@@ -112,30 +112,30 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces MIRSVM Flow Diagram. This figure represents a summary of the steps performed by the MIRSVM algorithm. The representatives are first randomly initialized and continuously updated according to the current hyper-plane, which is found using a quadratic programming (QP) solver. Upon completion, the model is returned along with the optimal bag-representatives.}}{8}{figure.2}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Multi-Instance Representative SVM (MIRSVM)}}{8}{algorithm.1}}
 \newlabel{alg:mirsvm}{{1}{8}{Multiple-Instance Representative SVM}{algorithm.1}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces MIRSVM Prediction}}{8}{algorithm.2}}
-\newlabel{alg:mirsvmtest}{{2}{8}{Multiple-Instance Representative SVM}{algorithm.2}{}}
 \newlabel{eqn:bias}{{16}{8}{Multiple-Instance Representative SVM}{equation.3.16}{}}
-\citation{Hall2009}
-\citation{Alca2011}
 \newlabel{fig:diff}{{3}{9}{Multiple-Instance Representative SVM}{equation.3.16}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Difference between MIRSVM and MISVM on a random $2$-dimensional toy dataset. The instances of this dataset were drawn from the standard normal distribution, with $6$ bags, $4$ of which are negative (red) and $2$ of which are positive (blue), indicated by the red and blue dotted circles. There are a total of $125$ instances, $65$ belonging to the positive bags and $60$ belonging to the negative bags. The decision boundaries (black lines) are shown for each of the algorithms, along with the SVM margin (red and blue dashed lines) and support vectors (black crosses). In this example, both MIRSVM and MISVM were trained using $C = 1000$ and $\sigma = 1.5$. Note the differing number of support vectors produced by the two methods. MIRSVM has $6$, one for each bag, and MISVM has $29$. Also note the smoother representation of the data distribution given by MIRSVM's decision boundary, unlike MISVM whose decision boundary was greatly affected by the larger number of support vectors belonging to the negative class with respect to the only $2$ positive support vectors. }}{9}{figure.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Experiments}{9}{section.4}}
-\newlabel{sec:experiments}{{4}{9}{Experiments}{section.4}{}}
+\newlabel{fig:convergence}{{3}{9}{Multiple-Instance Representative SVM}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Bag representative convergence plots on 9 datasets. The blue line shows the number of bag representatives that are equal from one iteration to the next. The red dashed line represents the total number of bags.}}{9}{figure.4}}
+\citation{Hall2009}
+\citation{Alca2011}
 \citation{Xu2003}
 \citation{Bendavid2008}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Datasets used for the experiments in\nobreakspace  {}\ref  {subsec:results}}}{10}{table.2}}
 \newlabel{tab:Dataset}{{2}{10}{Datasets used for the experiments in~\ref {subsec:results}}{table.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experiments}{10}{section.4}}
+\newlabel{sec:experiments}{{4}{10}{Experiments}{section.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Experimental Setup}{10}{subsection.4.1}}
 \newlabel{eq:hyperparam}{{17}{10}{Experimental Setup}{equation.4.17}{}}
 \newlabel{eq:paramC}{{17a}{10}{Experimental Setup}{equation.4.1}{}}
 \newlabel{eq:paramG}{{17b}{10}{Experimental Setup}{equation.4.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Results \& Statistical Analysis}{10}{subsection.4.2}}
-\newlabel{subsec:results}{{4.2}{10}{Results \& Statistical Analysis}{subsection.4.2}{}}
 \citation{Derrac2011,Garcia20102044}
 \citation{Garcia2008}
 \citation{Dunn1961}
 \citation{Garcia2009}
 \citation{Gibbons2011,Holander1999}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Results \& Statistical Analysis}{11}{subsection.4.2}}
+\newlabel{subsec:results}{{4.2}{11}{Results \& Statistical Analysis}{subsection.4.2}{}}
 \newlabel{eq:metrics}{{18}{11}{Results \& Statistical Analysis}{equation.4.18}{}}
 \newlabel{eq:accuracy}{{18a}{11}{Results \& Statistical Analysis}{equation.4.1}{}}
 \newlabel{eq:precision}{{18b}{11}{Results \& Statistical Analysis}{equation.4.2}{}}
@@ -145,34 +145,34 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Accuracy}{11}{subsection.4.3}}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Accuracy}}{12}{table.3}}
 \newlabel{tab:accResults}{{3}{12}{Accuracy}{table.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Bonferroni-Dunn test for Accuracy}}{12}{figure.4}}
-\newlabel{fig:BonfDunnacc}{{4}{12}{Bonferroni-Dunn test for Accuracy}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Bonferroni-Dunn test for Accuracy}}{12}{figure.5}}
+\newlabel{fig:BonfDunnacc}{{5}{12}{Bonferroni-Dunn test for Accuracy}{figure.5}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Nemenyi, Holm, and Shaffer tests for Accuracy}}{12}{table.4}}
 \newlabel{tab:statacc}{{4}{12}{Nemenyi, Holm, and Shaffer tests for Accuracy}{table.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Precision \& Recall}{12}{subsection.4.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Cohen's Kappa Rate}{12}{subsection.4.5}}
 \@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Precision}}{13}{table.5}}
 \newlabel{tab:preResults}{{5}{13}{Precision}{table.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Bonferroni-Dunn test for Precision}}{13}{figure.5}}
-\newlabel{fig:BonfDunnprec}{{5}{13}{Bonferroni-Dunn test for Precision}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Bonferroni-Dunn test for Precision}}{13}{figure.6}}
+\newlabel{fig:BonfDunnprec}{{6}{13}{Bonferroni-Dunn test for Precision}{figure.6}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Nemenyi, Holm, and Shaffer tests for Precision}}{13}{table.6}}
 \newlabel{tab:statprec}{{6}{13}{Nemenyi, Holm, and Shaffer tests for Precision}{table.6}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Recall}}{13}{table.7}}
-\newlabel{tab:recResults}{{7}{13}{Recall}{table.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Bonferroni-Dunn test for Recall}}{13}{figure.6}}
-\newlabel{fig:BonfDunnrec}{{6}{13}{Bonferroni-Dunn test for Recall}{figure.6}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Nemenyi, Holm, and Shaffer tests for Recall}}{13}{table.8}}
-\newlabel{tab:statrec}{{8}{13}{Nemenyi, Holm, and Shaffer tests for Recall}{table.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Precision \& Recall}{13}{subsection.4.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Cohen's Kappa Rate}{13}{subsection.4.5}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Recall}}{14}{table.7}}
+\newlabel{tab:recResults}{{7}{14}{Recall}{table.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Bonferroni-Dunn test for Recall}}{14}{figure.7}}
+\newlabel{fig:BonfDunnrec}{{7}{14}{Bonferroni-Dunn test for Recall}{figure.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Nemenyi, Holm, and Shaffer tests for Recall}}{14}{table.8}}
+\newlabel{tab:statrec}{{8}{14}{Nemenyi, Holm, and Shaffer tests for Recall}{table.8}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Cohen's Kappa Rate}}{14}{table.9}}
 \newlabel{tab:kappaResults}{{9}{14}{Cohen's Kappa Rate}{table.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Bonferroni-Dunn test for Cohen's Kappa rate}}{14}{figure.7}}
-\newlabel{fig:BonfDunnkappa}{{7}{14}{Bonferroni-Dunn test for Cohen's Kappa rate}{figure.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Bonferroni-Dunn test for Cohen's Kappa rate}}{14}{figure.8}}
+\newlabel{fig:BonfDunnkappa}{{8}{14}{Bonferroni-Dunn test for Cohen's Kappa rate}{figure.8}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Nemenyi, Holm, and Shaffer tests for Cohen's Kappa rate}}{14}{table.10}}
 \newlabel{tab:statkappa}{{10}{14}{Nemenyi, Holm, and Shaffer tests for Cohen's Kappa rate}{table.10}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces AUC}}{14}{table.11}}
 \newlabel{tab:aucResults}{{11}{14}{AUC}{table.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Bonferroni-Dunn test for AUC}}{14}{figure.8}}
-\newlabel{fig:BonfDunnauc}{{8}{14}{Bonferroni-Dunn test for AUC}{figure.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Bonferroni-Dunn test for AUC}}{14}{figure.9}}
+\newlabel{fig:BonfDunnauc}{{9}{14}{Bonferroni-Dunn test for AUC}{figure.9}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Nemenyi, Holm, and Shaffer tests for AUC}}{14}{table.12}}
 \newlabel{tab:statauc}{{12}{14}{Nemenyi, Holm, and Shaffer tests for AUC}{table.12}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.6}AUC}{15}{subsection.4.6}}
@@ -181,8 +181,8 @@
 \newlabel{tab:time}{{13}{15}{Run Time (seconds)}{table.13}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Overall ranks comparison}}{15}{table.14}}
 \newlabel{tab:metarank}{{14}{15}{Overall ranks comparison}{table.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Bonferroni-Dunn test for overall ranks comparison}}{15}{figure.9}}
-\newlabel{fig:BonfDunnpmeta}{{9}{15}{Bonferroni-Dunn test for overall ranks comparison}{figure.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Bonferroni-Dunn test for overall ranks comparison}}{15}{figure.10}}
+\newlabel{fig:BonfDunnpmeta}{{10}{15}{Bonferroni-Dunn test for overall ranks comparison}{figure.10}{}}
 \bibstyle{natbib}
 \bibdata{references}
 \bibcite{Alca2011}{{1}{2011}{{Alcal\'{a}-Fdez et~al.}}{{Alcal\'{a}-Fdez, Fern\'{a}ndez, Luengo, Derrac, Garc\'{i}a, S\'{a}nchez, and Herrera}}}

@@ -216,7 +216,7 @@ The MI adaptation of the SVM presents two contexts for solving the problem: the 
 One of the first bag-level approaches to the multi-instance SVM problem was proposed by~\cite{Smola2002}, who defined a bag-level kernel. A bag-level kernel determines the similarity between two bags in a higher dimensional space and using such a kernel with the standard SVM problem, the margin can be optimized over bag classes without any modification to the SVM problem.~\cite{Blaschko2006} propose conformal kernels which manipulate each attribute's dimension based on its importance, without affecting the angles between vectors in the transformed space. Bag level kernels transform the bags into a single-instance representation which enables standard SVMs to be directly applied to multi-instance data~\citep{Herrera2016}. 
 
 \section{Multiple-Instance Representative SVM}\label{sec:contribution}
-MIRSVM is based on the idea of selecting representative instances from both positive and negative bags which are used to find an unbiased, optimal separating hyperplane. A representative is iteratively chosen from each bag, and a new hyperplane is formed according to the representatives until they converge. Based on the SMI hypothesis, only one instance in a bag is required to be positive for the bag to adopt a positive label. Due to the unknown distribution of instances within positive bags, MIRSVM is designed to give preference to negative bags during training, because their distribution is known, i.e. all instances are guaranteed to be negative. This is evident during the representative selection process, by taking the maximum output value within each bag based on the current hyperplane using the following rule, $s_I = \text{argmax}_{i \in I} (\langle \bm w,\, \bm x_i \rangle + b),\, \forall I \in \set{1,\ldots,n}$. In other words, the most positive sample is chosen from each positive bag and the least negative sample is chosen from each negative bag (samples with the largest output value based on the current hyperplane), pushing the decision boundary  towards the positive bags. Equation~\eqref{eq:primalmirsvm} presents the primal MIRSVM optimization problem:
+MIRSVM is based on the idea of selecting representative instances from both positive and negative bags which are used to find an unbiased, optimal separating hyperplane. A representative is iteratively chosen from each bag, and a new hyperplane is formed according to the representatives until they converge. Based on the SMI hypothesis, only one instance in a bag is required to be positive for the bag to adopt a positive label. Due to the unknown distribution of instances within positive bags, MIRSVM is designed to give preference to negative bags during training, because their distribution is known, i.e. all instances are guaranteed to be negative. This is evident during the representative selection process, by taking the maximum output value within each bag based on the current hyperplane using the following rule, $s_I = \text{max}_{i \in I} (\langle \bm w,\, \bm x_i \rangle + b),\, \forall I \in \set{1,\ldots,n}$. In other words, the most positive sample is chosen from each positive bag and the least negative sample is chosen from each negative bag (samples with the largest output value based on the current hyperplane), pushing the decision boundary  towards the positive bags. Equation~\eqref{eq:primalmirsvm} presents the primal MIRSVM optimization problem:
 \begin{subequations} 
 \label{eq:primalmirsvm}
 \begin{alignat}{2}
@@ -278,8 +278,8 @@ s_I = \underset{i \in I}{\text{argmax}}(\sum_{K\in I} \sum_{j=1}^d \alpha_K y_K 
 The implicit constraints~\eqref{eq:implicit1} through~\eqref{eq:implicit3} imply three possible cases for the $\alpha_I$ values:
 \begin{itemize}
 \item[1.] If $\alpha_I = 0$, then $\beta_I = C/n$ and $\xi_I = 0$, implying the instance is correctly classified and outside the margin. 
-\item[2.] If $0 \leq \alpha_I \leq C/n$, then $\beta_I > 0$ and $\xi_I = 0$, indicating that the instance sits on the margin boundary, i.e. is an \textit{unbounded support vector}.
-\item[3.] If $\alpha_I = C/n$, then $\beta_I = 0$ and there is no restriction for $\xi_I \geq 0$. This also indicates that the instance is a support vector that is \textit{unbounded}. If $0 \leq \xi_I < 1$, then the instance is correctly classified, and is misclassified otherwise. 
+\item[2.] If $0 < \alpha_I < C/n$, then $\beta_I > 0$ and $\xi_I = 0$, indicating that the instance sits on the margin boundary, i.e. is an \textit{unbounded support vector}.
+\item[3.] If $\alpha_I = C/n$, then $\beta_I = 0$ and there is no restriction for $\xi_I \geq 0$. This also indicates that the instance is a support vector that is \textit{bounded}. If $0 \leq \xi_I < 1$, then the instance is correctly classified, and is misclassified otherwise. 
 \end{itemize}
 
 We then kernelize the dual function by replacing the inner product of the samples in feature space with their corresponding kernel values, $\spa{K}\left(\bm{x}_{s_I},\bm{x}_{s_K}\right)$. The dual function is now written as:
@@ -350,22 +350,7 @@ One of the biggest advantages of the dual SVM formulation is the sparseness of t
 \EndWhile 
 \end{algorithmic} 
 \end{algorithm}
-\begin{algorithm}[H]
-\caption{MIRSVM Prediction}
-\label{alg:mirsvmtest} 
-\begin{algorithmic}[1]
-\renewcommand{\algorithmicrequire}{\textbf{Input:}}
-\renewcommand{\algorithmicensure}{\textbf{Output:}}
-\Require Testing dataset $\mathcal{D^\prime}$ with $n^\prime$ bags, Representatives $\bm S$, Classifier $\bm \alpha$ and $b$, SVM Parameter $\sigma$
-\Ensure Classifier output $\bm O$
-\For {$I \in \set{1,\ldots,n^\prime}$}
-\State $\bm G_I \leftarrow (Y_I \times Y_S) \bm \cdot \mathcal{K}\left( \bm B_I,\,\bm X_S,\,\sigma\right)$
-\State $\bm O_I \leftarrow \text{sign}(\text{max}\left(\bm G_I*\bm{\alpha} + b \right))$
-\EndFor 
-\end{algorithmic} 
-\end{algorithm}
 \end{figure}
-
 
 To evaluate the output vector, $\bm o_I$, of bag $I$ using the kernel, the following equation is used~\citep{Huang2006},
 \begin{align}
@@ -376,8 +361,8 @@ where $\bm B_I$ are the instances of bag $I$, $\bm X_S$ are the optimal bag repr
 \label{eqn:bias}
 b = \frac{1}{n_{sv}}\sum_{\bm{sv}} Y_{\bm{sv}} - \spa{K}(\bm X_{\bm{sv}},\bm X_{\bm{sv}})*(\bm \alpha_{\bm{sv}}\bm\cdot Y_{\bm{sv}})
 \end{align}
-\newpage
-Algorithm~\ref{alg:mirsvm} and Figure~\ref{fig:mirsvm} show the procedure for training the multi-instance representative SVM classifier, along with obtaining the optimal representatives from each bag. Algorithm~\ref{alg:mirsvmtest} lists the method for testing the model on unseen data. During training, the representatives, $\bm S$, are first initialized by randomly selecting an instance from each bag. A hyper-plane is then obtained using the representative instances, and new optimal representatives are found with respect to the current hyper-plane, by using the rule given in Equation~\eqref{eq:si}. At each step, the previous values in $\bm S$ are stored in $\bm S_{old}$. The training procedure ends when the bag representatives stop changing from one iteration to the next, i.e. when $\bm S = \bm S_{old}$. During the testing procedure, each bag produces an output vector based on the hyper-plane found in the training procedure. The bag label is then assigned by taking the sign of the output vector's maximum value, following the SMI assumption. 
+
+Algorithm~\ref{alg:mirsvm} shows the procedures for training the multi-instance representative SVM classifier and obtaining the optimal representatives from each bag.  During training, the representatives, $\bm S$, are first initialized by randomly selecting an instance from each bag. A hyper-plane is then obtained using the representative instances, and new optimal representatives are found with respect to the current hyper-plane, by using the rule given in Equation~\eqref{eq:si}. At each step, the previous values in $\bm S$ are stored in $\bm S_{old}$. The training procedure ends when the bag representatives stop changing from one iteration to the next ($\bm S = \bm S_{old}$). During the testing procedure, each bag produces an output vector based on the hyper-plane found in the training procedure. The bag label is then assigned by taking the sign of the output vector's maximum value, following the SMI assumption. 
 
 \begin{figure}
     \centering
@@ -392,6 +377,13 @@ Algorithm~\ref{alg:mirsvm} and Figure~\ref{fig:mirsvm} show the procedure for tr
     \end{minipage}
     \caption{Difference between MIRSVM and MISVM on a random $2$-dimensional toy dataset. The instances of this dataset were drawn from the standard normal distribution, with $6$ bags, $4$ of which are negative (red) and $2$ of which are positive (blue), indicated by the red and blue dotted circles. There are a total of $125$ instances, $65$ belonging to the positive bags and $60$ belonging to the negative bags. The decision boundaries (black lines) are shown for each of the algorithms, along with the SVM margin (red and blue dashed lines) and support vectors (black crosses). In this example, both MIRSVM and MISVM were trained using $C = 1000$ and $\sigma = 1.5$. Note the differing number of support vectors produced by the two methods. MIRSVM has $6$, one for each bag, and MISVM has $29$. Also note the smoother representation of the data distribution given by MIRSVM's decision boundary, unlike MISVM whose decision boundary was greatly affected by the larger number of support vectors belonging to the negative class with respect to the only $2$ positive support vectors. }
 \end{figure}
+\begin{figure}
+\centering
+\label{fig:convergence}
+\includegraphics[width=0.95\textwidth]{convergence.eps} 
+\caption{Bag representative convergence plots on 9 datasets. The blue line shows the number of bag representatives that are equal from one iteration to the next. The red dashed line represents the total number of bags.}
+\end{figure}
+
 This formulation is designed to utilize and select representatives from positive and negative bags, unlike MISVM, which only optimizes over representatives from positive bags, while flattening the negative bag instances. MISVM allows multiple representatives to be chosen from negative bags and limits positive bag-representatives to be one, while MIRSVM allows for balanced bag-representative selection, where each bag is allowed one. MISVM also uses a wrapper technique to initialize the positive bag-representatives by taking the mean vector of the instances within each positive bag. This is an implicit assumption that the instances within the positive bags are all positive, whereas MIRSVM's initialization procedure selects an instance from all bags at random, ensuring no noise is added by any wrapper techniques during initialization and no assumptions are made about the instances. Due to the constraints on the representatives, MIRSVM produces sparser models while MISVM has the freedom to select as many negative support vectors as it needs and restricts the support vectors chosen from positive bags to be one. Figure~\ref{fig:diff} shows the decision boundaries produced by MIRSVM and MISVM to highlight the differences in their solutions. As Figure~\ref{fig:diff} shows, MISVM produces a larger number of support vectors from the negative bags, which greatly influences the final decision boundary in favor of the negative class.
 
 \section{Experiments}\label{sec:experiments}
