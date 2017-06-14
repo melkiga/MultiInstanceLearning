@@ -1,7 +1,7 @@
 \documentclass[preprint,12pt]{elsarticle}
 \hyphenation{op-tical net-works semi-conduc-tor}
 \usepackage[hidelinks]{hyperref}
-\usepackage{amsmath,amssymb,mathtools,float,times,bm,tikz,proof,tabularx,capt-of,natbib}
+\usepackage{amsmath,amssymb,mathtools,float,times,bm,tikz,proof,tabularx,capt-of,natbib,siunitx}
 \usepackage{graphicx,amsfonts,array,url,algorithm,algorithmicx,algpseudocode,booktabs}
 \usepackage[flushleft]{threeparttable}
 \usepackage[top=1in,bottom=1in,right=1in,left=1in]{geometry}
@@ -78,7 +78,8 @@ This work is organized as follows. First, the notation used throughout the paper
 This section defines the notation that will be used throughout the paper, and reviews related works on multi-instance learning, traditional SVMs, and multi-instance support vector machines.
 
 \subsection{Notation}\label{subsec:notation}
-Let $\mathcal{D}$ be a training dataset of $n$ bags. Let $\bm{Y} \in \mathcal{D}$ be a vector of $n$ labels corresponding to each bag, having a domain of $\bm{Y} \in \set{-1,1}^n$. Let $\bm{X} \in \mathcal{D}$ be a matrix consisting of $d$ input variables and $m$ instances, having a domain of $\bm{X} \in \mathbb{R}^{m \times d}$. Let $\mathcal{B}$ be the set of bags which contain a number of instances, sometimes of different size and usually non-overlapping, such as $\bm{B}_I = \{\bm x_{1}, \ldots, \bm x_{|\bm B_I|}\}$ for index set $I \subseteq \set{1,\ldots,n}$, where $|\bm B_I|$ is the number of instances in bag $I$. Using the training dataset $\mathcal{D} = \{(\bm B_1,Y_1), \ldots, (\bm B_n,Y_n)\}$, the goal is to learn a model $f : \bm{B} \rightarrow Y$, that assigns a label for each input bag. The model will then be used to predict the labels of new and unseen input bags. Table~\ref{tab:Notation} provides a summary of the notation used in this paper.
+Let $\mathcal{D}$ be a training dataset of $n$ bags. Let $\bm{Y} \in \mathcal{D}$ be a vector of $n$ labels corresponding to each bag, having a domain of $\bm{Y} \in \set{-1,1}^n$. Let $\bm{X} \in \mathcal{D}$ be a matrix consisting of $d$ input variables and $m$ instances, having a domain of $\bm{X} \in \mathbb{R}^{m \times d}$. Let $\mathcal{B}$ be the set of bags which contain a number of instances, sometimes of different size and usually non-overlapping, such as $\mathcal{B}_I = \{\bm x_{1}, \ldots, \bm x_{|\mathcal{B}_I|}\}$ for index set $I \subseteq \set{1,\ldots,n}$, where $|\mathcal{B}_I|$ is the number of instances in bag $I$. Table~\ref{tab:Notation} provides a summary of the notation used in this paper.
+
 \begin{table}
 \caption{Summary of notation used throughout the paper}\label{tab:Notation}
 \begin{tabularx}{\textwidth}{l@{\extracolsep{\fill}}l}
@@ -88,24 +89,23 @@ Definition & Notation\\
 Number of Bags & $n$ \\
 Number of Instances & $m$ \\
 Number of Input Attributes & $d$ \\
-Set of Bags & $\mathcal{B} = \set{\bm B_1,\, \ldots,\, \bm B_n}$ \\
+Set of Bags & $\mathcal{B} = \set{\mathcal{B}_1,\, \ldots,\, \mathcal{B}_n}$ \\
 Bag Index Set & $I \in \ints_+^n$ \\
 Input Space & $\bm{X} \in \mathbb{R}^{m \times d}$ \\
 Bag Labels & $\bm{Y} \in \{-1,1\}^n$ \\
 Input Instance $i$ from Bag $I$ & $\bm{x}_i = (x_{1}, \ldots, x_{d}),\, i \in I$ \\
-Individual Instance Label $i$ & $y_i \in \set{-1,1}$ \\
-Bag $I$ & $\bm B_I = \set{\bm x_i \st \forall i \in I}$ \\
+Unknown Individual Instance Label $i$ & $y_i \in \set{-1,1}$ \\
+Bag $I$ & $\mathcal{B}_I = \set{\bm x_i \st \forall i \in I}$ \\
 \noalign{\smallskip}\hline\noalign{\smallskip}
-Full Multi-Instance Training Dataset & $\mathcal{D} = \{(\bm B_1,Y_1), \ldots, (\bm B_n,Y_n)\}$ \\
-Full Single-Instance Training Dataset & $\mathcal{S} = \{(\bm x_1,y_1), \ldots, (\bm x_m,y_m)\} $\\
+Full Multi-Instance Training Dataset & $\mathcal{D} = \{(\mathcal{B}_1,Y_1), \ldots, (\mathcal{B}_n,Y_n)\}$ \\
 \noalign{\smallskip}\hline
 \end{tabularx}
 \end{table}
 
 \subsection{Multiple-Instance Learning}\label{subsec:mil}
-In traditional binary classification problems, the goal is to learn a model that maps input samples to labels, $f: \reals^{m \times d} \rightarrow Y^m \in \set{-1,\,+1}$. Multiple instance learning generalizes this framework and makes weaker assumptions about sample labeling. In the MIL case, samples are called \textit{bags} and each bag contains one or more input instances. Each bag is assigned a label, unlike traditional classification problems, where individual samples are assigned a label. Input instances, $\set{\bm x_1,\, \bm x_2,\, \ldots,\, \bm x_m}$, are grouped into bags with unique identifiers, $\mathcal{B} = \set{\bm B_1,\, \bm B_2,\, \ldots,\, \bm B_n \st \bm B_I = \set{\bm x_i \st \forall i \in I}}$, $\forall I \in \set{1, \ldots, n}$ and assigned a label, $Y_I$. An example representation of an MI dataset is shown in Figure~\ref{fig:mirep}. 
-
-In MIL, the goal is to train a classifier that predicts the label of an unseen bag, $f(\bm B_{n+1}) \rightarrow Y_{n+1}$~\citep{Amores2013}. In order to build a classifier without any knowledge of the individual training instance labels,~\citet{Dietterich1997} proposed the \textit{standard MI} (SMI) hypothesis based on the domain of drug-activity prediction, shown in Equation~\ref{eqn:stas}, which states that a bag is labeled positive if and only if at least one of the instances in the bag is positive, and is labeled negative otherwise.
+\begin{sloppypar}
+In traditional binary classification problems, the goal is to learn a model that maps input samples to labels, $f: \reals^{m \times d} \rightarrow Y^m \in \set{-1,\,+1}$. In the MIL case, samples are called \textit{bags} and each bag contains one or more input instances and is assigned a single bag-level label. Input instances, $\set{\bm x_1,\, \bm x_2,\, \ldots,\, \bm x_m}$, are grouped into bags with unique identifiers, $\mathcal{B} = \set{\mathcal{B}_1,\, \mathcal{B}_2,\, \ldots,\, \mathcal{B}_n \st \mathcal{B}_I = \set{\bm x_i \st \forall i \in I},\, \forall I \in \set{1, \ldots, n}}$ and assigned a label, $Y_I$. An example MI dataset representation is shown in Figure~\ref{fig:mirep}. Using the training dataset $\mathcal{D} = \{(\mathcal{B}_1,Y_1), \ldots, (\mathcal{B}_n,Y_n)\}$, the goal is to train a classifier that predicts the label of an unseen bag, $f(\mathcal{B}_{n+1}) \rightarrow Y_{n+1}$~\citep{Amores2013}. In order to build a classifier without any knowledge of the individual training instance labels,~\citet{Dietterich1997} proposed the \textit{standard MI} (SMI) hypothesis based on the drug-activity prediction domain, shown in Equation~\ref{eqn:stas}, which states that a bag is labeled positive if and only if at least one of the instances in the bag is positive, and is labeled negative otherwise.
+\end{sloppypar}
 \begin{equation}
 \centering \label{eqn:stas}
  Y_I = \begin{cases}
@@ -114,7 +114,7 @@ In MIL, the goal is to train a classifier that predicts the label of an unseen b
 		  \end{cases}
 \end{equation}
 
-This implies that individual instance labels $y_i$ exist, but are not known during training. Equation~\ref{eqn:stas} can also be rewritten as Equation~\ref{eqn:stasmax} for simplicity:
+This implies that individual instance labels $y_i$ exist, but are not known (for positive bags) during training. Equation~\ref{eqn:stas} can also be rewritten as Equation~\ref{eqn:stasmax} for simplicity:
 \begin{equation}
 \centering \label{eqn:stasmax}
 Y_I = \text{max}_{\forall i \in I}\,\,\, y_i.
@@ -127,20 +127,20 @@ Instance-based methods that follow the SMI assumption attempt to identify desira
 \centering
 \begin{tabular}{|c|ccccc|c|}
 \hline
-$\mathcal{B}$ & $F_1$ & $F_2$ & $F_3$ & \ldots & $F_d$ & $\bm Y$ \\        
+$\mathcal{B}$ & $x_1$ & $x_2$ & $x_3$ & \ldots & $x_d$ & $\bm Y$ \\        
 \hline
     	  & 0.1 & 0.8 & 2.5 & \ldots & 0.8 &    \\        
-    $B_1$ 	  & 0.2 & 2.0 & 5.5 & \ldots & 3.0 & POS \\
+    $\mathcal{B}_1$ 	  & 0.2 & 2.0 & 5.5 & \ldots & 3.0 & POS \\
     	  & 0.1 & 0.1   & 4.5 & \ldots & 0.1 &    \\
 \hline
     	  & 1.5 & 4.0 & 0.8 & \ldots & 0.1 &    \\
     	  & 0.8 & 0.4 & 2.9 & \ldots & 1.1 &    \\
-    $B_2$	  & 2.3 & 0.2 & 4.0 & \ldots & 5.5 & NEG \\
+    $\mathcal{B}_2$	  & 2.3 & 0.2 & 4.0 & \ldots & 5.5 & NEG \\
     	  & 6.7 & 5.0 & 0.1  & \ldots & 0.5 &    \\
     	  & 0.1 & 4.0 & 8.7 & \ldots & 3.3 &    \\
 \hline
   \end{tabular}
-  \caption{Example of multi-instance data representation. The figure shows a sample binary MI dataset with $2$ bags, identified as $B_1$ and $B_2$. The bags each contain differing number of instances, each with $d$ dimension, and are assigned positive and negative labels indicated by column $\bm Y$.}%
+  \caption{Example multi-instance data representation. The figure shows a sample binary MI dataset with $2$ bags of different sizes and labels, $\mathcal{B}_1$ and $\mathcal{B}_2$. The instances are $d$-dimensional.}%
   \label{fig:mirep}%
 \end{figure*}
 
@@ -153,9 +153,9 @@ An extension of traditional single-instance $k$-nearest neighbors method (KNN) w
 For most of the methods described above, implicit or explicit assumptions have been made about the distribution of the data. Selecting a method that is robust for a problem such as MIL can be difficult when little is known about the nature of the data, especially considering the unknown distribution of the instances within bags~\citep{2015-KAIS,2016-INS-MIARM}. The proposed method, MIRSVM, is a general method that uses support vector machines to design a MIL model without making prior assumptions about the data. Classifiers of this type are known to provide better generalization capabilities and performance, as well as sparser models.
 
 \subsection{Support Vector Machines}\label{subsec:svms}
-Most classical machine learning techniques require knowledge of the data distribution in order to learn accurate models. This is a serious restriction because, in most cases, the distribution of the data is unknown. Another disadvantage of these methods stems from high dimensional, sparse datasets, which are very common in real-world applications. Small sample size also poses problems of model reliability, especially when coupled with high dimensional feature spaces. SVMs represent learning techniques that have been introduced under the \textit{structural risk minimization} (SRM) framework and VC theory~\citep{Kecman2001}. Rather than optimizing over L1 or L2 norms and classification error, SVMs perform SRM~\citep{Shalev2014}, minimizing the expected probability of classification error, resulting in a generalized model without making assumptions about the data distribution~\citep{Cortes1995}. 
+Most classical learning techniques require knowledge of the data distribution to build accurate models. This is a serious restriction because, in most cases, the data distribution is unknown~\citep{Kecman2001}. SVMs represent learning techniques that have been introduced under the \textit{structural risk minimization} (SRM) framework and VC theory. Rather than optimizing over L1 or L2 norms and classification error, SVMs perform SRM~\citep{Shalev2014}, minimizing the expected probability of classification error, resulting in a generalized model without making assumptions about the data distribution~\citep{Cortes1995}. 
 
-SVMs are a particularly useful for learning linear predictors in high dimensional feature spaces, which is a computationally complex learning problem. In the context of classification, this problem is approached by searching for the optimal \textit{maximal margin} of separability between classes. A training set $\mathcal{D}$ is \textit{linearly separable} if a halfspace exists, $(\bm{w},b)$, such that $y_i = \text{sign }(\langle \bm{w},\bm{x}_i\rangle+b), \forall i \in \{1,\ldots,m\}$, where $\bm w \in \reals^d$ is a $d$-dimensional weight vector, and $b \in \reals$ is a bias term. All halfspaces, defined as $d(\bm{x}_i) = \langle \bm{w},\bm{x}_i\rangle + b$, satisfying $y_i \left(\langle \bm{w},\bm{x}_i\rangle + b\right) > 0,\,\, \forall i \in \{1,\ldots,m\}$, have no error. This hard constraint is associated with the \textit{Hard-Margin SVM}. No feasible solution exists for the Hard-Margin SVM problem if the dataset is non-linearly separable, which is the case for most datasets. To overcome this,~\citet{Cortes1995} introduced the \textit{Soft-Margin L$1$-SVM}:
+SVMs are a particularly useful for learning linear predictors in high dimensional feature spaces, which is a computationally complex problem. In the context of classification, this problem is approached by searching for the optimal \textit{maximal margin} of separability between classes. Since most real-world datasets are non-linearly separable, ~\citet{Cortes1995} introduced the \textit{Soft-Margin L$1$-SVM}:
 \begin{subequations} 
 \label{eq:primalsvm}
 \begin{alignat}{2}
@@ -164,12 +164,12 @@ SVMs are a particularly useful for learning linear predictors in high dimensiona
 {} & {\,\,} \xi_i \geq 0,\,\, \forall i \in \{1,\ldots,m\},
 \end{alignat}
 \end{subequations} 
-where $C \in \reals$ is the penalty parameter that controls the trade-off between margin maximization and classification error minimization, penalizing large norms and errors. The slack variable $\bm \xi \in \reals^m$ allows for optimizing over sample errors. The resulting hyperplane is called \textit{soft-margin hyperplane}. Although the Soft-SVM learns an optimal hyperplane, if the training data set is not linearly separable, the classifier learned may not have a good generalization capability~\citep{Nocedal2006}. Generalization and linear separability can be enhanced by mapping the original input space to a higher dimensional dot-product space by using a kernel function shown in Equation~\ref{eqn:kerneltrick}:
+where $\bm w \in \reals^d$ is a $d$-dimensional weight vector, $b \in \reals$ is a bias term, and $C \in \reals$ is the penalty parameter that controls the trade-off between margin maximization and classification error minimization. The slack variable $\bm \xi \in \reals^m$ allows for optimizing over sample errors. However, if the training dataset is not linearly separable, the classifier may not have a good generalization capability~\citep{Nocedal2006}. Generalization and linear separability can be enhanced by mapping the original input space to a higher dimensional dot-product space by using a kernel function shown in Equation~\ref{eqn:kerneltrick}:
 \begin{equation}
 \spa{K}\left(\bm{x}_i,\bm{x}_j\right) = \langle \phi\left(\bm{x}_i\right),\,\phi\left(\bm{x}_j\right)\rangle,
 \label{eqn:kerneltrick}
 \end{equation}
-where $\phi\left(\cdot\right)$ represents a function mapping from the original feature space to a higher dimensional space. This kernel mapping is particularly helpful when solving the dual SVM optimization problem shown in Equation~\eqref{eq:dualsvm}. Rather than calculating the inner product of two mapped vectors, their corresponding \textit{scalar} kernel value can be used. 
+where $\phi\left(\cdot\right)$ represents a function mapping from the original feature space to a higher dimensional space. This kernel mapping is helpful when solving the dual SVM optimization problem shown in Equation~\eqref{eq:dualsvm}.
 \begin{subequations}
 \label{eq:dualsvm}
 \begin{alignat}{2}
@@ -179,7 +179,7 @@ where $\phi\left(\cdot\right)$ represents a function mapping from the original f
 \end{alignat}
 \end{subequations}
 
-A traditional and widely used method of solving the L1-SVM problem is the \textit{Sequential Minimal Optimization} (SMO) technique proposed by~\citet{Platt1998}. It is an iterative procedure that divides the SVM dual problem into a series of sub-problems, which are then solved analytically by finding the optimal $\bm \alpha$ values that satisfy the Karush-Kuhn-Tucker (KKT) conditions~\citep{Boyd2004}. Although SMO is guaranteed to converge, heuristics are used to choose $\bm \alpha$ values in order to accelerate the convergence rate. This is a critical step because the convergence speed of the SMO algorithm is highly dependent on the dataset size, as well as the SVM hyperparameters~\citep{Schoelkopf2002}. \textit{Iterative Single Data Algorithm} (ISDA)~\citep{Huang2006,Kecman2016} is a more recent and efficient approach for solving the L2-SVM problem, shown to be faster than the SMO algorithm and equal in terms of accuracy~\citep{Kecman2015,Kecman2014}. It iteratively updates the objective function by working on one data point at a time, using coordinate descent to find the optimal objective function value. Other methods for solving the SVM problem include \textit{Quadratic Programming} solvers, such as the interior point method. These types of algorithms find the true optimal objective function value at the trade-off of having a relatively slower run-time.
+A traditional and widely used method of solving the L1-SVM problem is the \textit{Sequential Minimal Optimization} (SMO) technique proposed by~\citet{Platt1998}. It is an iterative procedure that divides the SVM dual problem into a series of sub-problems, which are then solved analytically by finding the optimal $\bm \alpha$ values that satisfy the Karush-Kuhn-Tucker (KKT) conditions~\citep{Boyd2004}. Although SMO is guaranteed to converge, heuristics are used to choose $\bm \alpha$ values in order to accelerate the convergence rate. This is a critical step because the convergence speed of the SMO algorithm is highly dependent on the dataset size, as well as the SVM hyperparameters~\citep{Schoelkopf2002}. \textit{Iterative Single Data Algorithm} (ISDA)~\citep{Huang2006,Kecman2016} is a more recent and efficient approach for solving the L2-SVM problem, shown to be faster than the SMO algorithm and equal in terms of accuracy~\citep{Kecman2015,Kecman2014}. It iteratively updates the objective function by working on one data point at a time, using coordinate descent to find the optimal objective function value. Other methods for solving the SVM problem include \textit{Quadratic Programming} solvers. These types of algorithms find the true optimal objective function value at the trade-off of having a relatively slower run-time.
 
 \subsection{Multiple-Instance Support Vector Machines}
 The MI adaptation of the SVM presents two contexts for solving the problem: the instance-level and the bag-level. The first tries to identify instances, either all within a bag or just key instances, that help find the optimal separating hyperplane between positive and negative bags. The latter uses kernels defined over whole bags to optimize the margin. 
