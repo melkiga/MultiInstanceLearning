@@ -104,7 +104,7 @@ Full Multi-Instance Training Dataset & $\mathcal{D} = \{(\mathcal{B}_1,Y_1), \ld
 
 \subsection{Multiple-Instance Learning}\label{subsec:mil}
 \begin{sloppypar}
-In traditional binary classification problems, the goal is to learn a model that maps input samples to labels, $f: \reals^{m \times d} \rightarrow Y^m \in \set{-1,\,+1}$. In the MIL case, samples are called \textit{bags} and each bag contains one or more input instances and is assigned a single bag-level label. Input instances, $\set{\bm x_1,\, \bm x_2,\, \ldots,\, \bm x_m}$, are grouped into bags with unique identifiers, $\mathcal{B} = \set{\mathcal{B}_1,\, \mathcal{B}_2,\, \ldots,\, \mathcal{B}_n \st \mathcal{B}_I = \set{\bm x_i \st \forall i \in I},\, \forall I \in \set{1, \ldots, n}}$ and assigned a label, $Y_I$. An example MI dataset representation is shown in Figure~\ref{fig:mirep}. Using the training dataset $\mathcal{D} = \{(\mathcal{B}_1,Y_1), \ldots, (\mathcal{B}_n,Y_n)\}$, the goal is to train a classifier that predicts the label of an unseen bag, $f(\mathcal{B}_{n+1}) \rightarrow Y_{n+1}$~\citep{Amores2013}. In order to build a classifier without any knowledge of the individual training instance labels,~\citet{Dietterich1997} proposed the \textit{standard MI} (SMI) hypothesis based on the drug-activity prediction domain, shown in Equation~\ref{eqn:stas}, which states that a bag is labeled positive if and only if at least one of the instances in the bag is positive, and is labeled negative otherwise.
+In traditional binary classification problems, the goal is to learn a model that maps input samples to labels, $f: \reals^{m \times d} \rightarrow Y^m \in \set{-1,\,+1}$. In the MIL case, samples are called \textit{bags} and each bag contains one or more input instances and is assigned a single bag-level label. Input instances, $\set{\bm x_1,\, \bm x_2,\, \ldots,\, \bm x_m}$, are grouped into bags with unique identifiers, $\mathcal{B} = \set{\mathcal{B}_1,\, \mathcal{B}_2,\, \ldots,\, \mathcal{B}_n \st \mathcal{B}_I = \set{\bm x_i \st \forall i \in I},\, \forall I \in \set{1, \ldots, n}}$ and assigned a label, $Y_I$. An example MI dataset representation is shown in Figure~\ref{fig:mirep}. Using the training dataset $\mathcal{D} = \{(\mathcal{B}_1,Y_1), \ldots, (\mathcal{B}_n,Y_n)\}$, the goal is to train a classifier that predicts the label of an unseen bag, $f(\mathcal{B}_{n+1}) \rightarrow Y_{n+1}$~\citep{Amores2013}. In order to build a classifier without any knowledge of the individual training instance labels,~\citet{Dietterich1997} proposed the \textit{standard MI} (SMI) hypothesis based on the drug-activity prediction domain, shown in Equation~\eqref{eqn:stas}, which states that a bag is labeled positive if and only if at least one of the instances in the bag is positive, and is labeled negative otherwise.
 \end{sloppypar}
 \begin{equation}
 \centering \label{eqn:stas}
@@ -114,7 +114,7 @@ In traditional binary classification problems, the goal is to learn a model that
 		  \end{cases}
 \end{equation}
 
-This implies that individual instance labels $y_i$ exist, but are not known (for positive bags) during training. Equation~\ref{eqn:stas} can also be rewritten as Equation~\ref{eqn:stasmax} for simplicity:
+This implies that individual instance labels $y_i$ exist, but are not known (for positive bags) during training. Equation~\eqref{eqn:stas} can also be rewritten as Equation~\eqref{eqn:stasmax} for simplicity:
 \begin{equation}
 \centering \label{eqn:stasmax}
 Y_I = \text{max}_{\forall i \in I}\,\,\, y_i.
@@ -164,7 +164,7 @@ SVMs are a particularly useful for learning linear predictors in high dimensiona
 {} & {\,\,} \xi_i \geq 0,\,\, \forall i \in \{1,\ldots,m\},
 \end{alignat}
 \end{subequations} 
-where $\bm w \in \reals^d$ is a $d$-dimensional weight vector, $b \in \reals$ is a bias term, and $C \in \reals$ is the penalty parameter that controls the trade-off between margin maximization and classification error minimization. The slack variable $\bm \xi \in \reals^m$ allows for optimizing over sample errors. However, if the training dataset is not linearly separable, the classifier may not have a good generalization capability~\citep{Nocedal2006}. Generalization and linear separability can be enhanced by mapping the original input space to a higher dimensional dot-product space by using a kernel function shown in Equation~\ref{eqn:kerneltrick}:
+where $\bm w \in \reals^d$ is a $d$-dimensional weight vector, $b \in \reals$ is a bias term, and $C \in \reals$ is the penalty parameter that controls the trade-off between margin maximization and classification error minimization. The slack variable $\bm \xi \in \reals^m$ allows for optimizing over sample errors. However, if the training dataset is not linearly separable, the classifier may not have a good generalization capability~\citep{Nocedal2006}. Generalization and linear separability can be enhanced by mapping the original input space to a higher dimensional dot-product space by using a kernel function shown in Equation~\eqref{eqn:kerneltrick}:
 \begin{equation}
 \spa{K}\left(\bm{x}_i,\bm{x}_j\right) = \langle \phi\left(\bm{x}_i\right),\,\phi\left(\bm{x}_j\right)\rangle,
 \label{eqn:kerneltrick}
@@ -188,51 +188,37 @@ The MI adaptation of the SVM presents two contexts for solving the problem: the 
 
 \citet{Yang2006} presented an instance-based SVM that uses an asymmetric loss function that follows the SMI assumption. The idea behind this loss function is that positive and negative misclassification costs are different. A false negative instance in a positive bag might not cause an error on the bag label, but a false positive instance within a negative bag would lead to a misclassification error. The algorithm ensures all negative instances are correctly classified while minimizing false positives.
 
-One of the first bag-level approaches to the multi-instance SVM problem was proposed by~\citet{Smola2002}, who defined a bag-level kernel. A bag-level kernel determines the similarity between two bags in a higher dimensional space and using such a kernel with the standard SVM problem, the margin can be optimized over bag classes without any modification to the SVM problem.~\citet{Blaschko2006} propose conformal kernels which manipulate each attribute's dimension based on its importance, without affecting the angles between vectors in the transformed space. Bag level kernels transform the bags into a single-instance representation which enables standard SVMs to be directly applied to multi-instance data~\citep{Herrera2016}. 
+One of the first bag-level approaches to the multi-instance SVM problem was proposed by \citet{Smola2002}, who defined a bag-level kernel. A bag-level kernel determines the similarity between two bags in a higher dimensional space and using such a kernel with the standard SVM problem, the margin can be optimized over bag classes without any modification to the SVM problem.~\citet{Blaschko2006} propose conformal kernels which manipulate each attribute's dimension based on its importance, without affecting the angles between vectors in the transformed space. Bag level kernels transform the bags into a single-instance representation which enables standard SVMs to be directly applied to multi-instance data~\citep{Herrera2016}. 
 
 \section{Multiple-Instance Representative SVM}\label{sec:contribution}
-MIRSVM is based on the idea of selecting representative instances from both positive and negative bags which are used to find an unbiased, optimal separating hyperplane. A representative is iteratively chosen from each bag, and a new hyperplane is formed according to the representatives until they converge. Based on the SMI hypothesis, only one instance in a bag is required to be positive for the bag to adopt a positive label. Due to the unknown distribution of instances within positive bags, MIRSVM is designed to give preference to negative bags during training, because their distribution is known, i.e. all instances are guaranteed to be negative. This is evident during the representative selection process, by taking the maximum output value within each bag based on the current hyperplane using the following rule, $s_I = \text{max}_{i \in I} (\langle \bm w,\, \bm x_i \rangle + b),\, \forall I \in \set{1,\ldots,n}$. In other words, the most positive sample is chosen from each positive bag and the least negative sample is chosen from each negative bag (samples with the largest output value based on the current hyperplane), pushing the decision boundary  towards the positive bags. Equation~\eqref{eq:primalmirsvm} presents the primal MIRSVM optimization problem:
+MIRSVM is based on the idea of selecting representative instances from both positive and negative bags which are used to find an unbiased, optimal separating hyperplane. A representative is iteratively chosen from each bag, and a new hyperplane is formed according to the representatives until they converge. Based on the SMI hypothesis, only one instance in a bag is required to be positive for the bag to adopt a positive label. Due to the unknown distribution of instances within positive bags, MIRSVM is designed to give preference to negative bags during training, because their distribution is known, i.e. all instances are guaranteed to be negative. This is evident during the representative selection process, by taking the index of the maximum output value within each bag based on the current hyperplane using the following rule, $s_I = \text{max}_{i \in I} (\langle \bm w,\, \bm x_i \rangle + b),\, \forall I \in \set{1,\ldots,n}$. In other words, the most positive sample is chosen from each positive bag and the least negative sample is chosen from each negative bag (samples with the largest output value based on the current hyperplane), pushing the decision boundary  towards the positive bags. Equation~\eqref{eq:primalmirsvm} presents the primal MIRSVM optimization problem:
 \begin{subequations} 
 \label{eq:primalmirsvm}
 \begin{alignat}{2}
 \min\limits_{\bm w, b,\bm\xi}& {\,\,} \frac{1}{2}||\bm{w}||^2 + \frac{C}{n}\sum_I \xi_I, \tag{\ref{eq:primalmirsvm}}\\ 
-\text{s.t.}& {\,\,} y_I(\langle\bm{w},\bm{x}_{s_I}\rangle + b) \geq 1 - \xi_I,\, \forall I \in \set{1,\ldots,n}  \label{eq:primalmirsvm1}\\
+\text{s.t.}& {\,\,} y_I(\langle\bm{w},x_{s_I}\rangle + b) \geq 1 - \xi_I,\, \forall I \in \set{1,\ldots,n}  \label{eq:primalmirsvm1}\\
 {} & {\,\,} \xi_I \geq 0,\, \forall I \in \set{1,\ldots,n}, 
 \end{alignat}
 \end{subequations} 
-where $\bm S_I$ is a set of the bag representatives' indices and $\bm x_{s_I}$ is the sample representative of bag $\bm B_I$. Note the variables in MIRSVMs formulation are the similar to those of the traditional SVM, except they are now representing each bag as an instance. Solving the optimization problem given in Equation~\eqref{eq:primalmirsvm} using a quadratic programming solver is a computationally expensive task due to the number of constraints, which scales by the number of bags $n$, as well as the calculation of the inner product between two $d$-dimensional vectors in constraint~\eqref{eq:primalmirsvm1}. The proposed solution for these problems was deriving and solving the dual of the optimization problem given by Equation~\eqref{eq:primalmirsvm}. 
+where $\bm S_I$ is a set of the bag representatives' indices and $\bm x_{s_I}$ is the sample representative of bag $\mathcal{B}_I$. Note the variables in MIRSVMs formulation are the similar to those of the traditional SVM, except they are now representing each bag as an instance. Solving the optimization problem given in Equation~\eqref{eq:primalmirsvm} using a quadratic programming solver is a computationally expensive task due to the number of constraints, which scales by the number of bags $n$, as well as the calculation of the inner product between two $d$-dimensional vectors in constraint~\eqref{eq:primalmirsvm1}. The proposed solution for these problems was deriving and solving the dual of the optimization problem given by Equation~\eqref{eq:primalmirsvm}. 
 
-The dual can be found by first forming the primal Lagrangian given by Equation~\ref{eqn:svmlagrangian}, where $\bm{\alpha}$ and $\bm{\beta}$ are the non-negative Lagrange multipliers.
+The dual can be formed by taking the Lagrangian of~\eqref{eq:primalmirsvm}, given by Equation~\eqref{eqn:svmlagrangian}, where $\bm \alpha$ and $\bm \beta$ are the non-negative Lagrange multipliers.
 \begin{equation}
-\centering
+\centering \label{eqn:svmlagrangian}
 \resizebox{.9\textwidth}{!}{$
 \begin{aligned}
-\label{eqn:svmlagrangian}
 \mathcal{L}\left(\bm{w},b,\bm{\xi},\bm{\alpha},\bm{\beta}\right) = \frac{1}{2}\sum_{j=1}^d w_j^2  + \frac{C}{n}\sum_I \xi_I - \sum_I{\beta_I \xi_I} - \sum_I{\alpha_I\left(y_I\left(\sum_{j=1}^d w_j \bm x_{s_Ij} + b\right) -1 + \xi_I\right)}
-\end{aligned}$}
+\end{aligned}$} 
 \end{equation}
-The following Karush-Kuhn-Tucker (KKT)~\citep{Boyd2004} conditions must be satisfied:
-\begin{align*}
-&\frac{\partial\mathcal{L}}{\partial w_j} = 0, \,\forall j \in \{1,\ldots,d\} \\
-&\frac{\partial\mathcal{L}}{\partial b} = 0     \\
-&\frac{\partial\mathcal{L}}{\partial\xi_I} = 0,\,\forall I \in \set{1,\ldots,n}\\
-&\alpha_I\left(y_I(\langle\bm{w},\bm{x}_{s_I}\rangle + b)-1+\xi_{I}\right) = 0,\, \forall I \in \set{1,\ldots,n}\\
-&\beta_I\xi_I = 0, \forall I \in \set{1,\ldots,n} \\
-&\alpha_I \geq 0,\, \beta_I \geq 0,\, \xi_I \geq 0,\, \forall I \in \set{1,\ldots,n}
-\end{align*}
-At optimality, $\bigtriangledown_{w,b,\xi}\mathcal{L}(\bm{w},b,\bm{\xi},\bm{\alpha},\bm{\beta}) = 0$ and the following conditions are met:
-\begin{align}
-&\frac{\partial\mathcal{L}}{\partial w_j}: w_j = \sum_I{\alpha_I\,y_I\,\bm x_{s_I\,j}},\,\forall j \in \{1,\ldots,d\}\label{eqn:optcond1}\\
-&\frac{\partial\mathcal{L}}{\partial b}: \sum_I{\alpha_Iy_I} = 0,\label{eqn:optcond2}\\
-&\frac{\partial\mathcal{L}}{\partial\xi_I}: \alpha_I + \beta_I = \frac{C}{n},\,\forall I \in \set{1,\ldots,n}\label{eqn:optcond3}
-\end{align}
-By substituting Equations~\ref{eqn:optcond1},~\ref{eqn:optcond2}, and~\ref{eqn:optcond3} into the Lagrangian in~\ref{eqn:svmlagrangian}, the following dual problem, $q(\bm \alpha, \bm \beta)$, is obtained:
-\begin{align*}
-q(\bm \alpha, \bm \beta) &= \underset{\bm w, b, \bm \xi}{\text{ inf }} \frac{1}{2} \sum_I \sum_{K \in I} \sum_{j=1}^d \alpha_I \alpha_K y_I y_K  x_{s_I j} x_{s_K j} + \sum_I \xi_I \left( \alpha_I + \beta_I \right) - \sum_I \xi_I \left( \alpha_I + \beta_I \right) \\
-{} & - \sum_I \sum_{K\in I} \sum_{j=1}^d \alpha_I \alpha_K y_I y_K  x_{s_I j} x_{s_K j} - \sum_I \alpha_I y_I b  + \sum_I \alpha_I.
-\end{align*}
 
-At optimality, $\sum_I{\alpha_Iy_I} = 0$, so the term with $b$ can be removed. The terms with $\bm \xi$ can also be removed because they negate each other. The resulting function is now with respect to the dual variables, so the infimum can be dropped. The dual MIRSVM formulation then becomes:
+At optimality~\citep{Boyd2004}, $\bigtriangledown_{w,b,\xi}\mathcal{L}(\bm{w},b,\bm{\xi},\bm{\alpha},\bm{\beta}) = 0$ and the following conditions are met:
+\begin{align}
+&\frac{\partial\mathcal{L}}{\partial w_j}: w_j = \sum_I{\alpha_I\,y_I\, x_{s_I\,j}},\,\forall j \in \{1,\ldots,d\}\label{eqn:optcond1}\\
+&\frac{\partial\mathcal{L}}{\partial b}: \sum_I{\alpha_Iy_I} = 0,\label{eqn:optcond2}\\
+&\frac{\partial\mathcal{L}}{\partial\xi_I}: \alpha_I + \beta_I = \frac{C}{n},\,\forall I \in \set{1,\ldots,n}\label{eqn:optcond3} 
+\end{align}
+\newpage
+By substituting Equations~\eqref{eqn:optcond1},~\eqref{eqn:optcond2}, and~\eqref{eqn:optcond3} into the Lagrangian in~\eqref{eqn:svmlagrangian}, the dual MIRSVM formulation becomes the following:
 \begin{subequations} 
 \label{eq:dualmirsvm1}
 \begin{alignat}{2}
@@ -240,21 +226,21 @@ At optimality, $\sum_I{\alpha_Iy_I} = 0$, so the term with $b$ can be removed. T
 \text{s.t.}&  \sum_I{\alpha_Iy_I} = 0\, \\
 {} & \alpha_I + \beta_I = \frac{C}{n},\,\forall I \in \set{1,\ldots,n}   \label{eq:implicit1}\\
 {} & \alpha_I \geq 0,\, \forall I \in \set{1,\ldots,n}  \label{eq:implicit2} \\
-{} & \beta_I \geq 0,\, \forall I \in \set{1,\ldots,n}  \label{eq:implicit3}
+{} & \beta_I \geq 0,\, \forall I \in \set{1,\ldots,n},  \label{eq:implicit3}
 \end{alignat}
 \end{subequations} 
 where $s_I$ is computed for each bag, as shown in Equation~\eqref{eq:si}:
 \begin{equation}
 \label{eq:si}
 \centering
-s_I = \underset{i \in I}{\text{argmax}}(\sum_{K\in I} \sum_{j=1}^d \alpha_K y_K x_{s_K j} x_{ij} + b),\, \forall I \in \set{1,\ldots,n}.
+s_I = \underset{i \in I}{\text{max}}(\sum_{K\in I} \sum_{j=1}^d \alpha_K y_K x_{s_K j} x_{ij} + b),\, \forall I \in \set{1,\ldots,n}.
 \end{equation}
 
 The implicit constraints~\eqref{eq:implicit1} through~\eqref{eq:implicit3} imply three possible cases for the $\alpha_I$ values:
 \begin{itemize}
 \item[1.] If $\alpha_I = 0$, then $\beta_I = C/n$ and $\xi_I = 0$, implying the instance is correctly classified and outside the margin. 
 \item[2.] If $0 < \alpha_I < C/n$, then $\beta_I > 0$ and $\xi_I = 0$, indicating that the instance sits on the margin boundary, i.e. is an \textit{unbounded support vector}.
-\item[3.] If $\alpha_I = C/n$, then $\beta_I = 0$ and there is no restriction for $\xi_I \geq 0$. This also indicates that the instance is a support vector that is \textit{bounded}. If $0 \leq \xi_I < 1$, then the instance is correctly classified, and is misclassified otherwise. 
+\item[3.] If $\alpha_I = C/n$, then $\beta_I = 0$ and there is no restriction for $\xi_I \geq 0$. This also indicates that the instance is a support vector, but one that is \textit{bounded}. If $0 \leq \xi_I < 1$, then the instance is correctly classified, and is misclassified otherwise. 
 \end{itemize}
 
 We then kernelize the dual function by replacing the inner product of the samples in feature space with their corresponding kernel values, $\spa{K}\left(\bm{x}_{s_I},\bm{x}_{s_K}\right)$. The dual function is now written as:
@@ -273,7 +259,7 @@ One of the biggest advantages of the dual SVM formulation is the sparseness of t
 \centering
 \mathcal{K}(\bm x_i, \bm x_j) = e^{-\frac{\norm{x_i - x_j}^2}{2\sigma^2}}
 \end{equation}
-\begin{figure}[tpb]
+\begin{figure}[tpb!]
 \centering
 \small
 \label{fig:mirsvm}
@@ -295,8 +281,9 @@ One of the biggest advantages of the dual SVM formulation is the sparseness of t
 \draw[arrow] (D) -- node {yes} (E);
 \draw[arrow] (D.north) --+(0,0.1cm) -| (B.north) node[below,pos=0.25] {no} ;
 \end{tikzpicture}}
-\caption{MIRSVM Flow Diagram. This figure represents a summary of the steps performed by the MIRSVM algorithm. The representatives are first randomly initialized and continuously updated according to the current hyper-plane, which is found using a quadratic programming (QP) solver. Upon completion, the model is returned along with the optimal bag-representatives.}
+\caption{MIRSVM flow diagram. This figure represents a summary of the steps performed by the MIRSVM algorithm. The representatives are first randomly initialized and continuously updated according to the current hyper-plane, which is found using a quadratic programming (QP) solver. Upon completion, the model is returned along with the optimal bag-representatives.}
 \end{minipage}
+
 \begin{algorithm}[H]
 \caption{Multi-Instance Representative SVM (MIRSVM)}
 \label{alg:mirsvm} 
@@ -327,24 +314,25 @@ One of the biggest advantages of the dual SVM formulation is the sparseness of t
 \end{algorithm}
 \end{figure}
 
-To evaluate the output vector, $\bm o_I$, of bag $I$ using the kernel, the following equation is used~\citep{Huang2006},
-\begin{align}
-\bm o = \spa{K}(\bm B_I,\bm X_S)*(\bm\alpha \cdot Y_S) + b
-\end{align}
-where $\bm B_I$ are the instances of bag $I$, $\bm X_S$ are the optimal bag representatives, and $Y_S$ are the representative bag labels. The bias term $b$ is calculated as shown in Equation~\ref{eqn:bias}, where $\bm{sv}$ is the vector of support vector indices and $n_{sv}$ is the number of support vectors~\citep{Huang2006}.
-\begin{align}
-\label{eqn:bias}
-b = \frac{1}{n_{sv}}\sum_{\bm{sv}} Y_{\bm{sv}} - \spa{K}(\bm X_{\bm{sv}},\bm X_{\bm{sv}})*(\bm \alpha_{\bm{sv}}\bm\cdot Y_{\bm{sv}})
-\end{align}
-
-Algorithm~\ref{alg:mirsvm} shows the procedure for training the multi-instance representative SVM classifier and obtaining the optimal representatives from each bag.  During training, the representatives, $\bm S$, are first initialized by randomly selecting an instance from each bag. A hyper-plane is then obtained using the representative instances, and new optimal representatives are found with respect to the current hyper-plane, by using the rule given in Equation~\eqref{eq:si}. At each step, the previous values in $\bm S$ are stored in $\bm S_{old}$. The training procedure ends when the bag representatives stop changing from one iteration to the next ($\bm S = \bm S_{old}$). Examples of the convergence of bag-representatives are shown in Figure~\ref{fig:convegence}. During the testing procedure, each bag produces an output vector based on the hyper-plane found in the training procedure. The bag label is then assigned by taking the sign of the output vector's maximum value, following the SMI assumption. 
-
+\newpage
 \begin{figure}
 \centering
 \label{fig:convegence}
 \includegraphics[width=0.95\textwidth]{convergence.eps} 
 \caption{Bag representative convergence plots on 9 datasets. The blue line shows the number of bag representatives that are equal from one iteration to the next. The red dashed line represents the total number of bags.}
 \end{figure}
+To evaluate the output vector, $\bm o_I$, of bag $I$ using the kernel, the following equation is used~\citep{Huang2006}, where $\bm B_I$ are the instances of bag $I$, $\bm X_S$ are the optimal bag representatives, and $Y_S$ are the representative bag labels.
+\begin{align}
+\bm o_I = \spa{K}(\bm B_I,\bm X_S)*(\bm\alpha \cdot Y_S) + b
+\end{align}
+
+The bias term $b$ is calculated as shown in Equation~\eqref{eqn:bias}, where $\bm{sv}$ is the vector of support vector indices and $n_{sv}$ is the number of support vectors~\citep{Huang2006}.
+\begin{align}
+\label{eqn:bias}
+b = \frac{1}{n_{sv}}\sum_{\bm{sv}} Y_{\bm{sv}} - \spa{K}(\bm X_{\bm{sv}},\bm X_{\bm{sv}})*(\bm \alpha_{\bm{sv}}\bm\cdot Y_{\bm{sv}})
+\end{align}
+
+Algorithm~\ref{alg:mirsvm} shows the procedure for training the multi-instance representative SVM classifier and obtaining the optimal representatives from each bag.  During training, the representatives, $\bm S$, are first initialized by randomly selecting an instance from each bag. A hyper-plane is then obtained using the representative instances, and new optimal representatives are found with respect to the current hyper-plane, by using the rule given in Equation~\eqref{eq:si}. At each step, the previous values in $\bm S$ are stored in $\bm S_{old}$. The training procedure ends when the bag representatives stop changing from one iteration to the next ($\bm S = \bm S_{old}$). Examples of the convergence of bag-representatives are shown in Figure~\ref{fig:convegence}. During the testing procedure, each bag produces an output vector based on the hyper-plane found in the training procedure. The bag label is then assigned by taking the sign of the output vector's maximum value, following the SMI assumption. 
 
 \begin{figure}
     \centering
@@ -358,9 +346,8 @@ Algorithm~\ref{alg:mirsvm} shows the procedure for training the multi-instance r
     \end{minipage}
     \caption{Difference between MIRSVM and MISVM on a random $2$-dimensional toy dataset. The instances of this dataset were drawn from the standard normal distribution, with $6$ bags, $4$ of which are negative (red) and $2$ of which are positive (blue), indicated by the red and blue dotted circles. There are a total of $125$ instances, $65$ belonging to the positive bags and $60$ belonging to the negative bags. The decision boundaries (black lines) are shown for each of the algorithms, along with the SVM margin (red and blue dashed lines) and support vectors (black crosses). In this example, both MIRSVM and MISVM were trained using $C = 1000$ and $\sigma = 1.5$. Note the differing number of support vectors produced by the two methods. MIRSVM has $6$, one for each bag, and MISVM has $29$. Also note the smoother representation of the data distribution given by MIRSVM's decision boundary, unlike MISVM whose decision boundary was greatly affected by the larger number of support vectors belonging to the negative class with respect to the only $2$ positive support vectors. }\label{fig:diff}
 \end{figure}
-
 This formulation is designed to utilize and select representatives from positive and negative bags, unlike MISVM, which only optimizes over representatives from positive bags, while flattening the negative bag instances. MISVM allows multiple representatives to be chosen from negative bags and limits positive bag-representatives to be one, while MIRSVM allows for balanced bag-representative selection, where each bag is allowed one. MISVM also uses a wrapper method to initialize the positive bag-representatives by taking the mean vector of the instances within each positive bag. This is an implicit assumption that the instances within the positive bags are all positive, whereas MIRSVM's initialization procedure selects an instance from all bags at random, ensuring no noise is added by any wrapper techniques during initialization and no assumptions are made about the instances. Due to the constraints on the representatives, MIRSVM produces sparser models while MISVM has the freedom to select as many negative support vectors as it needs and restricts the support vectors chosen from positive bags to be one. Figure~\ref{fig:diff} shows the decision boundaries produced by MIRSVM and MISVM to highlight the differences in their solutions. As Figure~\ref{fig:diff} shows, MISVM produces a larger number of support vectors from the negative bags, which greatly influences the final decision boundary in favor of the negative class.
-
+\newpage
 \section{Experiments}\label{sec:experiments}
 This section presents the experimental setup and comparison of our contribution, as well as ten other state-of-the-art methods on $15$ different benchmark datasets. First, the experimental setup is described and the state-of-the-art methods are listed. The results for each metric, as well as the statistical analysis, are then presented and analyzed. Finally, the run-time and meta-ranks of each algorithm are shown, and the overall performance of the algorithms across each metric is discussed. The main aim of the experiments is to compare our contribution to other multi-instance support vector machines, state-of-the-art multi-instance learners, and ensemble methods. 
 
