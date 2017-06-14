@@ -318,7 +318,7 @@ One of the biggest advantages of the dual SVM formulation is the sparseness of t
 \begin{figure}
 \centering
 \label{fig:convegence}
-\includegraphics[width=0.95\textwidth]{convergence.eps} 
+\includegraphics[width=0.99\textwidth]{convergence.eps} 
 \caption{Bag representative convergence plots on 9 datasets. The blue line shows the number of bag representatives that are equal from one iteration to the next. The red dashed line represents the total number of bags.}
 \end{figure}
 To evaluate the output vector, $\bm o_I$, of bag $I$ using the kernel, the following equation is used~\citep{Huang2006}, where $\bm B_I$ are the instances of bag $I$, $\bm X_S$ are the optimal bag representatives, and $Y_S$ are the representative bag labels.
@@ -395,7 +395,9 @@ C \in  & \{0.1, 1, 10, 100, 1000, 10000\} \label{eq:paramC}\\
 These parameters were also used for the state-of-the-art SVM methods. This was done in order to keep the experimental environment controlled and ensure fair evaluation of the multi-instance SVM algorithms. The parameters for the referenced algorithms used throughout the experiments were those specified by their authors.
 
 \subsection{Results \& Statistical Analysis}\label{subsec:results}
-The classification performance was measured using five metrics: Accuracy~\eqref{eq:accuracy}, Precision~\eqref{eq:precision}, Recall~\eqref{eq:recall}, Cohen's kappa rate~\eqref{eq:kappa}, and Area under ROC curve (AUC)~\eqref{eq:auc}. Accuracy can be misleading when classes are imbalanced, as is the case with the \textit{component} and \textit{function} datasets, which have six and ten times as many negative instances than positive, respectively. Cohen's Kappa Rate and the AUC measures are used as complementary measures in order to evaluate the algorithms comprehensively~\citep{Bendavid2008}. Cohen's kappa rate, shown in Equation~\eqref{eq:kappa}, evaluates classifier merit according to the class distribution and ranges between -1 (full disagreement), 0 (random classification), and 1 (full agreement). The AUC metric highlights the trade-off between the true positive rate, or recall, and the false positive rate, as shown in Equation~\eqref{eq:auc}. The values of the true positive (TP), true negative (TN), false positive (FP), and false negative samples (FN) were first collected for each of the classifiers, then the metrics were computed using the equations shown in~\eqref{eq:metrics} on the $n^\prime$ bags of the test data. The run times of each algorithm are also reported to analyze the usability and speed of each of the algorithms across differently sized datasets. The results for these metrics are shown in Tables~\ref{tab:accResults},~\ref{tab:preResults},~\ref{tab:recResults},~\ref{tab:kappaResults},~\ref{tab:aucResults}, and~\ref{tab:time}.
+The classification performance was measured using five metrics: Accuracy~\eqref{eq:accuracy}, Precision \eqref{eq:precision}, Recall~\eqref{eq:recall}, Cohen's kappa rate~\eqref{eq:kappa}, and Area under ROC curve (AUC)~\eqref{eq:auc}. Accuracy can be misleading when classes are imbalanced, as is the case with the \textit{component} and \textit{function} datasets, which have six and ten times as many negative instances than positive, respectively. Cohen's Kappa Rate and the AUC measures are used as complementary measures in order to evaluate the algorithms comprehensively~\citep{Bendavid2008}. Cohen's kappa rate, shown in Equation~\eqref{eq:kappa}, evaluates classifier merit according to the class distribution and ranges between -1 (full disagreement), 0 (random classification), and 1 (full agreement). The AUC metric highlights the trade-off between the true positive rate, or recall, and the false positive rate, as shown in Equation~\eqref{eq:auc}. The values of the true positive (TP), true negative (TN), false positive (FP), and false negative samples (FN) were first collected for each of the classifiers, then the metrics were computed using the equations shown in~\eqref{eq:metrics} on the $n^\prime$ bags of the test data. The run times of each algorithm are also reported to analyze the usability and speed of each of the algorithms across differently sized datasets. 
+
+The results for these metrics are shown in Tables~\ref{tab:accResults},~\ref{tab:preResults},~\ref{tab:recResults},~\ref{tab:kappaResults},~\ref{tab:aucResults}, and~\ref{tab:time}.
 \begin{subequations}
 \label{eq:metrics}
 \begin{align}
@@ -412,15 +414,11 @@ In order to analyze the performances of the multiple models, non-parametric stat
 After the Iman-Davenport test indicates significant differences, the Bonferroni-Dunn post-hoc test~\citep{Dunn1961} is then used to find where they occur between algorithms by assuming the classifiers' performances are different by at least some critical value~\citep{Garcia2009}. Below each result table, a figure highlighting the critical distance (in gray), from the best ranking algorithm to the rest, is shown. The algorithms to the right of the critical distance bar perform statistically significantly worse than the control algorithm, MIRSVM. Figures \ref{fig:BonfDunnacc}, \ref{fig:BonfDunnprec}, \ref{fig:BonfDunnrec}, \ref{fig:BonfDunnkappa}, \ref{fig:BonfDunnauc}, \ref{fig:BonfDunnpmeta} show the results of the Bonferroni-Dunn post-hoc procedure over the metrics in~\eqref{eq:metrics}, as well as the meta-rank results in Table~\ref{tab:metarank}.
 
 The Nemenyi, Holm, and Shaffer post-hoc~\citep{Gibbons2011,Holander1999} tests were then run for each of the metrics to compute multiple pairwise comparisons between the proposed algorithm and the state-of-the-art methods, investigating whether statistical differences exist among pairs of algorithms. Tables~\ref{tab:statacc},~\ref{tab:statprec},~\ref{tab:statrec},~\ref{tab:statkappa}, and~\ref{tab:statauc} show the $p$-values for the Nemenyi, Holm, and Shaffer tests for $\alpha = 0.05$.
-
+\newpage
 \subsection{Accuracy}
-Table~\ref{tab:accResults} shows the accuracy results of the $11$ algorithms over $15$ multi-instance datasets, along with their average and rank. The results indicate that the bag-based and ensemble learners perform better than the instance-based and wrapper methods. Specifically, MIRSVM achieves the best accuracy over $6$ of the $15$ datasets with a competitive average against the Bagging, Stacking, and TLC algorithms. Note that MIRSVM performs better than MISVM for all datasets, indicating that using representatives from each bag and limiting the number of support-vectors per negative bag improves the classification performance. The instance-level classifiers and wrapper methods, such as MIBoost, MIWrapper, and SimpleMI perform the worst. This behavior emphasizes the importance of not making prior assumptions about the positive bags' distributions. 
-
-Figure~\ref{fig:BonfDunnacc} and Table~\ref{tab:statacc} show the results for the statistical analysis on the accuracy results. The algorithms with ranking higher than $5.51$ (MIRSVM rank + Bonferroni-Dunn critical value), to the right of the grey bar in Figure~\ref{fig:BonfDunnacc}, perform statistically worse than MIRSVM. Table~\ref{tab:statacc} shows the $p$-values of the Nemenyi, Holm, and Shaffer tests. The results from these tests are complement each other. Nemenyi's procedure indicates that MIRSVM performs significantly better than all methods (with $p$-values $< 0.01$), except Bagging, Stacking, TLC, and MISMO. The Nemenyi $p$-values for MIBoost, MIWrapper, and SimpleMI are $= 0$, showing that MIRSVM has significantly better accuracy. However, the stricter Holm and Shaffer tests indicate that significant differences exist between MIRSVM and all other classifiers, highlighting MIRSVM's superior classification accuracy. 
-
-\begin{table}[th!]
+\begin{table}[t!]
 \caption{Accuracy}\label{tab:accResults}
-\resizebox{\textwidth}{!}{\begin{tabular}{l@{\extracolsep{\fill}}cccccccccccc}
+\resizebox{0.95\textwidth}{!}{\begin{tabular}{l@{\extracolsep{\fill}}cccccccccccc}
 \noalign{\smallskip}\hline\noalign{\smallskip}
 Datasets &MIRSVM &MIBoost &MIOptimalBall &MIDD &MIWrapper &MISMO &MISVM &SimpleMI &TLC &Bagging &Stacking \\
 \noalign{\smallskip}\hline\noalign{\smallskip}
@@ -481,28 +479,26 @@ Ranks &\textbf{2.4000} &8.8000 &7.2667 &6.0333 &8.8000 &4.8000 &7.0667 &9.0000 &
 \foreach \x in {0,1,2,3,4,5,6,7,8,9,10} {
 \draw (l\x) -| (c\x);
 };
-\end{tikzpicture}}
-\captionof{figure}{Bonferroni-Dunn test for Accuracy}\label{fig:BonfDunnacc}
+\end{tikzpicture}}\vspace{-0.6em}
+\captionof{figure}{Bonferroni-Dunn test for Accuracy}\label{fig:BonfDunnacc}\vspace{-0.5em}
 \captionof{table}{Nemenyi, Holm, and Shaffer tests for Accuracy}\label{tab:statacc}
 \scriptsize
-\begin{tabularx}{\textwidth}{lcccccccccc}\noalign{\smallskip}\hline\noalign{\smallskip}
+\resizebox{0.95\textwidth}{!}{\begin{tabular}{lcccccccccc}\noalign{\smallskip}\hline\noalign{\smallskip}
 MIRSVM vs. & MIBoost & MIOptimalBall & MIDD & MIWrapper & MISMO & MISVM & SimpleMI & TLC & Bagging & Stacking\\
 \noalign{\smallskip}\hline\noalign{\smallskip}
 Nemenyi $p$-value & 0.00000 & 0.00006 & 0.00270 & 0.00000 & 0.04751 & 0.00012 & 0.00000 & 0.05402 & 0.76207 & 0.11040\\
 Holm $p$-value & 0.00093 & 0.00102 & 0.00139 & 0.00094 & 0.00185 & 0.00104 & 0.00091 & 0.00192 & 0.00833 & 0.00238\\
 Shaffer $p$-value & 0.00111 & 0.00111 & 0.00139 & 0.00111 & 0.00185 & 0.00111 & 0.00091 & 0.00192 & 0.00833 & 0.00238\\
 \noalign{\smallskip}\hline\noalign{\smallskip}
-\end{tabularx}
+\end{tabular}}
 \end{table}
-\newpage
-\subsection{Precision \& Recall}
-Precision and recall are metrics that must be evaluated together in order to observe their behavior simultaneously, since they are both metrics used to measure relevance. Tables~\ref{tab:preResults} and~\ref{tab:recResults} show the precision and recall results obtained by each algorithm. The precision and recall results for MIWrapper and SimpleMI indicate that they are unstable classifiers, exhibiting extreme variance in behavior, making them unsuitable for real-world applications. It is also interesting to analyze the performance on the mutagenesis datasets, where MISVM, MIBoost, MIWrapper, and SimpleMI predict all bags as negative. Additionally, while MISMO obtains unbiased results on these datasets, MIRSVM significantly outperforms it over both precision and recall.  
+Table~\ref{tab:accResults} shows the accuracy results of the $11$ algorithms over $15$ multi-instance datasets, along with their average and rank. The results indicate that the bag-based and ensemble learners perform better than the instance-based and wrapper methods. Specifically, MIRSVM achieves the best accuracy over $6$ of the $15$ datasets with a competitive average against the Bagging, Stacking, and TLC algorithms. Note that MIRSVM performs better than MISVM for all datasets, indicating that using representatives from each bag and limiting the number of support-vectors per negative bag improves the classification performance. The instance-level classifiers and wrapper methods, such as MIBoost, MIWrapper, and SimpleMI perform the worst. This behavior emphasizes the importance of not making prior assumptions about the positive bags' distributions. 
 
-Figure~\ref{fig:BonfDunnprec} shows that there are no statistically significant differences between the precision results obtained by all algorithms, except SimpleMI; and Figure~\ref{fig:BonfDunnrec} shows none over all. It is worth noting that MIRSVM outperforms both ensemble methods according to recall, despite them exhibiting relatively good accuracy and precision. This indicates that they are strongly conservative towards predicting positive bags. The Holm and Shaffer tests indicate that significant differences exist between MIRSVM and the state-of-the-art, with the exception of SimpleMI. 
+Figure~\ref{fig:BonfDunnacc} and Table~\ref{tab:statacc} show the results for the statistical analysis on the accuracy results. The algorithms with ranking higher than $5.51$ (MIRSVM rank + Bonferroni-Dunn critical value), to the right of the grey bar in Figure~\ref{fig:BonfDunnacc}, perform statistically worse than MIRSVM. Table~\ref{tab:statacc} shows the $p$-values of the Nemenyi, Holm, and Shaffer tests and their results complement one another. Nemenyi's procedure indicates that MIRSVM performs significantly better than all methods (with $p$-values $< 0.01$), except Bagging, Stacking, TLC, and MISMO. The Nemenyi $p$-values for MIBoost, MIWrapper, and SimpleMI are $0$, showing that MIRSVM has significantly better accuracy. However, the stricter Holm and Shaffer tests indicate that significant differences exist between MIRSVM and all other classifiers, highlighting MIRSVM's superior classification accuracy. 
 
-\begin{table}[t!]
+\begin{table}[H]
 \caption{Precision}\label{tab:preResults}
-\resizebox{\textwidth}{!}{\begin{tabular}{l@{\extracolsep{\fill}}cccccccccccc}
+\resizebox{0.95\textwidth}{!}{\begin{tabular}{l@{\extracolsep{\fill}}cccccccccccc}
 \noalign{\smallskip}\hline\noalign{\smallskip}
 Datasets &MIRSVM &MIBoost &MIOptimalBall &MIDD &MIWrapper &MISMO &MISVM &SimpleMI &TLC &Bagging &Stacking \\
 \noalign{\smallskip}\hline\noalign{\smallskip}
@@ -561,24 +557,21 @@ Ranks &6.0667 &6.7333 &6.7333 &6.7667 &6.7333 &5.3667 &5.1000 &7.3000 &5.5000 &\
 \fill[fill=gray,fill opacity=0.5] (3.9333,-0.1) rectangle (7.0529,0.1);
 
 \foreach \x in {0,1,2,3,4,5,6,7,8,9,10} {
-\draw (l\x) -| (c\x);
-};
-\end{tikzpicture}}
-\captionof{figure}{Bonferroni-Dunn test for Precision}\label{fig:BonfDunnprec}
+\draw (l\x) -| (c\x);};
+\end{tikzpicture}}\vspace{-1.1em}
+\captionof{figure}{Bonferroni-Dunn test for Precision}\label{fig:BonfDunnprec}\vspace{-0.5em}
 \captionof{table}{Nemenyi, Holm, and Shaffer tests for Precision}\label{tab:statprec}
 \scriptsize
-\begin{tabularx}{\textwidth}{lcccccccccc}\noalign{\smallskip}\hline\noalign{\smallskip}
+\resizebox{0.95\textwidth}{!}{\begin{tabular}{lcccccccccc}\noalign{\smallskip}\hline\noalign{\smallskip}
 MIRSVM vs. & MIBoost & MIOptimalBall & MIDD & MIWrapper & MISMO & MISVM & SimpleMI & TLC & Bagging & Stacking\\
 \noalign{\smallskip}\hline\noalign{\smallskip}
 Nemenyi $p$-value & 0.58199 & 0.58199 & 0.56326 & 0.58199 & 0.56326 & 0.42475 & 0.30849 & 0.63985 & 0.07815 & 0.80435\\
 Holm $p$-value & 0.00263 & 0.00250 & 0.00217 & 0.00278 & 0.00227 & 0.00185 & 0.00156 & 0.00294 & 0.00102 & 0.00500\\
 Shaffer $p$-value & 0.00263 & 0.00250 & 0.00217 & 0.00278 & 0.00227 & 0.00185 & 0.00156 & 0.00294 & 0.00102 & 0.00500\\
 \noalign{\smallskip}\hline\noalign{\smallskip}
-\end{tabularx}
-\end{table}
-\begin{table}[h!]
-\caption{Recall}\label{tab:recResults}
-\resizebox{\textwidth}{!}{\begin{tabular}{l@{\extracolsep{\fill}}cccccccccccc}
+\end{tabular}}
+\captionof{table}{Recall}\label{tab:recResults}
+\resizebox{0.95\textwidth}{!}{\begin{tabular}{l@{\extracolsep{\fill}}cccccccccccc}
 \noalign{\smallskip}\hline\noalign{\smallskip}
 Datasets &MIRSVM &MIBoost &MIOptimalBall &MIDD &MIWrapper &MISMO &MISVM &SimpleMI &TLC &Bagging &Stacking \\
 \noalign{\smallskip}\hline\noalign{\smallskip}
@@ -636,30 +629,30 @@ Ranks &\textbf{4.4333} &6.2667 &5.8000 &6.7667 &6.2667 &6.2667 &7.4333 &4.5333 &
 \fill[fill=gray,fill opacity=0.5] (4.4333,-0.1) rectangle (7.5529,0.1);
 
 \foreach \x in {0,1,2,3,4,5,6,7,8,9,10} {
-\draw (l\x) -| (c\x);
-};
-\end{tikzpicture}}
-\captionof{figure}{Bonferroni-Dunn test for Recall}\label{fig:BonfDunnrec}
+\draw (l\x) -| (c\x);};
+\end{tikzpicture}}\vspace{-1.1em}
+\captionof{figure}{Bonferroni-Dunn test for Recall}\label{fig:BonfDunnrec}\vspace{-0.5em}
 \captionof{table}{Nemenyi, Holm, and Shaffer tests for Recall}\label{tab:statrec}
 \scriptsize
-\begin{tabularx}{\textwidth}{lcccccccccc}\noalign{\smallskip}\hline\noalign{\smallskip}
+\resizebox{0.95\textwidth}{!}{\begin{tabular}{lcccccccccc}\noalign{\smallskip}\hline\noalign{\smallskip}
 MIRSVM vs. & MIBoost & MIOptimalBall & MIDD & MIWrapper & MISMO & MISVM & SimpleMI & TLC & Bagging & Stacking\\
 \noalign{\smallskip}\hline\noalign{\smallskip}
 Nemenyi $p$-value & 0.13007 & 0.25911 & 0.05402 & 0.13007 & 0.13007 & 0.01324 & 0.93419 & 0.03180 & 0.45739 & 0.23660\\
 Holm $p$-value & 0.00104 & 0.00135 & 0.00098 & 0.00106 & 0.00109 & 0.00090 & 0.01000 & 0.00094 & 0.00208 & 0.00132\\
 Shaffer $p$-value & 0.00104 & 0.00135 & 0.00098 & 0.00106 & 0.00109 & 0.00090 & 0.01000 & 0.00094 & 0.00208 & 0.00132\\
 \noalign{\smallskip}\hline\noalign{\smallskip}
-\end{tabularx}
+\end{tabular}}
 \end{table}
 
+\subsection{Precision \& Recall}
+Precision and recall are metrics that must be evaluated together in order to observe their behavior simultaneously, since they are both metrics used to measure relevance. Tables~\ref{tab:preResults} and~\ref{tab:recResults} show the precision and recall results obtained by each algorithm. The precision and recall results for MIWrapper and SimpleMI indicate that they are unstable classifiers, exhibiting extreme variance in behavior, making them unsuitable for real-world applications. It is also interesting to analyze the performance on the mutagenesis datasets, where MISVM, MIBoost, MIWrapper, and SimpleMI predict all bags as negative. Additionally, while MISMO obtains unbiased results on these datasets, MIRSVM significantly outperforms it over both precision and recall.  
+
+Figure~\ref{fig:BonfDunnprec} shows that there are no statistically significant differences between the precision results obtained by all algorithms, except SimpleMI; and Figure~\ref{fig:BonfDunnrec} shows none over all. It is worth noting that MIRSVM outperforms both ensemble methods according to recall, despite them exhibiting relatively good accuracy and precision. This indicates that they are strongly conservative towards predicting positive bags. The Holm and Shaffer tests indicate that significant differences exist between MIRSVM and the state-of-the-art, with the exception of SimpleMI. 
+
 \subsection{Cohen's Kappa Rate}
-Table~\ref{tab:kappaResults} shows the Cohen's Kappa rate results obtained by the algorithms. These results support the accuracy achieved by the algorithms, in the sense that the instance-based and wrapper methods perform worse than bag-based and ensemble learners. Specifically, MIRSVM achieves the best kappa rate over $7$ of the $15$ datasets with a competitive average against the Bagging, Stacking, SMO, and TLC algorithms. MIRSVM's kappa values all fall within the range ($0.5$-$1$], indicating that its merit as a classifier agrees with the class distribution and is not random. Note that SimpleMI, MIOptimalBall, MIDD, MISVM, and Stacking contain some negative kappa values, indicating performance worse than the default-hypothesis. MIBoost and MIWrapper are shown to randomly classify all $15$ datasets. 
-
-Figure~\ref{fig:BonfDunnkappa} and Table~\ref{tab:statkappa} show the results of the statistical analysis on the Cohen's Kappa Rate results. Nemenyi's procedure reflects results similar to the $p$-values obtained from the accuracy results, where MIRSVM performs significantly better than MIOptimalBall, MIDD, MISVM, MIWrapper, MIBoost, and SimpleMI, having $p$-values $< 0.01$. The Holm and Shaffer procedures indicate that significant differences exist among all algorithms results, supporting MIRSVM's performance as a competitive classifier.
-
-\begin{table}[t!]
+\begin{table}[b!]
 \caption{Cohen's Kappa Rate}\label{tab:kappaResults}
-\resizebox{\textwidth}{!}{\begin{tabular}{lcccccccccccc}
+\resizebox{0.95\textwidth}{!}{\begin{tabular}{lcccccccccccc}
 \noalign{\smallskip}\hline\noalign{\smallskip}
 Datasets &MIRSVM &MIBoost &MIOptimalBall &MIDD &MIWrapper &MISMO &MISVM &SimpleMI &TLC &Bagging &Stacking \\
 \noalign{\smallskip}\hline\noalign{\smallskip}
@@ -720,24 +713,26 @@ Ranks &\textbf{2.2333} &9.2333 &6.5333 &6.1667 &9.2333 &4.7667 &6.7667 &9.4333 &
 \foreach \x in {0,1,2,3,4,5,6,7,8,9,10} {
 \draw (l\x) -| (c\x);
 };
-\end{tikzpicture}}
+\end{tikzpicture}}\vspace{-0.6em}
 \captionof{figure}{Bonferroni-Dunn test for Cohen's Kappa rate}\label{fig:BonfDunnkappa}
-\vspace{0.5cm}
+\vspace{-0.5em}
 \captionof{table}{Nemenyi, Holm, and Shaffer tests for Cohen's Kappa rate}\label{tab:statkappa}
 \scriptsize
-\begin{tabularx}{\textwidth}{lcccccccccc}\noalign{\smallskip}\hline\noalign{\smallskip}
+\resizebox{0.95\textwidth}{!}{\begin{tabular}{lcccccccccc}\noalign{\smallskip}\hline\noalign{\smallskip}
 MIRSVM vs. & MIBoost & MIOptimalBall & MIDD & MIWrapper & MISMO & MISVM & SimpleMI & TLC & Bagging & Stacking\\
 \noalign{\smallskip}\hline\noalign{\smallskip}
 Nemenyi $p$-value & 0.00000 & 0.00105 & 0.00353 & 0.00000 & 0.03180 & 0.00018 & 0.00000 & 0.03899 & 0.49139 & 0.13720\\
 Holm $p$-value & 0.00091 & 0.00128 & 0.00143 & 0.00093 & 0.00200 & 0.00119 & 0.00094 & 0.00208 & 0.00556 & 0.00263\\
 Shaffer $p$-value & 0.00091 & 0.00135 & 0.00143 & 0.00111 & 0.00200 & 0.00135 & 0.00111 & 0.00208 & 0.00556 & 0.00263\\
 \noalign{\smallskip}\hline\noalign{\smallskip}
-\end{tabularx}
+\end{tabular}}
 \end{table}
-\bigskip
-\begin{table}[H]
+Table~\ref{tab:kappaResults} shows the Cohen's Kappa rate results obtained by the algorithms. These results support the accuracy achieved by the algorithms, in the sense that the instance-based and wrapper methods perform worse than bag-based and ensemble learners. MIRSVM's kappa values all fall within the range ($0.5$-$1$], indicating that its merit as a classifier agrees with the class distribution and is not random. Note that SimpleMI, MIOptimalBall, MIDD, MISVM, and Stacking contain some negative kappa values, indicating performance worse than the default-hypothesis. MIBoost and MIWrapper are shown to randomly classify all $15$ datasets. Figure~\ref{fig:BonfDunnkappa} and Table~\ref{tab:statkappa} show the results of the statistical analysis on the Cohen's Kappa Rate results. Nemenyi's procedure reflects results similar to the $p$-values obtained from the accuracy results, where MIRSVM performs significantly better than MIOptimalBall, MIDD, MISVM, MIWrapper, MIBoost, and SimpleMI, having $p$-values $< 0.01$. The Holm and Shaffer procedures indicate that significant differences exist among all algorithms results, supporting MIRSVM's performance as a competitive classifier.
+
+\subsection{AUC}
+\begin{table}[b!]
 \caption{AUC}\label{tab:aucResults}
-\resizebox{\textwidth}{!}{\begin{tabular}{lcccccccccccc}
+\resizebox{0.95\textwidth}{!}{\begin{tabular}{lcccccccccccc}
 \hline\noalign{\smallskip}
 Datasets &MIRSVM &MIBoost &MIOptimalBall &MIDD &MIWrapper &MISMO &MISVM &SimpleMI &TLC &Bagging &Stacking \\
 \hline\noalign{\smallskip}
@@ -762,7 +757,7 @@ Ranks &\textbf{2.7667} &9.2000 &6.4000 &6.2333 &9.2000 &4.7000 &6.6667 &9.4333 &
 \hline\noalign{\smallskip}
 \end{tabular}}
 \centering
-\resizebox{0.9\textwidth}{!}{\begin{tikzpicture}
+\resizebox{0.95\textwidth}{!}{\begin{tikzpicture}
 \draw (1,0) -- (10,0);
 \foreach \x in {1,2,3,4,5,6,7,8,9,10} {
 \draw (\x, 0) -- ++(0,.1) node [above,scale=0.7] {\tiny \x};
@@ -798,30 +793,27 @@ Ranks &\textbf{2.7667} &9.2000 &6.4000 &6.2333 &9.2000 &4.7000 &6.6667 &9.4333 &
 \foreach \x in {0,1,2,3,4,5,6,7,8,9,10} {
 \draw (l\x) -| (c\x);
 };
-\end{tikzpicture}}
+\end{tikzpicture}}\vspace{-0.6em}
 \captionof{figure}{Bonferroni-Dunn test for AUC}\label{fig:BonfDunnauc}
-\vspace{0.5cm}
+\vspace{-0.5em}
 \captionof{table}{Nemenyi, Holm, and Shaffer tests for AUC}\label{tab:statauc}
 \scriptsize
-\begin{tabularx}{\textwidth}{lcccccccccc}\noalign{\smallskip}\hline\noalign{\smallskip}
+\resizebox{0.95\textwidth}{!}{\begin{tabular}{lcccccccccc}\noalign{\smallskip}\hline\noalign{\smallskip}
 MIRSVM vs. & MIBoost & MIOptimalBall & MIDD & MIWrapper & MISMO & MISVM & SimpleMI & TLC & Bagging & Stacking\\
 \noalign{\smallskip}\hline\noalign{\smallskip}
 Nemenyi $p$-value & 0.00000 & 0.00270 & 0.00420 & 0.00000 & 0.11040 & 0.00128 & 0.00000 & 0.23660 & 0.78313 & 0.27091\\
 Holm $p$-value & 0.00093 & 0.00128 & 0.00135 & 0.00094 & 0.00278 & 0.00125 & 0.00091 & 0.00357 & 0.00714 & 0.00385\\
 Shaffer $p$-value & 0.00111 & 0.00135 & 0.00135 & 0.00111 & 0.00278 & 0.00135 & 0.00091 & 0.00357 & 0.00714 & 0.00385\\
 \noalign{\smallskip}\hline\noalign{\smallskip}
-\end{tabularx}
+\end{tabular}}
 \end{table}
+Table~\ref{tab:aucResults} shows AUC results obtained by the algorithms, which complement the accuracy and kappa rate, emphasizing the better performance of bag-based methods. MIRSVM achieves the best AUC score on $6$ of the $15$ datasets, while MIBoost, SimpleMI, and MIWrapper obtain the worst results. Their AUC score indicates random predictor behavior, having values $\leq 0.5$. Bag-level methods all obtain scores between $0.7$ and $0.75$ indicating a high true positive rate and a low false positive rate, which is reflected by the precision and recall results. Figure~\ref{fig:BonfDunnauc} and Table~\ref{tab:statauc} show that MIRSVM performs significantly better than $6$ out of the $10$ competing algorithms. Nemenyi's procedure indicates that significant differences exist between MIRSVM and all algorithms except MISMO, TLC, Bagging, and Stacking. MISVM's true positive rate could be affected because of the possible imbalance of support vectors from the positive and negative classes (favoring the negative). Note that the Nemenyi $p$-values for MIWrapper, MIBoost, and SimpleMI are $0$. 
 
-\newpage
-\subsection{AUC}
-Table~\ref{tab:aucResults} shows AUC results obtained by the algorithms. These results complement the accuracy and kappa rate, emphasizing the better performance of bag-based methods. MIRSVM achieves the best AUC score on $6$ of the $15$ datasets, while MIBoost, SimpleMI, and MIWrapper obtain the worst results. Their AUC score indicates random predictor behavior, having values $\leq 0.5$. Bag-level methods all obtain scores between $0.7$ and $0.75$ indicating a high true positive rate and a low false positive rate, which is reflected by the precision and recall results. 
-
-Figure~\ref{fig:BonfDunnauc} and Table~\ref{tab:statauc} show that MIRSVM performs significantly better than $6$ out of the $10$ competing algorithms. Nemenyi's procedure indicates that significant differences exist between MIRSVM and all algorithms except MISMO, TLC, Bagging, and Stacking. MISVM is ranked $8^{th}$ with respect to the other state-of-the-art methods. MISVM's true positive rate could be affected because of the possible imbalance of support vectors from the positive and negative classes (favoring the negative). Note that the Nemenyi $p$-values for MIWrapper, MIBoost, and SimpleMI are $= 0$. 
-\begin{table}[b!]
+\subsection{Overall Comparison}
+\begin{table}[t!]
 \centering
 \caption{Run Time (seconds)}\label{tab:time}
-\resizebox{\textwidth}{!}{\begin{tabular}{lrrrrrrrrrrrr}
+\resizebox{0.95\textwidth}{!}{\begin{tabular}{lrrrrrrrrrrrr}
 \hline\noalign{\smallskip}
 Datasets &MIRSVM &MIBoost &MIOptimalBall &MIDD &MIWrapper &MISMO &MISVM &SimpleMI &TLC &Bagging &Stacking \\
 \hline\noalign{\smallskip}
@@ -846,7 +838,7 @@ Rank &2.2 &2.8 &6.3 &10.1 &3.9 &7.5 &8.9 &\textbf{1.6} &6.3 &8.1 &8.4 &  \\
 \hline\noalign{\smallskip}
 \end{tabular}}
 \captionof{table}{Overall ranks comparison}\label{tab:metarank}
-\resizebox{\textwidth}{!}{\begin{tabular}{lcccccccccccc}
+\resizebox{0.95\textwidth}{!}{\begin{tabular}{lcccccccccccc}
 \hline\noalign{\smallskip}
 Ranks &MIRSVM &MIBoost &MIOptimalBall &MIDD &MIWrapper &MISMO &MISVM &SimpleMI &TLC &Bagging &Stacking \\
 \midrule
@@ -898,11 +890,9 @@ Rank &\textbf{2.0000} &7.7500 &6.5833 &8.0000 &7.9167 &5.3333 &7.6667 &7.8333 &5
 \foreach \x in {0,1,2,3,4,5,6,7,8,9,10} {
 \draw (l\x) -| (c\x);
 };
-\end{tikzpicture}}
+\end{tikzpicture}}\vspace{-1.2em}
 \captionof{figure}{Bonferroni-Dunn test for overall ranks comparison}\label{fig:BonfDunnpmeta}
 \end{table}
-
-\subsection{Overall Comparison}
 Table~\ref{tab:time} shows the run time results, in seconds, for each algorithm. MIRSVM has the fastest run time and is ranked second. MIRSVM shows very good scalability considering the number of features, such as in the webmining dataset which comprises of $5863$ attributes. Additionally, taking into account the number of instances as seen in the two largest datasets, component and function, MIRSVM displays superior scalability. It is important to note that quadratic programming solvers are not the most efficient tools for solving optimization problems in terms of run time, and yet MIRSVM still is shown to perform competitively against the current state-of-the-art algorithms. 
 
 SimpleMI achieves the highest rank and competitive run times because, rather than use the instances in each bag to train a model, it takes the mean value of the instances in a bag and uses that for training. Even though SimpleMI has fast run-times, its performance over the previous metrics has been shown to be random and not as efficient as the bag-level methods.
