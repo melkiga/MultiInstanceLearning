@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 JUN 2017 13:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 JUN 2017 15:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -996,9 +996,10 @@ ure.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.152 
-      ]pdfTeX warning (ext4): destination with the same identifier (name{equati
-on.2.1}) has been already used, duplicate ignored
+l.153 F
+       or most of the methods described above, implicit or explicit assumpti...
+]pdfTeX warning (ext4): destination with the same identifier (name{equation.2.1
+}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.165 \end{alignat}
@@ -1023,8 +1024,8 @@ Overfull \hbox (11.10098pt too wide) in paragraph at lines 191--192
 SVM prob-lem was pro-posed by G[]artner|
  []
 
-[8] [9]pdfTeX warning (ext4): destination with the same identifier (name{equati
-on.3.1}) has been already used, duplicate ignored
+[8]pdfTeX warning (ext4): destination with the same identifier (name{equation.3
+.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.244 \end{alignat}
@@ -1033,8 +1034,8 @@ l.244 \end{alignat}
 <to be read again> 
                    \relax 
 l.244 \end{alignat}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{equation.3.1}) has been already used, duplicate ignored
+                    [9]pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.3.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.267 \end{alignat}
@@ -1050,7 +1051,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 297--298
 
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 301.
-[10]
+[10] [11pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.333 \end{align}
+                 ]
 Package epstopdf Info: Source file: <convergence.eps>
 (epstopdf)                    date: 2017-06-12 17:04:18
 (epstopdf)                    size: 193078 bytes
@@ -1061,7 +1068,8 @@ Package epstopdf Info: Source file: <convergence.eps>
 to.pdf convergence.eps>
 (epstopdf)             \includegraphics on input line 345.
 Package epstopdf Info: Output file is already uptodate.
- <convergence-eps-converted-to.pdf, id=310, 1066.98625pt x 733.74126pt>
+
+<convergence-eps-converted-to.pdf, id=318, 1066.98625pt x 733.74126pt>
 File: convergence-eps-converted-to.pdf Graphic file (type pdf)
 
 <use convergence-eps-converted-to.pdf>
@@ -1079,7 +1087,7 @@ d-to.pdf mirsvm_figure.eps>
 (epstopdf)             \includegraphics on input line 353.
 Package epstopdf Info: Output file is already uptodate.
 
-<mirsvm_figure-eps-converted-to.pdf, id=311, 421.575pt x 316.18124pt>
+<mirsvm_figure-eps-converted-to.pdf, id=319, 421.575pt x 316.18124pt>
 File: mirsvm_figure-eps-converted-to.pdf Graphic file (type pdf)
 
 <use mirsvm_figure-eps-converted-to.pdf>
@@ -1097,22 +1105,15 @@ Package epstopdf Info: Source file: <misvm_figure.eps>
 (epstopdf)             \includegraphics on input line 357.
 Package epstopdf Info: Output file is already uptodate.
 
-<misvm_figure-eps-converted-to.pdf, id=312, 421.575pt x 316.18124pt>
+<misvm_figure-eps-converted-to.pdf, id=320, 421.575pt x 316.18124pt>
 File: misvm_figure-eps-converted-to.pdf Graphic file (type pdf)
 
 <use misvm_figure-eps-converted-to.pdf>
 Package pdftex.def Info: misvm_figure-eps-converted-to.pdf used on input line 3
 57.
 (pdftex.def)             Requested size: 234.8775pt x 176.1581pt.
- [11] [12pdfTeX warning (ext4): destination with the same identifier (name{figu
-re.2}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.367 \subsection
-                 {Experimental Setup}] [13pdfTeX warning (ext4): destination wi
-th the same identifier (name{figure.3}) has been already used, duplicate ignore
-d
+ [12] [13pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -1325,10 +1326,10 @@ Package rerunfilecheck Info: File `article.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 939.
  ) 
 Here is how much of TeX's memory you used:
- 22311 strings out of 493089
- 432857 string characters out of 6134842
+ 22310 strings out of 493089
+ 432847 string characters out of 6134842
  570693 words of memory out of 5000000
- 25176 multiletter control sequences out of 15000+600000
+ 25175 multiletter control sequences out of 15000+600000
  38068 words of font info for 93 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  56i,15n,82p,1788b,879s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1363,7 +1364,7 @@ onts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on article.pdf (26 pages, 628210 bytes).
+Output written on article.pdf (26 pages, 627804 bytes).
 PDF statistics:
  610 PDF objects out of 1000 (max. 8388607)
  547 compressed objects within 6 object streams
