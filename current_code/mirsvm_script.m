@@ -1,4 +1,4 @@
-function [acc,iter,precision,recall,kappa,AUC] = mirsvm_script(path,name,C,param,rnd,p)
+function [acc,iter,precision,recall,kappa,AUC,sums,numb_bags] = mirsvm_script(path,name,C,param,rnd,p)
 % [acc,iter,precision,recall,kappa,AUC] = mirsvm_script('Google Drive/data/midata/libsvm/','musk1',1000,4.6,1,1)
 
 rng('default'); rng(rnd); 

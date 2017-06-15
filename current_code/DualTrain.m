@@ -16,8 +16,8 @@ end
 
 Xn = X(S,:); Yn = Y(S); Bn = B(S);
 %%%%%%%% Compute QP Solution %%%%%%%%
-iter = 1; scurrent = 1;
-while(scurrent ~= numb_bags && iter < numb_bags)
+iter = 1; scurrent = 1; max_iter = 10;
+while(iter <= max_iter)%(scurrent ~= numb_bags && iter < numb_bags)
     S_old = [S_old S];
     H = (Yn*Yn').*GaussianKernel(Xn,Xn,param);
     f = -1*ones(numb_bags,1);
