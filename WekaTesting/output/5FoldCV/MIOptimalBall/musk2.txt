@@ -1,0 +1,8 @@
+Confusion Matrix:
+TP=52.0
+FP=13.0
+TN=26.0
+FN=10.0
+AUC=0.7571275946275946
+TrainTime=1156.6
+TestTime=46.6

@@ -2,15 +2,15 @@
 clear; clc; close all;
 
 % Get algorithm names
-path = 'C:\Users\melkiga\Google Drive\Research\Cano\MultiInstanceClassification\WekaTesting\output\';
+path = '/Users/gabriellamelki/Documents/Research/MultiInstanceLearning/WekaTesting/output/';
+alg_names = dir(path); alg_names([1:4 6 13:14]) = [];
 names = getList(path,'.');
 
-%metrics = {'Total','Accuracy','Precision','Recall','Kappa','AUC'};
-metrics = {'Time'};
+metrics = {'Precision','Recall'};
 
 % Create Excel File
 fold = 0;
-excelFile = [path 'ResultsTime.xlsx'];
+excelFile = [path 'ResultsPR.xlsx'];
 sheet = 1;
 startRange = 2;
 xlRange = ['B' num2str(startRange)];
