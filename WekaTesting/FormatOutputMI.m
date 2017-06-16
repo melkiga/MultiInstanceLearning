@@ -1,69 +1,70 @@
 % Create Excel File
-clear; clc; close all;
-
-% Get algorithm names
+cclear;
+% get dataset names
+path_data = '../../../Google Drive/data/midata/libsvm/';
+Datasets = dir([path_data '*']);
+Datasets(1:2,:) = []; Datasets = {Datasets.name}';
 path = '/Users/gabriellamelki/Documents/Research/MultiInstanceLearning/WekaTesting/output/';
-alg_names = dir(path); alg_names([1:4 6 13:14]) = [];
-names = getList(path,'.');
-
-metrics = {'Precision','Recall'};
-
-% Create Excel File
-fold = 0;
-excelFile = [path 'ResultsPR.xlsx'];
-sheet = 1;
-startRange = 2;
-xlRange = ['B' num2str(startRange)];
-
-%[status,~] = xlswrite(excelFile,{'Algorithm','DataSet','NumData','Accuracy','Precision','Recall','Kappa','AUC'},sheet,'A1');
-[status,~] = xlswrite(excelFile,{'Algorithm','DataSet','Time'},sheet,'A1');
-
-for n = 1:length(names)
-    folder = names{n};
-    files = getList([path folder '\*.txt'],'');
-    disp(['Reading ' folder]);
-    for f = 1:length(files)
-        line{1} = folder;
-        [resFile, ~] = fopen([path folder '\' files{f}],'r');
-        resText = fscanf(resFile,'%s');
-        fclose(resFile);
-        line{2} = files{f};
-        disp(['Reading ' files{f}]);
-        
-        TP = regexp(resText,'TP=(\d+[.\d+]+)','tokens'); TP = str2double(TP{1});
-        FP = regexp(resText,'FP=(\d+[.\d+]+)','tokens'); FP = str2double(FP{1});
-        TN = regexp(resText,'TN=(\d+[.\d+]+)','tokens'); TN = str2double(TN{1});
-        FN = regexp(resText,'FN=(\d+[.\d+]+)','tokens'); FN = str2double(FN{1});
-        traintime = regexp(resText,'TrainTime=(\d+[.\d+]+)','tokens'); traintime = str2double(traintime{1});
-        testtime = regexp(resText,'TestTime=(\d+[.\d+]+)','tokens'); testtime = str2double(testtime{1});
-        time = (traintime + testtime)/2;
-        
-        num = (TP+FP+TN+FN);
-        accuracy = (TP+TN)/num;
-        precision = TP/(TP+FP);
-        recall = TP/(TP+FN);
-        EA = (TP+FN)*(TP+FP) + (FP + TN)*(FN + TN);
-        kappa = (num*(TP+TN) - EA)/(num^2 - EA);
-        AUC = (1+(TP/(TP+FN)) - (FP/(FP+TN)))/2;
-        
-        precision(isnan(precision)) = 1;
-        recall(isnan(recall)) = 1;
-        
-        %results = [num accuracy precision recall kappa AUC];
-        results = time;
-        
-        for m = 1:length(metrics)
-            line{2+m} = results(m);
+names = {'MIBoost','MIOptimalBall','MIDD','MIWrapper','MISMO','MISVM','SimpleMI','TLC','Bagging','Stacking'};
+% metrics
+%metrics = {'Precision'};
+metrics = {'Accuracy','Precision','Recall','Kappa','AUC'};
+ind = [11,2,15,6,7,14,13,9,10,8,12,3,4,1,5];
+% initialize table
+T = table;
+T.Datasets = Datasets(ind);
+for m = 1:length(metrics)   % for each metric, build a table
+    sheet = m;
+    for n = 1:length(names) % for each algorithm
+        folder = names{n};
+        files = dir([path folder '/*.txt']); files = {files.name}';
+        disp(['Reading ' folder]);
+        for f = 1:length(files) % for each dataset result
+            [resFile, ~] = fopen([path folder '/' files{f}],'r');
+            resText = fscanf(resFile,'%s');
+            fclose(resFile);
+            
+            TP = regexp(resText,'TP=(\d+[.\d+]+)','tokens'); TP = str2double(TP{1});
+            FP = regexp(resText,'FP=(\d+[.\d+]+)','tokens'); FP = str2double(FP{1});
+            TN = regexp(resText,'TN=(\d+[.\d+]+)','tokens'); TN = str2double(TN{1});
+            FN = regexp(resText,'FN=(\d+[.\d+]+)','tokens'); FN = str2double(FN{1});
+            traintime = regexp(resText,'TrainTime=(\d+[.\d+]+)','tokens'); traintime = str2double(traintime{1});
+            testtime = regexp(resText,'TestTime=(\d+[.\d+]+)','tokens'); testtime = str2double(testtime{1});
+            time = (traintime + testtime)/2;
+            
+            num = (TP+FP+TN+FN);
+            switch metrics{m}
+                case 'Accuracy'
+                    accuracy = (TP+TN)/num;
+                    results(f,1) = accuracy;
+                case 'Precision'
+                    precision = TP/(TP+FP);
+                    if TP + FP == 0
+                        precision = 1;
+                    end
+                    results(f,1) = precision;
+                case 'Recall'
+                    recall = TP/(TP+FN);
+                    if TP + FN == 0
+                        recall = 1;
+                    end
+                    results(f,1) = recall;
+                case 'Kappa'
+                    EA = (TP+FN)*(TP+FP) + (FP + TN)*(FN + TN);
+                    kappa = (num*(TP+TN) - EA)/(num^2 - EA);
+                    results(f,1) = kappa;
+                case 'AUC'
+                    AUC = (1+(TP/(TP+FN)) - (FP/(FP+TN)))/2;
+                    results(f,1) = AUC;
+            end
         end
-        [status,message] = xlswrite(excelFile,line,sheet,xlRange);
-        if(status == 0)
-            disp(message);
-            return;
-        end
-        startRange = startRange + 1;
-        xlRange = ['A' num2str(startRange)];
-        line = {};
+        %[num_S,ids] = sort(num,'ascend');
+        results = results(ind); 
+        %if m == 1, T.Datasets = Datasets(ind); end
+        eval(sprintf('T.%s=results;',folder));
     end
-    
-
+    writetable(T,[path metrics{m} '.csv']);
+    %excel = table2array(T(1:end,2:end));
+    %xlswrite([path 'Results_new.xlsx'],excel,m+1,'C2:L16');
+    clearvars T; T = table; T.Datasets = Datasets(ind);
 end
