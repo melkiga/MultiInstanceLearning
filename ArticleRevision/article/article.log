@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  16 JUN 2017 13:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  16 JUN 2017 13:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1351,7 +1351,7 @@ put line 288.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.317 \newpage
-              ] <convergence.png, id=309, 2400.97pt x 1559.8275pt>
+              ] <convergence.png, id=310, 2400.97pt x 1559.8275pt>
 File: convergence.png Graphic file (type png)
 
 <use convergence.png>
@@ -1368,7 +1368,7 @@ d-to.pdf mirsvm_figure.eps>
 (epstopdf)             \includegraphics on input line 341.
 Package epstopdf Info: Output file is already uptodate.
 
-<mirsvm_figure-eps-converted-to.pdf, id=317, 421.575pt x 316.18124pt>
+<mirsvm_figure-eps-converted-to.pdf, id=318, 421.575pt x 316.18124pt>
 File: mirsvm_figure-eps-converted-to.pdf Graphic file (type pdf)
 
 <use mirsvm_figure-eps-converted-to.pdf>
@@ -1386,7 +1386,7 @@ Package epstopdf Info: Source file: <misvm_figure.eps>
 (epstopdf)             \includegraphics on input line 345.
 Package epstopdf Info: Output file is already uptodate.
 
-<misvm_figure-eps-converted-to.pdf, id=318, 421.575pt x 316.18124pt>
+<misvm_figure-eps-converted-to.pdf, id=319, 421.575pt x 316.18124pt>
 File: misvm_figure-eps-converted-to.pdf Graphic file (type pdf)
 
 <use misvm_figure-eps-converted-to.pdf>
@@ -1573,7 +1573,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 917.
 Here is how much of TeX's memory you used:
  30770 strings out of 493089
  632147 string characters out of 6134842
- 715307 words of memory out of 5000000
+ 714307 words of memory out of 5000000
  33588 multiletter control sequences out of 15000+600000
  42988 words of font info for 109 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -1596,23 +1596,24 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
-ype1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/t
-imes/utmri8a.pfb>
-Output written on article.pdf (25 pages, 525432 bytes).
+5/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
+rw/times/utmri8a.pfb>
+Output written on article.pdf (25 pages, 531886 bytes).
 PDF statistics:
- 608 PDF objects out of 1000 (max. 8388607)
- 545 compressed objects within 6 object streams
+ 612 PDF objects out of 1000 (max. 8388607)
+ 548 compressed objects within 6 object streams
  159 named destinations out of 1000 (max. 500000)
  156 words of extra memory for PDF output out of 10000 (max. 10000000)
 
