@@ -4,5 +4,5 @@ FP=0.0
 TN=125.0
 FN=63.0
 AUC=0.5
-TrainTime=0.0
-TestTime=0.0
+TrainTime=14.7
+TestTime=2.2
