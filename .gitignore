@@ -8,3 +8,4 @@ ArticleRevision/article/article.synctex.gz
 *.aux
 .DS_Store
 *.asv
+*.m~
