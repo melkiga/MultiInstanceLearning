@@ -5,5 +5,5 @@
 *.asv
 *.m~
 Icon\r\r
-Icon^M^M
+!Icon
 .DS_Store
