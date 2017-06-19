@@ -1,4 +1,4 @@
-function [alphay,bias,S,iter,sums] = DualTrain(X,Y,B,C,param,options,Bsizes)
+function [alphay,bias,S,iter,sums,tracc] = DualTrain(X,Y,B,C,param,options,Bsizes)
 
 [unique_bag_ids,~] = unique(B);
 numb_bags = length(unique_bag_ids);
@@ -16,7 +16,7 @@ end
 
 Xn = X(S,:); Yn = Y(S); Bn = B(S);
 %%%%%%%% Compute QP Solution %%%%%%%%
-iter = 1; scurrent = 1; max_iter = 10;
+iter = 1; scurrent = 1; max_iter = numb_bags;
 while(iter <= max_iter)%(scurrent ~= numb_bags && iter < numb_bags)
     S_old = [S_old S];
     H = (Yn*Yn').*GaussianKernel(Xn,Xn,param);
@@ -42,6 +42,7 @@ while(iter <= max_iter)%(scurrent ~= numb_bags && iter < numb_bags)
     end
     Xn = X(S,:); Yn = Y(S); Bn = B(S);
     sums(iter) = sum(S_old(:,iter) == S);
+    tracc(iter) = 100*(sum(ytrain == Yn))/numb_bags;
     scurrent = sums(iter);
     iter = iter + 1;
 end

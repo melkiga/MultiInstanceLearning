@@ -1,4 +1,4 @@
-function [acc,iter,precision,recall,kappa,AUC,sums,numb_bags] = mirsvm_script(path,name,C,param,rnd,p)
+function [acc,iter,precision,recall,kappa,AUC,sums,numb_bags,tracc] = mirsvm_script(path,name,C,param,rnd,p)
 % [acc,iter,precision,recall,kappa,AUC] = mirsvm_script('Google Drive/data/midata/libsvm/','musk1',1000,4.6,1,1)
 
 rng('default'); rng(rnd); 
@@ -9,7 +9,7 @@ B = X(:,2); Bsizes = X(:,1); X = X(:,3:end); X = scale(X,2); X(isnan(X)) = 0;
 [unique_bag_ids,~] = unique(B);
 numb_bags = length(unique_bag_ids);
 % train
-[alphay,bias,S,iter,sums] = DualTrain(X,Y,B,C,param,options,Bsizes);
+[alphay,bias,S,iter,sums,tracc] = DualTrain(X,Y,B,C,param,options,Bsizes);
 XS = X(S,:);
 % test
 [TP,TN,FP,FN] = DualTest(X,XS,Y,B,alphay,bias,param);
