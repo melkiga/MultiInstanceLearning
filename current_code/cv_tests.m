@@ -35,11 +35,11 @@ recall(isnan(recall)) = 0;
 kappa(isnan(kappa)) = 0;
 AUC(isnan(AUC)) = 0;
 
-acc = mean(acc);
-iter = mean(iter);
-precision = mean(precision);
-recall = mean(recall);
-kappa = mean(kappa);
-AUC = mean(AUC);
+if TP + FP == 0
+    precision = 1;
+end
+if TP + FN == 0
+    recall = 1;
+end
 
 end

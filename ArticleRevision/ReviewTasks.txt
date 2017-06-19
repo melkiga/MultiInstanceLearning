@@ -1,17 +1,3 @@
-## Tasks for reviewing the MIRSVM paper
-
-1. Emphasize why the instance selection strategy is new
-2. Review notation-------------------------------------------[DONE]
-3. Port article to elsevier
-4. Add convergence
-5. Shorten SVM derivations when needed
-6. Read introduction and section 2.1 2.2
-7. Remove missing feature in figure of MI dataset------------[DONE]
-8. Explain Run-time (train or test or both)
-9. Elaborate on the results and why they are that way
-10. Read: "Active learning with multi-criteria decision making systems" and add it to the paper
-
-
 ------ SUBMISSION INSTRUCTIONS -------
 More info: https://www.elsevier.com/journals/pattern-recognition/0031-3203/guide-for-authors
 > Author Biographies 

@@ -1,0 +1,18 @@
+Possible algorithms to test MIRSVM with:
+
+http://lamda.nju.edu.cn/Data.ashx?AspxAutoDetectCookieSupport=1
+
+	> MIKI: The package includes the MATLAB code of the MIKI (Multi-Instance Learning with Key Instance Shift) algorithm which focuses on handling the setting when Multi-instance learning encounters with key (positive) instance shift [1]. You will find an example of using this code in the 'example.m' function. The example data is 20newsgroup dataset comp_gra_ibm.
+		> Y.-L. Zhang and Z.-H. Zhou. Multi-Instance Learning with Key Instance Shift. In: Proceeding of the 26th International Joint Conference on Artificial Intelligence (IJCAI'17), Melbourne, Australia, 2017.
+
+	> miVLAD/miFV: The package includes the MATLAB code of the multi-instance learning algorithms miVLAD and miFV, which are efficient and scalable MIL algorithms. miVLAD/miFV maps the original MIL bags into a new feature vector representation, which can obtain bag-level information, and meanwhile lead to excellent performances even with linear classifiers. In consequence, thanks to the low computational cost in the mapping step and the scalability of linear classifiers, miVLAD/miFV can handle large scale MIL data efficiently and effectively. A Readme file and some data files are included in the package.
+		> X.-S. Wei, J. Wu and Z.-H. Zhou. Scalable Algorithms for Multi-Instance Learning. IEEE Transactions on Neural Networks and Learning Systems, in press.
+		> X.-S. Wei, J. Wu and Z.-H. Zhou. Scalable Multi-Instance Learning. In: Proceedings of the 14th International Conference on Data Mining (ICDM’14), Shenzhen, China, 2014, pp.1037-1042.
+
+	> miGraph: The package includes the MATLAB code of the multi-instance learning algorithm miGraph, which does not assume the instances as i.i.d. samples. A Readme file and some example files are included in the package.
+		> Z.-H. Zhou, Y.-Y. Sun, and Y.-F. Li. Multi-instance learning by treating instances as non-i.i.d. samples. In: Proceedings of the 26th International Conference on Machine Learning (ICML'09), Montreal, Canada, 2009, pp.1249-1256.
+
+	> MissSVM (C/C++): MissSVM is a package for solving multi-instance learning problems using semi-supervised support vector machines. The purpose of MissSVM is to show that if the assumption of i.i.d. instances were taken, multi-instance learning can be viewed as a special case of semi-supervised learning, and the field of multi-instance learning might be merged into the field of semi-supervised learning. Thus, future multi-instance learning research should assume only i.i.d. bags and avoid the assumption of i.i.d. instances.
+		> Z.-H. Zhou and J.-M. Xu. On the relation between multi-instance learning and semi-supervised learning. In: Proceedings of the 24th International Conference on Machine Learning (ICML'07), Corvallis, OR, 2007. 
+
+
