@@ -1,13 +1,13 @@
 % Create Excel File
 cclear;
 % get dataset names
-path_data = '../../../Google Drive/data/midata/libsvm/';
+path_data = '/Users/gabriellamelki/Google Drive/data/midata/libsvm/';
 Datasets = dir([path_data '*']);
 Datasets(1:2,:) = []; Datasets = {Datasets.name}';
 path = '/Users/gabriellamelki/Documents/Research/MultiInstanceLearning/WekaTesting/output/';
-names = {'MIBoost','MIOptimalBall','MIDD','MIWrapper','MISMO','MISVM','SimpleMI','TLC','Bagging','Stacking'};
+names = {'miGraph'};
+%names = {'MIBoost','MIOptimalBall','MIDD','MIWrapper','MISMO','MISVM','SimpleMI','TLC','Bagging','Stacking'};
 % metrics
-%metrics = {'Precision'};
 metrics = {'Accuracy','Precision','Recall','Kappa','AUC'};
 ind = [11,2,15,6,7,14,13,9,10,8,12,3,4,1,5];
 % initialize table
@@ -58,9 +58,7 @@ for m = 1:length(metrics)   % for each metric, build a table
                     results(f,1) = AUC;
             end
         end
-        %[num_S,ids] = sort(num,'ascend');
         results = results(ind); 
-        %if m == 1, T.Datasets = Datasets(ind); end
         eval(sprintf('T.%s=results;',folder));
     end
     writetable(T,[path metrics{m} '.csv']);
