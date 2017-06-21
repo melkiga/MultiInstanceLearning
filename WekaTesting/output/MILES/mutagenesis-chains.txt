@@ -1,0 +1,6 @@
+TP=43.00
+FP=15.00
+TN=110.00
+FN=20.00
+TrainTime=473.95
+TestTime=12.77
