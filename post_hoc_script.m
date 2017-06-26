@@ -30,16 +30,14 @@ for m = 1:num_metrics
     [avg_ranks,chi_statistics] = avg_rank(-data);
     ranks(m,:) = avg_ranks;
     max_rank = round(max(avg_ranks))+1;
-    [stats,headers] = wilcoxon(data,alpha);
+    %[stats,headers] = wilcoxon(data,alpha);
     
     % add average + ranks to data
     data(end+1,:) = mean(data);
     data(end+1,:) = avg_ranks;
     
     % create latex table
-    matrix2latex_metrics(data, [path_out [metric '.tex']], 'rowLabels', latex_data_rows, 'columnLabels', algorithms, 'alignment', 'c', 'format', '%-1.1f', 'rank', 'yes');
-    % create results table
-    matrix2latex(stats, [path_out [metric '_wx.tex']], 'rowLabels', algorithms, 'columnLabels', headers, 'alignment', 'c', 'format', '%-1.4f');
+    matrix2latex_metrics(data, [path_out [metrics{m} '.tex']], 'rowLabels', latex_data_rows, 'columnLabels', algorithms, 'alignment', 'c', 'format', '%-1.4f', 'rank', 'yes');
     % create bonferroni-dunn figure
-    bonferroni_dunn_tikz([path_out [metric '_Fig.tex']],avg_ranks,1,num_algorithms,algorithms,max_rank);
+    bonferroni_dunn_tikz([path_out [metrics{m} '_Fig.tex']],avg_ranks,1,num_algorithms,algorithms,max_rank);
 end

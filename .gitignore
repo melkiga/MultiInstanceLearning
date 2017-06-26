@@ -6,3 +6,4 @@
 *.m~
 "Icon\r"
 ".DS_Store\r"
+*.log
