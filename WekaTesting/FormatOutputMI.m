@@ -6,10 +6,10 @@ Datasets = dir([path_data '*']);
 Datasets(1:2,:) = []; Datasets = {Datasets.name}';
 path = '/Users/gabriellamelki/Documents/Research/MultiInstanceLearning/WekaTesting/output/';
 %names = {'miGraph'};
-names = {'MIRSVM','MIBoost','MIOptimalBall','MIDD','MIWrapper','MISMO','MISVM','SimpleMI','TLC','Bagging','Stacking','miGraph'};
+names = {'MIRSVM','miGraph','MIBoost','MIOptimalBall','MIDD','MIWrapper','MISMO','MISVM','SimpleMI','TLC','Bagging','Stacking'};
 % metrics
 metrics = {'Accuracy','Precision','Recall','Kappa','AUC','Time'};
-ind = [11,2,15,6,7,14,13,9,10,8,12,3,4,1,5];
+ind = [11,2,15,6,7,14,13,8,9,10,12,3,4,1,5];
 % initialize table
 T = table;
 T.Datasets = Datasets(ind);
