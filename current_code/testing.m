@@ -1,7 +1,7 @@
 warning off;
-name = 'musk1/';
-path = './data/midata/CVSets/';
-num = 10; C = 1000; param = 4.5; randomnum = 2;
+name = 'elephant/';
+path = '/Users/gabriellamelki/Google Drive/data/midata/CVSets/';
+num = 10; C = 1000; param = 4.5; randomnum = 6;
 
 TP = zeros(num,1); TN = zeros(num,1); FP = zeros(num,1); FN = zeros(num,1);
 Time = zeros(num,1);
@@ -50,7 +50,7 @@ FP = sum(FP);
 FN = sum(FN);
 numb_data = (TP + TN + FP + FN);
 
-acc = (TP+TN)/numb_data;
+acc = (TP+TN)/numb_data
 precision = TP/(TP+FP);
 recall = TP/(TP+FN);
 EA = (TP+FN)*(TP+FP) + (FP + TN)*(FN + TN);
