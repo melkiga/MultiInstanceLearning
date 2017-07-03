@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 JUL 2017 16:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 JUL 2017 16:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1570,15 +1570,18 @@ Package rerunfilecheck Info: File `article.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 919.
  ) 
 Here is how much of TeX's memory you used:
- 30774 strings out of 493089
- 632208 string characters out of 6134842
+ 30776 strings out of 493089
+ 632237 string characters out of 6134842
  715355 words of memory out of 5000000
- 33591 multiletter control sequences out of 15000+600000
+ 33592 multiletter control sequences out of 15000+600000
  42988 words of font info for 109 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  56i,14n,82p,10460b,933s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exi
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
 st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
+, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 , replaced by a fixed one
@@ -1609,10 +1612,10 @@ st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fon
 ts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmri8a.pfb>
-Output written on article.pdf (25 pages, 532543 bytes).
+Output written on article.pdf (25 pages, 532648 bytes).
 PDF statistics:
- 614 PDF objects out of 1000 (max. 8388607)
- 550 compressed objects within 6 object streams
- 160 named destinations out of 1000 (max. 500000)
+ 616 PDF objects out of 1000 (max. 8388607)
+ 552 compressed objects within 6 object streams
+ 161 named destinations out of 1000 (max. 500000)
  156 words of extra memory for PDF output out of 10000 (max. 10000000)
 
