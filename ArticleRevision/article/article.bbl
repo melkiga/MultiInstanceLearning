@@ -1,4 +1,4 @@
-\begin{thebibliography}{57}
+\begin{thebibliography}{58}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -313,6 +313,13 @@
   \bibinfo{journal}{Proceedings of the IEEE Computer Society Conference on
   Computer Vision and Pattern Recognition}  (\bibinfo{year}{2006})
   \bibinfo{pages}{2057--2063}.
+
+\bibitem[{Zhou et~al.(2009)Zhou, Sun, and Li}]{Zhou2009}
+\bibinfo{author}{Z.-H. Zhou}, \bibinfo{author}{Y.-Y. Sun},
+  \bibinfo{author}{Y.-F. Li}, \bibinfo{title}{Multi-instance Learning by
+  Treating Instances As non-I.I.D. Samples}, in:
+  \bibinfo{booktitle}{Proceedings of the 26th Annual International Conference
+  on Machine Learning}, \bibinfo{pages}{1249--1256}, \bibinfo{year}{2009}.
 
 \bibitem[{G{\"a}rtner et~al.(2002)G{\"a}rtner, Flach, Kowalczyk, and
   Smola}]{Smola2002}
