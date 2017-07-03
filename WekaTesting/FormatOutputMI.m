@@ -5,6 +5,7 @@ path_data = '/Users/gabriellamelki/Google Drive/data/midata/libsvm/';
 Datasets = dir([path_data '*']);
 Datasets(1:2,:) = []; Datasets = {Datasets.name}';
 path = '/Users/gabriellamelki/Documents/Research/MultiInstanceLearning/WekaTesting/output/';
+keel_path = '/Users/gabriellamelki/Documents/EclipseWorkspace/evaluation/data/';
 %names = {'miGraph'};
 names = {'MIRSVM','miGraph','MIBoost','MIOptimalBall','MIDD','MIWrapper','MISMO','MISVM','SimpleMI','TLC','Bagging','Stacking'};
 % metrics
@@ -69,6 +70,7 @@ for m = 1:length(metrics)   % for each metric, build a table
         eval(sprintf('T.%s=results;',folder));
     end
     writetable(T,[path metrics{m} '.csv']);
+    writetable(T(:,2:end),[keel_path metrics{m} '.csv'],'WriteVariableNames',false);
     %excel = table2array(T(1:end,2:end));
     %xlswrite([path 'Results_new.xlsx'],metrics{m},'B2:L16');
     clearvars T; T = table; T.Datasets = Datasets(ind);
