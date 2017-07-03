@@ -9,6 +9,7 @@ else
 end
 
 metrics = {'Accuracy','Precision','Recall','Kappa','AUC','Time'};
+%metrics = {'Time'};
 num_metrics = length(metrics);
 alpha = 0.1;
 % initialize using Accuracy.csv
@@ -27,7 +28,17 @@ for m = 1:num_metrics
     T = readtable([path_in metrics{m} '.csv']);
     data = T{:,2:end};
     disp(['Analyzing ' metrics{m}]);
-    [avg_ranks,chi_statistics] = avg_rank(-data);
+    
+    if strmatch('Time',metrics{m})
+        rank_val = 'time';
+        format = '%-1.1f';
+    else
+        data = -data;
+        rank_val = 'yes';
+        format = '%-1.4f';
+    end
+    
+    [avg_ranks,chi_statistics] = avg_rank(data);
     ranks(m,:) = avg_ranks;
     max_rank = round(max(avg_ranks))+1;
     %[stats,headers] = wilcoxon(data,alpha);
@@ -37,7 +48,20 @@ for m = 1:num_metrics
     data(end+1,:) = avg_ranks;
     
     % create latex table
-    matrix2latex_metrics(data, [path_out [metrics{m} '.tex']], 'rowLabels', latex_data_rows, 'columnLabels', algorithms, 'alignment', 'c', 'format', '%-1.4f', 'rank', 'yes');
+    matrix2latex_metrics(data, [path_out [metrics{m} '.tex']], 'rowLabels', latex_data_rows, 'columnLabels', algorithms, 'alignment', 'c', 'format', format, 'rank', rank_val);
     % create bonferroni-dunn figure
     bonferroni_dunn_tikz([path_out [metrics{m} '_Fig.tex']],avg_ranks,1,num_algorithms,algorithms,max_rank);
 end
+
+% create latex table
+disp('Analyzing Meta-Ranks');
+[avg_ranks,~] = avg_rank(ranks);
+ranks(end+1,:) = mean(ranks);
+ranks(end+1,:) = avg_ranks;
+max_rank = round(max(avg_ranks))+1;
+rank_val = 'time';
+format = '%-1.4f';
+metrics{end+1} = 'Average'; metrics{end+1} = 'Rank'; 
+
+matrix2latex_metrics(ranks, [path_out 'metaranks.tex'], 'rowLabels', metrics, 'columnLabels', algorithms, 'alignment', 'c', 'format', format, 'rank', rank_val);
+bonferroni_dunn_tikz([path_out 'metaranks_Fig.tex'],avg_ranks,1,num_algorithms,algorithms,max_rank);

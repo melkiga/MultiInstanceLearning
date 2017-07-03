@@ -5,18 +5,18 @@
 \ifthenelse{\x < 12}{\draw (\x+.5, 0) -- ++(0,.03);}{}
 }
 
-\coordinate (c0) at (10.7333,0);
-\coordinate (c1) at (6.8,0);
-\coordinate (c2) at (9.9,0);
-\coordinate (c3) at (5.8,0);
-\coordinate (c4) at (1.9333,0);
-\coordinate (c5) at (8.7,0);
-\coordinate (c6) at (4.4667,0);
-\coordinate (c7) at (2.8667,0);
-\coordinate (c8) at (11.1333,0);
-\coordinate (c9) at (5.8,0);
-\coordinate (c10) at (6.5333,0);
-\coordinate (c11) at (3.3333,0);
+\coordinate (c0) at (2.2667,0);
+\coordinate (c1) at (6.2,0);
+\coordinate (c2) at (3.1,0);
+\coordinate (c3) at (7.2,0);
+\coordinate (c4) at (11.0667,0);
+\coordinate (c5) at (4.3,0);
+\coordinate (c6) at (8.5333,0);
+\coordinate (c7) at (10.1333,0);
+\coordinate (c8) at (1.8667,0);
+\coordinate (c9) at (7.2,0);
+\coordinate (c10) at (6.4667,0);
+\coordinate (c11) at (9.6667,0);
 
 \node (l0) at (c0) [above left=.1cm and 0cm, align=right,scale=0.7] {\tiny MIRSVM};
 \node (l1) at (c1) [above left=.1cm and 0cm, align=right,scale=0.7] {\tiny miGraph};
@@ -31,7 +31,7 @@
 \node (l10) at (c10) [above left=.1cm and 0cm, align=right,scale=0.7] {\tiny Bagging};
 \node (l11) at (c11) [above left=.1cm and 0cm, align=right,scale=0.7] {\tiny Stacking};
 
-\fill[fill=gray,fill opacity=0.5] (1.9333,-0.1) rectangle (2.9333,0.1);
+\fill[fill=gray,fill opacity=0.5] (1.8667,-0.1) rectangle (2.8667,0.1);
 
 \foreach \x in {0,1,2,3,4,5,6,7,8,9,10,11,12} {
 \draw (l\x) -| (c\x);
