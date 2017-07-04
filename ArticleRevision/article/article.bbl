@@ -1,4 +1,4 @@
-\begin{thebibliography}{58}
+\begin{thebibliography}{59}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -314,13 +314,6 @@
   Computer Vision and Pattern Recognition}  (\bibinfo{year}{2006})
   \bibinfo{pages}{2057--2063}.
 
-\bibitem[{Zhou et~al.(2009)Zhou, Sun, and Li}]{Zhou2009}
-\bibinfo{author}{Z.-H. Zhou}, \bibinfo{author}{Y.-Y. Sun},
-  \bibinfo{author}{Y.-F. Li}, \bibinfo{title}{Multi-instance Learning by
-  Treating Instances As non-I.I.D. Samples}, in:
-  \bibinfo{booktitle}{Proceedings of the 26th Annual International Conference
-  on Machine Learning}, \bibinfo{pages}{1249--1256}, \bibinfo{year}{2009}.
-
 \bibitem[{G{\"a}rtner et~al.(2002)G{\"a}rtner, Flach, Kowalczyk, and
   Smola}]{Smola2002}
 \bibinfo{author}{T.~G{\"a}rtner}, \bibinfo{author}{P.~Flach},
@@ -335,6 +328,22 @@
   \bibinfo{booktitle}{{Proceedings of the Conference on Advances in Neural
   Information Processing Systems}}, \bibinfo{pages}{1--6},
   \bibinfo{year}{2006}.
+
+\bibitem[{Zhou et~al.(2009)Zhou, Sun, and Li}]{Zhou2009}
+\bibinfo{author}{Z.-H. Zhou}, \bibinfo{author}{Y.-Y. Sun},
+  \bibinfo{author}{Y.-F. Li}, \bibinfo{title}{Multi-instance Learning by
+  Treating Instances As non-I.I.D. Samples}, in:
+  \bibinfo{booktitle}{Proceedings of the 26th Annual International Conference
+  on Machine Learning}, \bibinfo{pages}{1249--1256}, \bibinfo{year}{2009}.
+
+\bibitem[{Ula{\c s} et~al.(2012)Ula{\c s}, Y{\i}ld{\i}z, and
+  Alpayd{\i}n}]{ulas2012M2Test}
+\bibinfo{author}{A.~Ula{\c s}}, \bibinfo{author}{O.~T. Y{\i}ld{\i}z},
+  \bibinfo{author}{E.~Alpayd{\i}n}, \bibinfo{title}{Cost-Conscious Comparison
+  of Supervised Learning Algorithms over Multiple Data Sets},
+  \bibinfo{journal}{Pattern Recognition}
+  \bibinfo{volume}{45}~(\bibinfo{number}{4}) (\bibinfo{year}{2012})
+  \bibinfo{pages}{1772--1781}.
 
 \bibitem[{Alcal\'{a}-Fdez et~al.(2011)Alcal\'{a}-Fdez, Fern\'{a}ndez, Luengo,
   Derrac, Garc\'{i}a, S\'{a}nchez, and Herrera}]{Alca2011}
