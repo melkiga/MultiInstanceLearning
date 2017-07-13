@@ -51,7 +51,7 @@ for m = 1:num_metrics
     % create latex table
     matrix2latex_metrics(data, [path_out [metrics{m} '.tex']], 'rowLabels', latex_data_rows, 'columnLabels', algorithms, 'alignment', 'c', 'format', format, 'rank', rank_val);
     % create bonferroni-dunn figure
-    bonferroni_dunn_tikz([path_out [metrics{m} '_Fig.tex']],avg_ranks,1,num_algorithms,algorithms,max_rank);
+    bonferroni_dunn_tikz([path_out [metrics{m} '_Fig.tex']],avg_ranks,3.435,num_algorithms,algorithms(2:end),max_rank);
 end
 
 % create latex table
@@ -65,4 +65,4 @@ format = '%-1.4f';
 metrics{end+1} = 'Average'; metrics{end+1} = 'Rank'; 
 
 matrix2latex_metrics(ranks, [path_out 'metaranks.tex'], 'rowLabels', metrics, 'columnLabels', algorithms, 'alignment', 'c', 'format', format, 'rank', rank_val);
-bonferroni_dunn_tikz([path_out 'metaranks_Fig.tex'],avg_ranks,1,num_algorithms,algorithms,max_rank);
+bonferroni_dunn_tikz([path_out 'metaranks_Fig.tex'],avg_ranks,3.435,num_algorithms,algorithms(2:end),max_rank);
