@@ -15,8 +15,8 @@ alpha = 0.1;
 % initialize using Accuracy.csv
 T = readtable([path_in metrics{1} '.csv']);
 % get algorithm names
-algorithms = T.Properties.VariableNames(2:end);
-num_algorithms = length(algorithms);
+algorithms = T.Properties.VariableNames;
+num_algorithms = length(algorithms)-1;
 % get dataset names + latex table row names
 datasets = table2cell(T(:,1));
 num_datasets = length(datasets);
@@ -30,15 +30,16 @@ for m = 1:num_metrics
     disp(['Analyzing ' metrics{m}]);
     
     if strmatch('Time',metrics{m})
+        data2 = data;
         rank_val = 'time';
         format = '%-1.1f';
     else
-        data = -data;
+        data2 = -data;
         rank_val = 'yes';
         format = '%-1.4f';
     end
     
-    [avg_ranks,chi_statistics] = avg_rank(data);
+    [avg_ranks,chi_statistics] = avg_rank(data2);
     ranks(m,:) = avg_ranks;
     max_rank = round(max(avg_ranks))+1;
     %[stats,headers] = wilcoxon(data,alpha);
