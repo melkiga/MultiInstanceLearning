@@ -2,5 +2,5 @@ TP=7.00
 FP=4.00
 TN=2.00
 FN=0.00
-TrainTime=0.04
+TrainTime=0.12
 TestTime=0.00
