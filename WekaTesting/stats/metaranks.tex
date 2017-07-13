@@ -1,17 +1,27 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx,threeparttable,booktabs}
+\title{Statistical Comparisons}
+\author{}
+\date{\today}
+\begin{document}
+\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
 \begin{threeparttable}
-\begin{tabular}{lccccccccccccc}
-\toprule
+\resizebox{0.95\textwidth}{!}{\begin{tabular}{lccccccccccccc}
+\noalign{\smallskip}\hline\noalign{\smallskip}
 Datasets &MIRSVM &miGraph &MIBoost &MIOptimalBall &MIDD &MIWrapper &MISMO &MISVM &SimpleMI &TLC &Bagging &Stacking \\
-\midrule
-Accuracy &\textbf{2.4333} &3.8333 &9.6000 &7.8000 &6.5667 &9.6000 &5.2000 &8.5667 &9.6000 &4.7000 &4.8667 &5.2333 &  \\
-Precision &6.3333 &6.0000 &7.0333 &7.2667 &7.3000 &7.0333 &\textbf{5.7333} &5.8000 &7.0333 &5.7667 &6.2000 &6.5000 &  \\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+Accuracy &\textbf{2.2000} &3.8667 &9.6000 &7.8667 &6.5667 &9.6000 &5.3333 &8.5667 &9.6000 &4.7000 &4.8667 &5.2333 &  \\
+Precision &\textbf{5.3333} &6.1333 &7.1000 &7.3333 &7.3667 &7.1000 &5.8667 &5.8667 &7.1000 &5.9000 &6.3333 &6.5667 &  \\
 Recall &4.8667 &6.5667 &6.8667 &6.3333 &7.3667 &6.8667 &6.7000 &7.4333 &\textbf{4.8333} &7.3667 &6.0667 &6.7333 &  \\
-Kappa &\textbf{2.4000} &4.2333 &10.1667 &7.0000 &6.6000 &10.1667 &5.1667 &8.3667 &10.1667 &4.3333 &4.3333 &5.0667 &  \\
-AUC &\textbf{2.8667} &4.2333 &10.1667 &6.9333 &6.6000 &10.1667 &5.1000 &8.2333 &10.1667 &4.3333 &4.2667 &4.9333 &  \\
+Kappa &\textbf{2.6333} &4.2000 &10.1667 &7.0000 &6.5333 &10.1667 &5.2333 &8.3667 &10.1667 &4.2667 &4.2667 &5.0000 &  \\
+AUC &\textbf{2.7667} &4.2667 &10.1667 &7.0000 &6.5333 &10.1667 &5.2333 &8.2333 &10.1667 &4.2667 &4.2667 &4.9333 &  \\
 Time &2.2667 &6.2000 &3.1000 &7.2000 &11.0667 &4.3000 &8.5333 &10.1333 &\textbf{1.8667} &7.2000 &6.4667 &9.6667 &  \\
-\hline
-Average &\textbf{3.5278} &5.1778 &7.8222 &7.0889 &7.5833 &8.0222 &6.0722 &8.0889 &7.2778 &5.6167 &5.3667 &6.3556 &  \\
-Rank &\textbf{2.1667} &3.3333 &8.9167 &7.7500 &9.2500 &9.0833 &5.5000 &8.8333 &7.3333 &5.0833 &4.0833 &6.6667 &  \\
-\bottomrule
-\end{tabular}
+\noalign{\smallskip}\hline\noalign{\smallskip}
+Average &\textbf{3.3444} &5.2056 &7.8333 &7.1222 &7.5722 &8.0333 &6.1500 &8.1000 &7.2889 &5.6167 &5.3778 &6.3556 &  \\
+Rank &\textbf{1.3333} &3.6667 &8.9167 &7.7500 &9.2500 &9.0833 &5.9167 &8.7500 &7.3333 &5.2500 &4.2500 &6.5000 &  \\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+\end{tabular}}
 \end{threeparttable}
+\end{document}
