@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  13 JUL 2017 20:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 JUL 2017 19:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1508,27 +1508,28 @@ l.750
 l.750 
       ]
 Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
  [19pdfTeX warning (ext4): destination with the same identifier (name{table.11}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.920 \end{table}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{figure.9}) has been already used, duplicate ignored
+l.834 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.920 \end{table}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{table.12}) has been already used, duplicate ignored
+l.834 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.1
+2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.920 \end{table}
-                 ] [20pdfTeX warning (ext4): destination with the same identifi
-er (name{table.13}) has been already used, duplicate ignored
+l.834 
+      ]
+Missing character: There is no ; in font nullfont!
+ [20pdfTeX warning (ext4): destination with the same identifier (name{table.13}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -1568,11 +1569,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 941.
 Here is how much of TeX's memory you used:
  30789 strings out of 493089
  632419 string characters out of 6134842
- 721854 words of memory out of 5000000
+ 720897 words of memory out of 5000000
  33604 multiletter control sequences out of 15000+600000
  42988 words of font info for 109 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 56i,14n,82p,10460b,939s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,14n,82p,10460b,933s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1608,10 +1609,10 @@ st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fon
 ts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmri8a.pfb>
-Output written on article.pdf (25 pages, 535411 bytes).
+Output written on article.pdf (25 pages, 535327 bytes).
 PDF statistics:
- 618 PDF objects out of 1000 (max. 8388607)
- 554 compressed objects within 6 object streams
+ 620 PDF objects out of 1000 (max. 8388607)
+ 556 compressed objects within 6 object streams
  162 named destinations out of 1000 (max. 500000)
  156 words of extra memory for PDF output out of 10000 (max. 10000000)
 
