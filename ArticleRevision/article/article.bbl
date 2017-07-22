@@ -1,4 +1,4 @@
-\begin{thebibliography}{59}
+\begin{thebibliography}{65}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -57,6 +57,13 @@
   vs. multiple-instance classification}}, \bibinfo{journal}{Pattern
   Recognition} \bibinfo{volume}{48}~(\bibinfo{number}{9})
   (\bibinfo{year}{2015}) \bibinfo{pages}{2831--2838}.
+
+\bibitem[{Li et~al.(2013)Li, Tax, Duin, and Loog}]{li2013multiple}
+\bibinfo{author}{Y.~Li}, \bibinfo{author}{D.~M. Tax}, \bibinfo{author}{R.~P.
+  Duin}, \bibinfo{author}{M.~Loog}, \bibinfo{title}{Multiple-instance learning
+  as a classifier combining problem}, \bibinfo{journal}{Pattern Recognition}
+  \bibinfo{volume}{46}~(\bibinfo{number}{3}) (\bibinfo{year}{2013})
+  \bibinfo{pages}{865--874}.
 
 \bibitem[{Ray and Craven(2005)}]{Ray2005}
 \bibinfo{author}{S.~Ray}, \bibinfo{author}{M.~Craven},
@@ -129,11 +136,24 @@
   in: \bibinfo{booktitle}{Proceedings of the IEEE SoutheastCon},
   \bibinfo{pages}{1--6}, \bibinfo{year}{2016}.
 
+\bibitem[{Chen et~al.(2016)Chen, Tian, and Liu}]{chen2016structural}
+\bibinfo{author}{D.~Chen}, \bibinfo{author}{Y.~Tian}, \bibinfo{author}{X.~Liu},
+  \bibinfo{title}{Structural nonparallel support vector machine for pattern
+  recognition}, \bibinfo{journal}{Pattern Recognition} \bibinfo{volume}{60}
+  (\bibinfo{year}{2016}) \bibinfo{pages}{296--305}.
+
 \bibitem[{Amores(2013)}]{Amores2013}
 \bibinfo{author}{J.~Amores}, \bibinfo{title}{{Multiple instance classification:
   review, taxonomy and comparative study}}, \bibinfo{journal}{Artificial
   Intelligence} \bibinfo{volume}{201} (\bibinfo{year}{2013})
   \bibinfo{pages}{81--105}.
+
+\bibitem[{Qiao et~al.(2017)Qiao, Liu, Yu, Xu, and Tao}]{qiao2017diversified}
+\bibinfo{author}{M.~Qiao}, \bibinfo{author}{L.~Liu}, \bibinfo{author}{J.~Yu},
+  \bibinfo{author}{C.~Xu}, \bibinfo{author}{D.~Tao},
+  \bibinfo{title}{Diversified dictionaries for multi-instance learning},
+  \bibinfo{journal}{Pattern Recognition} \bibinfo{volume}{64}
+  (\bibinfo{year}{2017}) \bibinfo{pages}{407--416}.
 
 \bibitem[{Auer and Ortner(2004)}]{Auer2004}
 \bibinfo{author}{P.~Auer}, \bibinfo{author}{R.~Ortner}, \bibinfo{title}{A
@@ -269,6 +289,28 @@
   \bibinfo{title}{Support-vector networks}, \bibinfo{journal}{Machine Learning}
   \bibinfo{volume}{20}~(\bibinfo{number}{3}) (\bibinfo{year}{1995})
   \bibinfo{pages}{273--297}.
+
+\bibitem[{Wang et~al.(2016)Wang, Zhang, Fan, and Ye}]{wang2016hierarchical}
+\bibinfo{author}{D.~Wang}, \bibinfo{author}{X.~Zhang},
+  \bibinfo{author}{M.~Fan}, \bibinfo{author}{X.~Ye},
+  \bibinfo{title}{Hierarchical mixing linear support vector machines for
+  nonlinear classification}, \bibinfo{journal}{Pattern Recognition}
+  \bibinfo{volume}{59} (\bibinfo{year}{2016}) \bibinfo{pages}{255--267}.
+
+\bibitem[{Carrasco et~al.(2015)Carrasco, L{\'o}pez, and
+  Maldonado}]{carrasco2015multi}
+\bibinfo{author}{M.~Carrasco}, \bibinfo{author}{J.~L{\'o}pez},
+  \bibinfo{author}{S.~Maldonado}, \bibinfo{title}{A multi-class svm approach
+  based on the l 1-norm minimization of the distances between the reduced
+  convex hulls}, \bibinfo{journal}{Pattern Recognition}
+  \bibinfo{volume}{48}~(\bibinfo{number}{5}) (\bibinfo{year}{2015})
+  \bibinfo{pages}{1598--1607}.
+
+\bibitem[{Fan et~al.(2017)Fan, Wang, Zha, and Gao}]{fan2017mreklm}
+\bibinfo{author}{Q.~Fan}, \bibinfo{author}{Z.~Wang}, \bibinfo{author}{H.~Zha},
+  \bibinfo{author}{D.~Gao}, \bibinfo{title}{MREKLM: A fast multiple empirical
+  kernel learning machine}, \bibinfo{journal}{Pattern Recognition}
+  \bibinfo{volume}{61} (\bibinfo{year}{2017}) \bibinfo{pages}{197--209}.
 
 \bibitem[{Nocedal and Wright(2006)}]{Nocedal2006}
 \bibinfo{author}{J.~Nocedal}, \bibinfo{author}{S.~Wright},

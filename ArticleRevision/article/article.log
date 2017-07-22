@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 JUL 2017 15:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  22 JUL 2017 16:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1351,7 +1351,7 @@ put line 290.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.319 \newpage
-              ] <convergence.png, id=312, 2400.97pt x 1559.8275pt>
+              ] <convergence.png, id=324, 2400.97pt x 1559.8275pt>
 File: convergence.png Graphic file (type png)
 
 <use convergence.png>
@@ -1368,7 +1368,7 @@ d-to.pdf mirsvm_figure.eps>
 (epstopdf)             \includegraphics on input line 343.
 Package epstopdf Info: Output file is already uptodate.
 
-<mirsvm_figure-eps-converted-to.pdf, id=320, 421.575pt x 316.18124pt>
+<mirsvm_figure-eps-converted-to.pdf, id=332, 421.575pt x 316.18124pt>
 File: mirsvm_figure-eps-converted-to.pdf Graphic file (type pdf)
 
 <use mirsvm_figure-eps-converted-to.pdf>
@@ -1386,7 +1386,7 @@ Package epstopdf Info: Source file: <misvm_figure.eps>
 (epstopdf)             \includegraphics on input line 347.
 Package epstopdf Info: Output file is already uptodate.
 
-<misvm_figure-eps-converted-to.pdf, id=321, 421.575pt x 316.18124pt>
+<misvm_figure-eps-converted-to.pdf, id=333, 421.575pt x 316.18124pt>
 File: misvm_figure-eps-converted-to.pdf Graphic file (type pdf)
 
 <use misvm_figure-eps-converted-to.pdf>
@@ -1556,7 +1556,7 @@ Missing character: There is no œ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no  in font ptmr7t!
-) [25]
+ [25]) [26]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 941.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 941.
  (./article.aux)
@@ -1567,13 +1567,13 @@ Package rerunfilecheck Info: File `article.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 941.
  ) 
 Here is how much of TeX's memory you used:
- 30789 strings out of 493089
- 632419 string characters out of 6134842
- 721928 words of memory out of 5000000
- 33604 multiletter control sequences out of 15000+600000
+ 30814 strings out of 493089
+ 633004 string characters out of 6134842
+ 721263 words of memory out of 5000000
+ 33622 multiletter control sequences out of 15000+600000
  42988 words of font info for 109 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 56i,14n,82p,10460b,933s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,14n,82p,10460b,965s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1609,10 +1609,10 @@ st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fon
 ts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmri8a.pfb>
-Output written on article.pdf (25 pages, 535427 bytes).
+Output written on article.pdf (26 pages, 537033 bytes).
 PDF statistics:
- 618 PDF objects out of 1000 (max. 8388607)
- 554 compressed objects within 6 object streams
- 162 named destinations out of 1000 (max. 500000)
+ 636 PDF objects out of 1000 (max. 8388607)
+ 571 compressed objects within 6 object streams
+ 169 named destinations out of 1000 (max. 500000)
  156 words of extra memory for PDF output out of 10000 (max. 10000000)
 
