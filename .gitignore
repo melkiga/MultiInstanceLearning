@@ -1,10 +1,6 @@
-
 *.gz
 *.aux
 .DS_Store
 *.asv
 *.m~
-"Icon\r"
-".DS_Store\r"
 *.log
-*.gz
