@@ -14,9 +14,13 @@ half of the manuscript. Also many of the details in Section 3 could be left out 
         Is there any specific reason for the choice apart from to speed up the cross validation process ?
         Besides, I usually see people using the range 2^i where i = -10:10
         So, how about considering some smaller values as well, say 0.00001 and/or 0.001 ?
+
+          According to your suggestion, we tested the performance our method using a wider range of parameters (especially with lower C values). Results were exactly the same as originally reported, since the best parameters were still selected in the domain we originally defined. The only difference of evaluating a larger number of parameters would be a longer runtime but we observed no performance different in the results for any of the datasets evaluated. Thank you.
+
+
     2. Page 5, Line 8: "they assume the distribution the instances in positive bags is positive", I don't understand this sentence, please clarify. What does 'distribution is positive' mean in this context ?
 
-        Here what we meant was that:
+        Heres what we meant was that:
           They assumes that all the instances within positive bags are assumed to be positive, or to follow the distribution of positively labelled data.
 
 
