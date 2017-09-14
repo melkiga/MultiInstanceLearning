@@ -1,0 +1,23 @@
+1) The only (technical) contribution I see is the new measure used to select bag representatives. And this contribution should be highlighted.
+
+2) I also feel that Section 1 and 2 are too lengthy. It feels like reading a book chapter on multiple-instance learning. These two parts combined are almost
+half of the manuscript. Also many of the details in Section 3 could be left out as they are not much different from the standard SVM. That is to say, I would like the authors to consider making those parts more concise.
+
+3) Lastly, I think the standard MI assumption only makes sense in some problem domains. (Dietterich's drug-activity prediction seems to be the case). So, I believe it would make the paper stronger if the authors also present some interesting real-world usage of the proposed algorithm.
+
+
+4) Specific comments:
+    1. I think your ranges for C parameter and kernel width are too narrow, especially on the lower end.
+        Is there any specific reason for the choice apart from to speed up the cross validation process ?
+        Besides, I usually see people using the range 2^i where i = -10:10
+        So, how about considering some smaller values as well, say 0.00001 and/or 0.001 ?
+    2. Page 5, Line 8: "they assume the distribution the instances in positive bags is positive", I don't understand this sentence, please clarify. What does 'distribution is positive' mean in this context ?
+
+        Here what we meant was that:
+          They assumes that all the instances within positive bags are assumed to be positive, or to follow the distribution of positively labelled data.
+
+
+    3. Page 12, first sentence: "This formulation ... ", what formulation ? I suppose some equations are missing?
+
+
+    4. Page 12, Line 5: "... where each bag is allowed one." -> I don't think this is grammatical. 
