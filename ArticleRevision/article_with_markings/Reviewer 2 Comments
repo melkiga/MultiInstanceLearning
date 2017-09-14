@@ -4,7 +4,10 @@
 half of the manuscript. Also many of the details in Section 3 could be left out as they are not much different from the standard SVM. That is to say, I would like the authors to consider making those parts more concise.
 
 3) Lastly, I think the standard MI assumption only makes sense in some problem domains. (Dietterich's drug-activity prediction seems to be the case). So, I believe it would make the paper stronger if the authors also present some interesting real-world usage of the proposed algorithm.
-
+        Confirmations of a molecule (done)
+        Image classification
+        Computer Aided Diagnosis
+        (MORE)
 
 4) Specific comments:
     1. I think your ranges for C parameter and kernel width are too narrow, especially on the lower end.
@@ -18,6 +21,7 @@ half of the manuscript. Also many of the details in Section 3 could be left out 
 
 
     3. Page 12, first sentence: "This formulation ... ", what formulation ? I suppose some equations are missing?
+          [DONE]
 
-
-    4. Page 12, Line 5: "... where each bag is allowed one." -> I don't think this is grammatical. 
+    4. Page 12, Line 5: "... where each bag is allowed one." -> I don't think this is grammatical.
+          [DONE]
