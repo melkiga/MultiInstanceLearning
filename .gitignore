@@ -4,3 +4,11 @@
 *.asv
 *.m~
 *.log
+*.bbl
+*.blg
+*.dvi
+*.log
+*.out
+*.gz
+*.log
+*.spl
