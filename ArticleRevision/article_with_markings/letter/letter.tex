@@ -1,0 +1,141 @@
+\documentclass[a4paper,notitlepage]{article}
+\usepackage[colorlinks,linkcolor=blue,citecolor=green,filecolor=magenta,urlcolor=blue]{hyperref}
+\usepackage{url}
+\setlength{\parskip}{2ex}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=20mm,
+ right=20mm,
+ top=20mm,
+ bottom=20mm,
+ }
+
+\begin{document}
+
+\noindent \textbf{\small MANUSCRIPT NUMBER:} PR-D-17-01043 
+
+\noindent \textbf{\small TITLE:} {\small MIRSVM: Multi-Instance Support Vector Machine with Bag Representatives}
+
+\noindent \textbf{\small AUTHORS:} {\small Gabriella Melki, Alberto Cano, and Sebasti\'{a}n~Ventura}
+
+\bigskip
+
+\noindent Dear Editor and Reviewers,
+
+\noindent According to your suggestions, we have prepared a new version of our paper, introducing the changes required to incorporate all the reviewers' comments.
+The following is our explanation of the changes made, as well as how they address the comments raised by the reviewers. Text in bold corresponds to the original comments. We hope to satisfy the reviewers' expectations. Finally, we are really grateful to the reviewers for their insightful and constructive comments and suggestions in their revisions, which have helped us to improve the quality of the article.
+
+\noindent We hope that the reviewers find the proposed thorough revision of our manuscript satisfactory. We look forward to hearing from you soon.
+
+\section{Reviewer \#1}
+
+\noindent \textbf{\textit{The authors propose MIRSVM, a support vector machine (SVM) based approach for classification which uses the bag-level information for training. The proposed algorithm is able to identify the bag representatives which are the instances that impact the classification the most. One of the strengths of their method is that it deals with the potential class imbalance by incorporating both positive and negative bags and limiting them to have maximum 1 representative. Unlike other methods the MIRSVM doesn't have any assumption about the data distribution. 
+I support publication of this paper in this journal because: }}
+
+\noindent \textbf{\textit{The topic is very well-suited to the interests of this Journal.}}
+\noindent \textbf{\textit{The paper is very organized and written smoothly.}}
+\noindent \textbf{\textit{Enough background information is given about SVM, multi-instance learning and bag level classification.}}
+\noindent \textbf{\textit{A comprehensive literature review is provided. Each method is shortly described and the pitfalls are discussed which takes the reader to the idea of why an approach like MIRSVM is needed.}}
+
+\medskip
+
+\noindent Answer...
+
+\noindent \textbf{\textit{The algorithm is clearly described through flowcharts, pseudocodes and examples.}}
+\noindent \textbf{\textit{All notations are given at the beginning of the paper which helps the reader to follow the equations easier.}}
+
+\medskip
+
+\noindent Answer...
+
+\noindent \textbf{\textit{This method is very well evaluated by comparison of the results vs. 11 competing techniques on 15  datasets which provides enough data to the solidity of the evaluations.}}
+\noindent \textbf{\textit{The authors also have visual comparisons. For example they compare MIRSVM vs MISVM one of the competing techniques which are trained using the same parameters (Fig. 4). The plots clearly indicate the optimal number of support vectors as well as smoother data representation when using MIRSVM.}}
+\noindent \textbf{\textit{The authors also showed that their method runs faster than all 11 approaches.}}
+\noindent \textbf{\textit{The statistical analysis and tests are described in detail. By using both precision and recall rates they demonstrate that unlike other methods, MIRSVM doesn't have bias toward positive or negative bags and has balance of precision-recall trade-off. They also perform a statistical analysis using Cohen's Kappa Rate which again proves that MIRSMV outperforms the other methods.}}
+
+\smallskip
+
+\noindent  \textbf{\textit{I would strongly recommend this paper to be published in Elsevier, Pattern Recognition Journal.}}
+
+\medskip
+
+\noindent The answer...
+
+\section{Reviewer \#2}
+
+\noindent \textbf{\textit{The paper presents a new approach for solving multiple-instance classification 
+problem from bag-level perspective. The authors formulated an SVM classifier such that it finds optimal decision hyperplane that separates positive bags from the negative ones. The key idea is to train the SVM using representative instances from each of the bags. The representative instances are those having the largest magnitude of the dot product with the weight vector. In other words, the most positive instances are chosen from positive bags while the least negative instances are chosen from the 
+negative bags. The authors claimed that the approach helps alleviate the data imbalance problem often encountered in multiple-instance learning. The experimental results demonstrated that the proposed method is superior to existing algorithms designed for multiple-instance learning. The proposed method is also faster than many of the existing approaches. }}
+
+\medskip
+
+\noindent Answer...
+
+\noindent \textbf{\textit{Comment 1: First of all, what I like most about the paper is the way the comparisons are conducted. Not many of the papers that I read/reviewed provided such detailed statistics. Please keep up the good practice. }}
+
+\medskip
+
+\noindent Answer...
+
+\noindent \textbf{\textit{Comment 2: However, according to me, I think the technical novelty is somewhat marginal. 
+The formulations in section 3 are all standard SVM, except that it now operates at the bag-level. The only (technical) contribution I see is the new measure used to select bag representatives. And this contribution should be highlighted. }}
+
+\medskip
+
+\noindent Answer...
+
+\noindent \textbf{\textit{Comment 3: I also feel that Section 1 and 2 are too lengthy. It feels like reading a 
+book chapter on multiple-instance learning. These two parts combined are almost half of the manuscript. Also many of the details in Section 3 could be left out as they are not much different from the standard SVM. That is to say, I would like the authors to consider making those parts more concise. }}
+
+\medskip
+
+\noindent Answer...
+
+\noindent \textbf{\textit{Comment 4: Lastly, I think the standard MI assumption only makes sense in some problem domains. (Dietterich's drug-activity prediction seems to be the case). So, I believe it would make the paper stronger if the authors also present some interesting real-world usage of the proposed algorithm. }}
+
+\medskip
+
+\noindent Answer...
+
+\noindent \textbf{\textit{Speicific Comments:}}
+\begin{enumerate}
+\item \textbf{\textit{I think your ranges for C parameter and kernel width are too narrow, especially on the lower end. Is there any specific reason for the choice apart from to speed up the cross validation process? Besides, I usually see people using the range $2^i$ where $i = -10:10$. So, how about considering some smaller values as well, say $0.00001$ and/or $0.001$?}}
+
+\medskip
+
+\noindent Answer...
+
+\item \textbf{\textit{Page 5, Line 8: ``they assume the distribution the instances in positive bags is positive", I don't understand this sentence, please clarify. What does 'distribution is positive' mean in this context?}}
+
+\medskip
+
+\noindent Thank you for pointing out that statement. What we meant was that they assume that all the instances within positive bags are assumed to be positive, or to follow the distribution of positively labelled data.
+
+\item \textbf{\textit{Page 12, first sentence: ``This formulation...", what formulation? I suppose some equations are missing?}}
+
+\medskip
+
+\noindent We apologize for the ambiguity. What we were specifying was the MIRSVM bag-representative selector and formutlation. We've made the appropriate change in text. 
+
+\item \textbf{\textit{Page 12, Line 5: ``... where each bag is allowed one." $\rightarrow$ I don't think this is grammatical.}}
+
+\medskip
+
+\noindent Answer...
+
+\item \textbf{\textit{Algorithm 1 Line 8: Graham matrix $\rightarrow$ Gram matrix?}}
+
+\medskip
+
+\noindent Answer...
+
+\end{enumerate}
+
+\medskip
+
+\noindent Answer...
+
+\end{document}
