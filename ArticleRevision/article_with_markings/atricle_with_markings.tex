@@ -60,7 +60,7 @@ Machine learning \sep multiple-instance learning \sep support vector machines \s
 \end{frontmatter}
 
 \section{Introduction}\label{intro}
-In traditional classification, learning algorithms attempt to correctly label unknown samples by finding patterns between training samples and their class label. \textit{Multi-instance} (MI) learning is a generalization of \textit{supervised learning} that has been recently been gaining interest because \hl{of its applicability to many real-world problems such as webmining and text categorization {\citep{Andrews2002}}, image classification and retreival} {\citep{Herman2008,qi2007}}, \hl{human action recognition {\citep{Yi2016}}, medical diagnosis and imaging {\citep{Herrera2016}}, and bioinformatics {\citep{Dietterich1997}} (drug activity prediction and protein identification).}
+In traditional classification, learning algorithms attempt to correctly label unknown samples by finding patterns between training samples and their class label. \textit{Multi-instance} (MI) learning is a generalization of \textit{supervised learning} that has been recently been gaining interest because \hl{of its applicability to many real-world problems such as webmining and text categorization {\citep{Andrews2002}}, image classification and retreival} {\citep{qi2007,cao2017weakly}}, \hl{human action recognition {\citep{Yi2016}}, medical diagnosis and imaging {\citep{Herrera2016}}, and bioinformatics {\citep{Dietterich1997}} (drug activity prediction and protein identification).}
 
 The difference between MIL and traditional learning is the nature of the data. In the multi-instance setting, a sample is considered a \textit{bag} that contains multiple \textit{instances} and is associated with a single label. The individual instance labels within a bag are unknown and bag labels are assigned based on a multi-instance assumption, or hypothesis. Introduced by~\citet{Dietterich1997}, the standard MI assumption states that a bag is labeled positive if and only if it contains at least one positive instance. More recently, other hypotheses and frameworks have been proposed by~\citet{Foulds2010} to encompass a wider range of applications with MI data. 
 
@@ -154,7 +154,7 @@ An extension of traditional single-instance $k$-nearest neighbors method (KNN) w
 
 ~\citet{Blockeel2005} introduced the \hl{Multi-Instance Tree Inducer (MITI), which uses decision trees as a heuristic to solve the MI problem. MITI aims} to identify whether an instance within a bag is truly positive and eliminate false positives within the same bag. The disadvantage of this approach stems from removing instances considered as false positives from partially grown trees without updating the existing tree structure.~\citet{Bjerring2011} then enhanced this approach by creating the \hl{method Multi-Instance Rule Induction (MIRI), which eliminates any possibility of a suboptimal split because the tree is discarded and regrown.} Other popular methods include MIBoost~\citep{Hall2009}, MIWrapper~\citep{Frank2003}, and Two-Level Classifier (TLC)~\citep{Wang2014}.
 
-For most of the methods described above, implicit or explicit assumptions have been made about the distribution of the data. Selecting a method that is robust for a problem such as MIL can be difficult when little is known about the nature of the data, especially considering the unknown distribution of the instances within bags~\citep{2015-KAIS,2016-INS-MIARM}. \hl{MIRSVM, is an iterative method that uses SVMs to design a MIL model without making prior assumptions about the data. Classifiers of this type are known to provide better generalization capabilities, performance, and sparser models.}
+For most of the methods described above, implicit or explicit assumptions have been made about the distribution of the data~\citep{2017-KNOSYS-MIMV}. Selecting a method that is robust for a problem such as MIL can be difficult when little is known about the nature of the data, especially considering the unknown distribution of the instances within bags~\citep{2015-KAIS,2016-INS-MIARM}. \hl{MIRSVM, is an iterative method that uses SVMs to design a MIL model without making prior assumptions about the data. Classifiers of this type are known to provide better generalization capabilities, performance, and sparser models.}
 
 \subsection{Support Vector Machines}\label{subsec:svms}
 Most classical learning techniques require knowledge of the data \hl{distribution to build accurate models, which is a serious restriction because}, in most cases, the distribution is unknown~\citep{Kecman2001}. SVMs represent learning techniques that have been introduced under the \textit{structural risk minimization} (SRM) framework and VC theory. Rather than optimizing over L1 or L2 norms and classification error, SVMs perform SRM~\citep{Shalev2014}, minimizing the expected probability of classification error, resulting in a generalized model without making assumptions about the data distribution~\citep{Cortes1995}. 
@@ -190,7 +190,13 @@ One of the first bag-level approaches to the multi-instance SVM problem was prop
 \citet{Zhou2009} proposed miGraph, which implicitly constructs a graph by deriving affinity matrices while using a graph kernel. It assumes the instances are not independently and identically distributed because of the nature of MI data. Bags imply relationships among the instances within it, and miGraph was designed to exploit them. 
 
 \section{Multiple-Instance Representative SVM}\label{sec:contribution}
-MIRSVM is based on the idea of selecting representative instances from both positive and negative bags which are used to find an unbiased, optimal separating hyperplane. A representative is iteratively chosen from each bag, and a new hyperplane is formed according to the representatives until they converge. Based on the SMI hypothesis, only one instance in a bag is required to be positive for the bag to adopt a positive label. Due to the unknown distribution of instances within positive bags, MIRSVM is designed to give preference to negative bags during training, because their distribution is known, i.e. all instances are guaranteed to be negative. This is evident during the representative selection process, by taking the index of the maximum output value within each bag based on the current hyperplane using the following rule, $s_I = \text{argmax}_{i \in I} (\langle \bm w,\, \bm x_i \rangle + b),\, \forall I \in \set{1,\ldots,n}$, \hl{where $\bm w \in \reals^d$ is a $d$-dimensional weight vector, $b \in \reals$ is a bias term.} In other words, the most positive instance is chosen from each positive bag and the least negative instance is chosen from each negative bag (instances with the largest output value based on the current hyperplane), pushing the decision boundary  towards the positive bags. Equation~\eqref{eq:primalmirsvm} presents the primal MIRSVM optimization problem:
+MIRSVM is based on the idea of selecting representative instances from both positive and negative bags which are used to find an unbiased, optimal separating hyperplane. A representative is iteratively chosen from each bag, and a new hyperplane is formed according to the representatives until they converge. Based on the SMI hypothesis, only one instance in a bag is required to be positive for the bag to adopt a positive label. \hl{Due to the unknown distribution of instances within positive bags, MIRSVM is designed to give preference to negative bags during training, because their distribution is known, i.e. all instances are guaranteed to be negative. This is evident during the representative selection process, by taking the index of the maximum output value within each bag based on the current hyperplane using the following rule:}
+\begin{equation}
+\label{eq:SIPrimal}
+\centering
+s_I = \text{argmax}_{i \in I} (\langle \bm w,\, \bm x_i \rangle + b),\, \forall I \in \set{1,\ldots,n},
+\end{equation}
+\hl{where $\bm w \in \reals^d$ is a $d$-dimensional weight vector, $b \in \reals$ is a bias term.} In other words, the most positive instance is chosen from each positive bag and the least negative instance is chosen from each negative bag (instances with the largest output value based on the current hyperplane), pushing the decision boundary  towards the positive bags. Equation~\eqref{eq:primalmirsvm} presents the primal MIRSVM optimization problem:
 \begin{subequations} 
 \label{eq:primalmirsvm}
 \begin{alignat}{2}
@@ -199,25 +205,11 @@ MIRSVM is based on the idea of selecting representative instances from both posi
 {} & {\,\,} \xi_I \geq 0,\, \forall I \in \set{1,\ldots,n}, 
 \end{alignat}
 \end{subequations} 
-\hl{where $\bm S_I$ is a set of the bag representatives' indices, $\bm x_{s_I}$ is the instance representative of bag $\mathcal{B}_I$, and the slack variable $\bm \xi \in \reals^m$ allows for optimizing over bag errors. Note the variables in MIRSVMs formulation are the similar to those of the traditional SVM, except they are now representing each bag as an instance.}
+\hl{where $\bm S_I$ is a set of the bag representatives' indices, $\bm x_{s_I}$ is the instance representative of bag $\mathcal{B}_I$, and the slack variable $\bm \xi \in \reals^m$ allows for optimizing over bag errors. Note the variables in MIRSVMs formulation are the similar to those of the traditional SVM, except they are now representing each bag as an instance. This is one of the benefits of the MIRSVM formulation, whereby using a bag-representative selector, traditional SVM solvers can be used for new data representations such the multi-instance data.}
 
-Solving the optimization problem given in Equation~\eqref{eq:primalmirsvm} using a quadratic programming solver is a computationally expensive task due to the number of constraints, which scales by the number of bags $n$, as well as the calculation of the inner product between two $d$-dimensional vectors in constraint~\eqref{eq:primalmirsvm1}. The proposed solution for these problems was deriving and solving the dual of the optimization problem given by Equation~\eqref{eq:primalmirsvm}. The dual can be formed by taking the Lagrangian of~\eqref{eq:primalmirsvm}, given by Equation~\eqref{eqn:svmlagrangian}, where $\bm \alpha$ and $\bm \beta$ are the non-negative Lagrange multipliers.
-\begin{equation}
-\centering \label{eqn:svmlagrangian}
-\resizebox{.9\textwidth}{!}{$
-\begin{aligned}
-\mathcal{L}\left(\bm{w},b,\bm{\xi},\bm{\alpha},\bm{\beta}\right) = \frac{1}{2}\sum_{j=1}^d w_j^2  + \frac{C}{n}\sum_I \xi_I - \sum_I{\beta_I \xi_I} - \sum_I{\alpha_I\left(Y_I\left(\sum_{j=1}^d w_j x_{s_Ij} + b\right) -1 + \xi_I\right)}
-\end{aligned}$} 
-\end{equation}
+Solving the optimization problem given in Equation~\eqref{eq:primalmirsvm} using a quadratic programming solver is a computationally expensive task due to the number of constraints, which scales by the number of bags $n$, as well as the calculation of the inner product between two $d$-dimensional vectors in constraint~\eqref{eq:primalmirsvm1}. The proposed solution for these problems was deriving and solving the dual of the optimization problem given by Equation~\eqref{eq:primalmirsvm}. 
 
-At optimality~\citep{Boyd2004}, $\bigtriangledown_{w,b,\xi}\mathcal{L}(\bm{w},b,\bm{\xi},\bm{\alpha},\bm{\beta}) = 0$ and the following conditions are met:
-\begin{align}
-&\frac{\partial\mathcal{L}}{\partial w_j}: w_j = \sum_I{\alpha_I\,Y_I\, x_{s_I\,j}},\,\forall j \in \{1,\ldots,d\}\label{eqn:optcond1}\\
-&\frac{\partial\mathcal{L}}{\partial b}: \sum_I{\alpha_IY_I} = 0,\label{eqn:optcond2}\\
-&\frac{\partial\mathcal{L}}{\partial\xi_I}: \alpha_I + \beta_I = \frac{C}{n},\,\forall I \in \set{1,\ldots,n}\label{eqn:optcond3} 
-\end{align}
-
-By substituting Equations~\eqref{eqn:optcond1},~\eqref{eqn:optcond2}, and~\eqref{eqn:optcond3} into the Lagrangian in~\eqref{eqn:svmlagrangian}, the dual MIRSVM formulation becomes the following:
+\hl{The dual can be formed by taking the Lagrangian of~{\eqref{eq:primalmirsvm}}, $\mathcal{L}(\bm{w},b,\bm{\xi},\bm{\alpha},\bm{\beta})$, and substituting the optimality conditions (from $\bigtriangledown_{w,b,\xi}\mathcal{L}(\bm{w},b,\bm{\xi},\bm{\alpha},\bm{\beta}) = 0$), where $\bm \alpha$ and $\bm \beta$ are the non-negative Lagrange multipliers. The dual MIRSVM formulation becomes the following:}
 \begin{subequations} 
 \label{eq:dualmirsvm1}
 \begin{alignat}{2}
