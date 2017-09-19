@@ -70,15 +70,11 @@ I support publication of this paper in this journal because: }}
 problem from bag-level perspective. The authors formulated an SVM classifier such that it finds optimal decision hyperplane that separates positive bags from the negative ones. The key idea is to train the SVM using representative instances from each of the bags. The representative instances are those having the largest magnitude of the dot product with the weight vector. In other words, the most positive instances are chosen from positive bags while the least negative instances are chosen from the 
 negative bags. The authors claimed that the approach helps alleviate the data imbalance problem often encountered in multiple-instance learning. The experimental results demonstrated that the proposed method is superior to existing algorithms designed for multiple-instance learning. The proposed method is also faster than many of the existing approaches. }}
 
-\medskip
-
-\noindent Answer...
-
 \noindent \textbf{\textit{Comment 1: First of all, what I like most about the paper is the way the comparisons are conducted. Not many of the papers that I read/reviewed provided such detailed statistics. Please keep up the good practice. }}
 
 \medskip
 
-\noindent Answer...
+\noindent We tried to be as thorough as possible during our experimental study and we intend on continuing with this method of experimentation. We really appreciate your comment on this.
 
 \noindent \textbf{\textit{Comment 2: However, according to me, I think the technical novelty is somewhat marginal. 
 The formulations in section 3 are all standard SVM, except that it now operates at the bag-level. The only (technical) contribution I see is the new measure used to select bag representatives. And this contribution should be highlighted. }}
@@ -87,18 +83,23 @@ The formulations in section 3 are all standard SVM, except that it now operates 
 
 \noindent Answer...
 
-\noindent \textbf{\textit{Comment 3: I also feel that Section 1 and 2 are too lengthy. It feels like reading a 
-book chapter on multiple-instance learning. These two parts combined are almost half of the manuscript. Also many of the details in Section 3 could be left out as they are not much different from the standard SVM. That is to say, I would like the authors to consider making those parts more concise. }}
+\noindent \textbf{\textit{Comment 3: I also feel that Section 1 and 2 are too lengthy. It feels like reading a book chapter on multiple-instance learning. These two parts combined are almost half of the manuscript. Also many of the details in Section 3 could be left out as they are not much different from the standard SVM. That is to say, I would like the authors to consider making those parts more concise. }}
 
 \medskip
 
-\noindent Answer...
+\noindent We made some changes to sections 1, 2, and 3 to try and condense the information given. We shortened and rewrote some of the descriptions on the background of multiple-instance learning, as well as removed some of the basic SVM formulations from the SVM background to avoid repetition in Section 3. Your comment on the length of those sections makes sense and we hope to made the information more concise.
 
 \noindent \textbf{\textit{Comment 4: Lastly, I think the standard MI assumption only makes sense in some problem domains. (Dietterich's drug-activity prediction seems to be the case). So, I believe it would make the paper stronger if the authors also present some interesting real-world usage of the proposed algorithm. }}
 
 \medskip
 
-\noindent Answer...
+\noindent Thank you for noting this. As you've suggested, we added a couple of additional applications of the standard MI assumption to the paper. We hope that the following real-world scenarios provide a more global picture as to why MI algorithms are useful.
+\begin{enumerate}
+\item Bioinformatics: Protein Identification
+\item Image classification \& retrieval
+\item Web mining \& text classification
+\item Medical diagnosis \& imaging
+\end{enumerate}
 
 \noindent \textbf{\textit{Speicific Comments:}}
 \begin{enumerate}
@@ -106,31 +107,31 @@ book chapter on multiple-instance learning. These two parts combined are almost 
 
 \medskip
 
-\noindent Answer...
+\noindent According to your suggestion, we tested the performance of our method using a wider range of parameters (especially with lower C values). Results were exactly the same as originally reported, since the best parameters were still selected in the domain we originally defined. The only difference of evaluating a larger number of parameters would be a longer runtime, but we observed no performance different in the results for any of the datasets evaluated. Thank you.
 
 \item \textbf{\textit{Page 5, Line 8: ``they assume the distribution the instances in positive bags is positive", I don't understand this sentence, please clarify. What does 'distribution is positive' mean in this context?}}
 
 \medskip
 
-\noindent Thank you for pointing out that statement. What we meant was that they assume that all the instances within positive bags are assumed to be positive, or to follow the distribution of positively labelled data.
+\noindent Thank you for pointing out that statement. What we meant was that they assume that all the instances within positive bags are assumed to be positive, or to follow the distribution of positively labelled data. This statement was clarified in the text. Please let us know if it needs any further explanation.
 
 \item \textbf{\textit{Page 12, first sentence: ``This formulation...", what formulation? I suppose some equations are missing?}}
 
 \medskip
 
-\noindent We apologize for the ambiguity. What we were specifying was the MIRSVM bag-representative selector and formutlation. We've made the appropriate change in text. 
+\noindent We apologize for the ambiguity. What we were specifying was the MIRSVM bag-representative selector and formutlation, referenced by Equations 12 and 13. We've made the appropriate change in text to clarify the thought. 
 
 \item \textbf{\textit{Page 12, Line 5: ``... where each bag is allowed one." $\rightarrow$ I don't think this is grammatical.}}
 
 \medskip
 
-\noindent Answer...
+\noindent We've updated the text to the correct grammar. Thanks for pointing that out.
 
 \item \textbf{\textit{Algorithm 1 Line 8: Graham matrix $\rightarrow$ Gram matrix?}}
 
 \medskip
 
-\noindent Answer...
+\noindent Yep that's correct, thanks for catching that! We've updated the text to be ``Gram matrix".
 
 \end{enumerate}
 
