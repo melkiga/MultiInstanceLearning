@@ -53,7 +53,7 @@ O = Gp*alphay + bias;
 O = reshape(O,length(x1),length(x2));
 [~,h] = contour(x1,x2,(O'),[0 0],'k','DisplayName','decision boundary');
 set(h,'linewidth',1.5);
-h = plot(X(S,1),X(S,2),'kx','DisplayName','support vectors');
+h = plot(X(S,1),X(S,2),'kx','DisplayName','support vectors','linewidth',2);
 set(h,'linewidth',1.5);
 [~,h] = contour(x1,x2,(O'),[1 1],'b--','DisplayName','positive margin');
 set(h,'linewidth',1.5);
@@ -63,7 +63,6 @@ axis([minnum maxnum minnum+0.5 maxnum-1]);
 set(gca,'TickLabelInterpreter', 'tex');
 title('MIRSVM Decision Boundary','Interpreter','latex');
 set(gca,'fontsize',11);
-legend('show');
 vars = [1.1 1.1];
 for b=1:bnump
     indB = find(B == b);
@@ -78,6 +77,8 @@ for b=1:bnumn
     meanB = mean([minx; maxx]);
     circle(meanB(1),meanB(2),vars(b),0.01,1,[0.9 0.1 0.1]);
 end
+legend({'instance in positive bag','instance in negative bag','decision boundary','support vectors','positive margin','negative margin'});
+
 
 %% MISVM is here
 [alphay,bias,S,indSV] = MISVM(X,Y,B,C,param,options,Bsizes);
@@ -104,7 +105,7 @@ O = Gp*alphay + bias;
 O = reshape(O,length(x1),length(x2));
 [~,h] = contour(x1,x2,(O'),[0 0],'k','DisplayName','decision boundary');
 set(h,'linewidth',1.5);
-h = plot(Xn(indSV,1),Xn(indSV,2),'kx','DisplayName','support vectors');
+h = plot(Xn(indSV,1),Xn(indSV,2),'kx','DisplayName','support vectors','linewidth',2);
 set(h,'linewidth',1.5);
 [~,h] = contour(x1,x2,(O'),[1 1],'b--','DisplayName','positive margin');
 set(h,'linewidth',1.5);
@@ -114,7 +115,6 @@ axis([minnum maxnum minnum+0.5 maxnum-1]);
 set(gca,'TickLabelInterpreter', 'tex');
 title('MISVM Decision Boundary','Interpreter','latex');
 set(gca,'fontsize',11);
-legend('show');
 vars = [1.1 1.1];
 for b=1:bnump
     indB = find(B == b);
@@ -129,3 +129,5 @@ for b=1:bnumn
     meanB = mean([minx; maxx]);
     circle(meanB(1),meanB(2),vars(b),0.01,1,[0.9 0.1 0.1]);
 end
+legend({'instance in positive bag','instance in negative bag','decision boundary','support vectors','positive margin','negative margin'});
+
